@@ -1,0 +1,688 @@
+/* for all the college & schools pages, and majors pages */
+
+$arts: darken($color-moonDustGray,15);
+$athletics: lighten($color-moonDustGray, 5);
+$aviation: $color-ameliaSkyBlue;
+$business: lighten($color-slayterSkyBlue, 10);
+$computers: lighten($color-fountainRunTeal, 27);
+$communication: lighten($color-fountainRunTeal, 5);
+$engineering: lighten($color-landGrantGreen, 50);
+$technology: lighten($color-rossAdeGreen, 17);
+$environment: lighten($color-celeryBogGreen,2);
+$healthcare: lighten($color-celeryBogGreen, 30);
+$law: lighten($color-bellTowerBrick, 5);
+$marketing: lighten($color-bellTowerBrick, 25);
+$math: $color-mackeyOrange;
+$perform: lighten($color-yellowWalk, 13);
+$programming: lighten($color-pappysPurple, 15);
+$public: lighten($color-pappysPurple, 28);
+$randd: lighten($color-oakenBucketBrown, 30);
+$science: lighten($color-campusGold, 16);
+$education: lighten($color-campusGold, 35);
+
+.alpha {
+	display: block;
+	float: left;
+	width: (100%/26);
+	font-family: $font-champion-heavy;
+	font-size: 1em;
+	color: #ccc!important;
+	text-align: center;
+	padding: 5px 0;
+	
+	&:hover,
+	&:focus {
+		background-color: #111;
+		color: #fff!important;
+	}
+	
+}
+
+.college-list-group {
+    margin: 0;
+    padding: 0;
+	
+	li {
+		margin: 0;
+		padding: 0;
+		display: inline;
+		
+		a {
+			margin: 1px;
+			padding: 10px;
+			display: block;
+			width: 33%;
+			float: left;
+			background-color: #000;
+			color: $color-campusGold;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			font-family: $font-archivo-narrow;
+			font-weight: 700;
+			overflow: hidden;
+			
+			&:hover {
+				color: $color-campusGold;
+				background-color: #333;
+				text-decoration: none;
+			}
+		}
+	}
+}
+#college-panels {
+	ul {
+		margin: 0;
+		padding: 0;
+		display: inline;
+		
+		li {
+			display: inline;
+			margin: 0;
+			padding: 0;
+
+			a {
+				display: inline-block;
+				margin: 2px 0;
+				padding: 5px 10px;
+				background-color: #333;
+				color: #eee;
+				text-decoration: none;
+				font-weight: bold;
+				font-size: .9em;
+				
+				i {
+					display:none;
+				}
+			}
+		}
+	}
+	
+	&.arts {
+		.arts .arts {
+			color: $arts;
+			display: inline;
+		}
+	}
+	&.athletics {
+		.athletics .athletics {
+			color: $athletics;
+			display: inline;
+		}
+	}
+	&.aviation {
+		.aviation .aviation {
+			color: $aviation;
+			display: inline;
+		}
+	}
+	&.business {
+		.business .business {
+			color: $business;
+			display: inline;
+		}
+	}
+	&.computers {
+		.computers .computers {
+			color: $computers;
+			display: inline;
+		}
+	}
+	&.comm {
+		.comm .comm {
+			color: $communication;
+			display: inline;
+		}
+	}
+	&.engin {
+		.engin .engin {
+			color: $engineering;
+			display: inline;
+		}
+	}
+	&.tech {
+		.tech .tech {
+			color: $technology;
+			display: inline;
+		}
+	}
+	&.enviro {
+		.enviro .enviro {
+			color: $environment;
+			display: inline;
+		}
+	}
+	&.health {
+		.health .health {
+			color: $healthcare;
+			display: inline;
+		}
+	}
+	&.law {
+		.law .law {
+			color: $law;
+			display: inline;
+		}
+	}
+	&.marketing {
+		.marketing .marketing {
+			color: $marketing;
+			display: inline;
+		}
+	}
+	&.math {
+		.math .math {
+			color: $math;
+			display: inline;
+		}
+	}
+	&.perform {
+		.perform .perform {
+			color: $perform;
+			display: inline;
+		}
+	}
+	&.program {
+		.program .program {
+			color: $programming;
+			display: inline;
+		}
+	}
+	&.public {
+		.public .public {
+			color: $public;
+			display: inline;
+		}
+	}
+	&.randd {
+		.randd .randd {
+			color: $randd;
+			display: inline;
+		}
+	}
+	&.sci {
+		.sci .sci {
+			color: $science;
+			display: inline;
+		}
+	}
+	&.teach {
+		.teach .teach {
+			color: $education;
+			display: inline;
+		}
+	}
+}
+.dark-bg {
+	&.school {
+		.main-content {
+			h4,
+			h5,
+			h6 {
+				color: #8C8C8C;
+			}
+		}
+		
+	}
+}
+#interest-check,
+#school-check {
+	label {
+		line-height: 1.1em;
+		font-size: 1.3em;
+		margin: 0;
+		margin-bottom: 10px;
+		padding: 0;
+		padding-right: 15px;
+		vertical-align: middle;
+		font-weight: bold;
+	}
+	input[type="checkbox"],
+	input[type="radio"] {
+		width: 1.1em;
+		height: 1.3em;
+		margin: 0;
+		margin-top: -2px;
+		padding: 0;
+		line-height: 1.3em;
+		vertical-align: middle;
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+#school-check label {
+	color: #c28e0e;
+}
+#interest-check  {
+	.arts {
+		color: $arts;
+	}
+	.athletics {
+		color: $athletics;
+	}
+	.aviation {
+		color: $aviation;
+	}
+	.business {
+		color: $business;
+	}
+	.computers {
+		color: $computers;
+	}
+	.comm {
+		color: $communication;
+	}
+	.engin {
+		color: $engineering;
+	}
+	.tech {
+		color: $technology;
+	}
+	.enviro {
+		color: $environment;
+	}
+	.health {
+		color: $healthcare;
+	}
+	.law {
+		color: $law;
+	}
+	.marketing {
+		color: $marketing;
+	}
+	.math {
+		color: $math;
+	}
+	.perform {
+		color: $perform;
+	}
+	.program {
+		color: $programming;
+	}
+	.public {
+		color: $public;
+	}
+	.randd {
+		color: $randd;
+	}
+	.sci {
+		color: $science;
+	}
+	.teach {
+		color: $education;
+	}
+}
+
+#open-all, #close-all {
+	color: #bbb;
+}
+.hide-major {
+	display:none!important;
+}
+
+.main-content {
+	.filter-title {
+		margin: .8em 0 .5em 0!important;
+		font-size: 2.3em;
+	}
+	.jumbotron {
+		&.profile, 
+		&.cta {
+			margin-top: -30px;
+			background-color: darken($color-everTrueBlue, 6);
+			color: #eee;
+		}
+		&.cta {
+			background-color: #000;
+		}
+		&.profile {
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: #fff!important;
+				margin-bottom: .5em;
+			}
+			img {
+				margin: 0 auto;
+				margin-top: 0; 
+				padding-top: 0
+			}
+		}
+
+	}
+	#careers-list {
+		margin: 0;
+		padding: 0;
+		padding-left: 0;
+
+		.list-group-item {
+			margin: 0;
+			padding: 5px;
+			background-color: transparent;
+			border: none;
+			border-top: 1px solid #333;
+			text-align: left;
+			font-size: 1.1em;
+
+			i {
+				color: $color-campusGold;
+			}
+		}
+	}
+}
+.all-majors #inner-page-content {
+	background: #222 url('../images/Bursts-grey-majors.png') no-repeat center; 
+	background-size:120%
+}
+.major-personal {
+    font-size: 90%;
+	
+	button {
+		font-family: $font-archivo-narrow;
+		font-weight: bold;
+	}
+}
+.m-legend {
+	font-size: 13px;
+	line-height: 1;
+	padding-left: 5px;
+	margin-bottom: 5px;
+	
+	span {
+		font-weight: 900;
+	}
+}
+
+.school {
+	.aside .list-inline li {
+		display: block;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 1px;
+		
+		a {
+			display: block;
+			margin: 0;
+			padding: 10px;
+			background-color: #111;
+			color: #c28e0e;
+			font-size: 1.2em;
+			text-decoration: none;
+			font-weight: bold;
+			font-family: $font-archivo-narrow;
+			
+			&:hover {
+				background-color: #333;
+			}
+		}
+	}
+	.chart-title {
+		margin-top: 2em;
+		margin-bottom: .5em;
+	}
+	.jumbotron .text {
+		font-size: 90%;
+	}
+	
+	.main-content {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: $font-champion-welter;
+			font-weight: normal!important;
+		}
+	}
+	.major-personal {
+		background-color: darken($color-everTrueBlue, 6);
+		color: #eee;
+		padding: 15px;
+		margin: 1em 0;
+
+		.major-personal-title {
+			margin-top: 0;
+			color: #eee!important;
+			display: inline-block;
+		}
+		button {
+			width: 100%;
+			background-color: transparent;
+			color: lighten($color-everTrueBlue, 40);
+			padding: 10px;
+			text-align: center;
+			border: none;
+			margin-top: 1em;
+			outline: 1px solid lighten($color-everTrueBlue, 20);
+			
+			&:hover {
+				background-color: darken($color-everTrueBlue, 10);
+			}
+			
+			+ div.collapse :first-child {
+				padding-top: 2em;
+			}
+		}
+		.portrait {
+			margin: 0 0 1em 1em;
+		}
+		
+	}
+	.salary-title {
+		font-size:140%;
+		font-family: $font-archivo-narrow; 
+		color:#000
+	}
+	.salary {
+		font-family: $font-champion-welter;
+		color:#000;
+		font-weight: normal!important;
+	}
+	.vid-wrapper {
+		background-color: #333;
+	}
+	.text .vid-wrapper {
+		padding: 0;
+		margin-bottom: 2em;
+		background-color: $color-headlineGold;
+		
+		iframe {
+			display: block;
+		}
+	}
+}
+.cta-link, 
+.single-major-cta a {
+	display: inline-block;
+    padding: 20px 30px;
+    border: 1px solid #ccc;
+    outline: #dedede;
+    margin: 10px 15px 10px 0;
+	color: #000!important;
+}
+.single-major-cta {
+	margin: 70px 0;
+	display: block;
+	height: inherit;
+	
+	a {
+		font-family: $font-archivo-narrow;
+		text-decoration: none!important;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: $color-campusGold;
+		}
+	}
+}
+
+/*  media queries */
+@include desktopLargeMax {
+	#interest-check,
+	#school-check {
+		label {
+			line-height: 1em;
+			font-size: 1.2em;
+		}
+		input[type="checkbox"],
+		input[type="radio"] {
+			width: 1em;
+			height: 1em;
+		}
+	}
+	.school {
+		.jumbotron {
+			font-size: 95%!important;
+			
+			button {
+				font-size: 100%!important;
+			}
+			.text iframe {
+				height: 257px;
+			}
+		} 
+		.cta-link, .single-major-cta a {
+			font-size: 100%!important;
+		}
+		
+	}
+	.single-major-cta a {
+		display: block;
+		width: 100%;
+		margin: 5px 0;
+		text-align: center;
+	}
+}
+@include desktopSmallMax {
+	
+	.college-list-group li a {
+		width: 49%;
+	}
+	.cta-link {
+		display: block;
+		width: 100%;
+		margin: 5px 0;
+		text-align: center;
+	}
+	.school {
+		.cta-link {
+			font-size: 1em!important;
+		}
+		.jumbotron {
+			font-size: 110%!important;
+			.text iframe {
+				height: 352px;
+			}
+			.side {
+				padding-top: 2em;
+				margin-top: 2em;
+				border-top: 1px solid $color-yellowWalk;
+			}
+			.chart-title {
+				margin-top: 1.3em;
+				margin-bottom: 1em;
+				padding-top: 1.3em;
+				border-top: 1px solid $color-yellowWalk;
+			}
+			.salary-title {
+				margin-top: 1em;
+			}
+		} 
+		.single-major-cta a {
+			font-size: 1.2em!important;
+		}
+	}
+}
+@include tabletMax {
+	.alpha {
+		width: (100%/13);
+	}
+	.jumbotron.profile .text {
+		font-size: 80%!important;
+	}
+	.main-content .filter-title {
+		font-size: 2em;
+	}
+	#college-panels {
+		ul {
+			li {
+				a {
+					font-size: 1em;
+				}
+			}
+		}
+	}
+	.school {
+		.jumbotron {
+			.text iframe {
+				height: 251px;
+			}
+		} 
+		
+	}
+}
+@include phoneMax {
+	.alpha {
+		width: (100%/13);
+	}
+	#college-panels {
+		ul {
+			li {
+				display: block;
+				a {
+					font-size: 1.1em;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.college-list-group li a {
+		width: 100%;
+	}
+	#interest-check,
+	#school-check {
+		label {
+			font-size: 1em;
+		}
+	}
+	.jumbotron.profile .text {
+		font-size: 90%!important;
+	}
+	.major-personal {
+		.portrait {
+			display: block;
+			margin-left: auto!important;
+			margin-right: auto!important;
+			float: none;
+		}
+		.major-personal-title {
+			text-align: center!important;
+			display: block!important;
+			margin-bottom: 1em;
+		}
+	}
+	.school {
+		.cta-link {
+			font-size: 1.1em!important;
+		}
+		.chart-title {
+			margin-bottom: 0!important;
+		}
+		.single-major-cta a {
+			font-size: 120%!important;
+		}
+		.jumbotron {
+			.text iframe {
+				width: 280px;
+				height: 157px;
+				margin: 0 auto;
+				max-width: 100%;
+			}
+		} 
+	}
+}

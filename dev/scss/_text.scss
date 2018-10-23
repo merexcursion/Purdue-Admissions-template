@@ -1,0 +1,251 @@
+/* general */
+body {
+	font-family: $font-arial;
+	line-height: 1.6;
+}
+button {
+	font-family: $font-archivo-narrow;
+	text-transform: uppercase;
+}
+div[class*="-12 "].main-content,
+div[class*="-11 "].main-content {
+	font-size: 120%;
+}
+div[class*="-10 "].main-content,
+div[class*="-9 "].main-content {
+	font-size: 110%;
+}
+div[class*="-8 "].main-content .image-panel .panel-body,
+div[class*="-7 "].main-content .image-panel .panel-body {
+	font-size: 90%;
+}
+div[class*="-6 "].main-content,
+div[class*="-5 "].main-content,
+div[class*="-4 "].main-content {
+	font-size: 90%;
+}
+div[class*="-3 "].main-content,
+div[class*="-2 "].main-content,
+div[class*="-1 "].main-content {
+	font-size: 80%;
+}
+em {
+	font-style: italic;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-champion-welter;
+	font-weight: normal!important;
+	color: $color-gray70;
+	margin-top: 1em;
+	line-height: 1.1;
+	margin-bottom: .3em;
+}
+h1 {
+	font-size: 2.25em;
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 2em;
+}
+h3 {
+	font-size: 1.75em;
+	color: $color-gray60ish;
+}
+h4 {
+	font-size: 1.50em;
+	color: $color-gray90;
+}
+h5 {
+	font-size: 1.30em;
+	color: $color-gray90;
+}
+h6 {
+	font-size: 1.25em;
+	color: $color-gray90;
+}
+ol,
+ul {
+	padding-left: 3em;
+	margin-bottom: 15px;
+}
+p {
+	margin-bottom: 1em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+/* specific */
+blockquote {
+    
+	.quote__content {
+		
+		font-family: $font-archivo-narrow;
+		font-weight: bold;
+		font-size: 1.4em;
+		color: $color-gray90;
+		line-height: 1.25;
+	}
+	.quote__source {
+		
+		font-family: $font-archivo-narrow;
+		font-weight: bold;
+		font-size: 1.3em;
+		color: $color-headlineGold;
+	}
+}
+.dark-bg blockquote {
+	.quote__content {
+		color: #ddd;
+	}
+	.quote__source {
+		color: $color-campusGold;
+	}
+}
+caption {
+	text-transform: uppercase;
+	text-align: center;
+	font-family: $font-champion-welter;
+	font-size: 1.3em;
+	line-height: 1;
+}
+
+.content a {
+	color: inherit;
+	text-decoration: underline;
+	
+	&:hover {
+		color: inherit;
+	}
+}
+.dark-bg {
+	.main-content,
+	&.school.feature .main-content {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: $font-archivo-narrow;
+			font-weight: bold!important;
+			
+			&.landing-links-title {
+				font-weight: normal!important;
+			}
+		}
+	}
+}
+figure {
+	
+	figcaption {
+		font-size: .8em;
+		font-weight: bold;
+		text-align: center;
+	}
+}
+.home {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $color-campusGold;
+	}
+}
+#intro {
+	.blurb p {
+		font-size: 1.2em;
+		text-align: left;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	h1 {
+		line-height: 1;
+	}
+}
+#intro-text {
+	h1 {
+		font-size: 7vw;
+		margin-top: 0;
+	}
+}
+.main-content, 
+.accordion__item,
+#sidebar .text {
+	h1:first-child,
+	h2:first-child,
+	h3:first-child,
+	h4:first-child,
+	h5:first-child,
+	h6:first-child {
+		margin-top: 0;
+	}
+	
+}
+thead th {
+	font-weight: bold;
+	line-height: 1;
+	font-size: .9em;
+}
+
+/* media queries */
+@include desktopLarge {
+	#intro-text h1 {
+		font-size: 6vw;
+	}
+}
+@include desktopLargeMax {
+	button {
+		font-size: 110%!important;
+	}
+}
+@include desktopSmallMax {
+	div[class*="-12 "].main-content,
+	div[class*="-11 "].main-content,
+	div[class*="-10 "].main-content,
+	div[class*="-9 "].main-content,
+	div[class*="-6 "].main-content,
+	div[class*="-5 "].main-content,
+	div[class*="-4 "].main-content,
+	div[class*="-3 "].main-content,
+	div[class*="-2 "].main-content,
+	div[class*="-1 "].main-content {
+		font-size: 100%;
+	}
+	#intro {
+		font-size: 90%;
+	}
+}
+@include tabletMax {
+	#intro {
+		font-size: 80%;
+		
+		.blurb {
+			font-size: 1.1em;
+		}
+		h1 {
+			font-size: 9vw;
+		}
+	}
+	div[class*="col"].main-content {
+		font-size: 90%;
+	}
+}
+@include phoneMax {
+	#intro {
+		font-size: 70%;
+	}
+	div[class*="col"].main-content {
+		font-size: 80%;
+	}
+}

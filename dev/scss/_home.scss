@@ -1,0 +1,1132 @@
+.blog-entry {
+	background-color: #222;
+	color: $color-ameliaSkyBlue;
+	padding: 20px;
+	font-size: 90%;
+	
+	.article-title {
+		margin-top: 0;
+		font-size: 1.4em;
+		font-family: $font-archivo-narrow;
+		text-transform: uppercase;
+		font-weight: bold!important;
+	}
+	.blog-link {
+		display: block;
+		text-align: left;
+		background-color: transparent;
+		padding: 5px 10px;
+		padding-left: 0;
+		margin-left: 0;
+		white-space: nowrap;
+		@include transition((color 200ms, margin-left 350ms, letter-spacing 300ms));
+		transition-timing-function: ease-in;
+		font-weight: bold;
+		
+		.icon {
+			@include transition(transform 300ms);
+		}
+		
+		
+	}
+	&:hover a {
+		color: #fff;
+		margin-left:5%;
+		letter-spacing: 3px;
+		
+		.icon {
+			transform: scale(1.5); 
+			-webkit-transform: scale(1.5);
+		}
+	}
+}
+#dates-content {
+	background: #222 url(../images/linesBG.png) no-repeat center;
+    background-size: cover;
+	padding-top: 6em;
+    padding-bottom: 5em;
+    font-weight: 600;
+	
+	#dates-header {
+		font-size: 2.5em;
+		margin-top: 0;
+		line-height: 1;
+	}
+	
+	p {
+		background-color: #222;
+		margin: 0;
+		margin-bottom: 5px;
+		padding: 10px;
+		color: #ddd;
+		
+		.date {
+			color: #A3D6D7;
+			font-size: 1.3em;
+			text-transform: uppercase;
+			font-family: $font-archivo-narrow;
+		}
+	}
+}
+#faq-squares {
+	display: table;
+	height: 445px; 
+	border-collapse: separate;
+    border-spacing: 8px;
+	width: 100%!important;
+	
+	.faq-square-row {
+
+		display: table-row;
+
+		a {
+			display: table-cell;
+			padding: 10px;
+			cursor: pointer;
+			color: #fff!important;
+			background-color: #222;
+			max-width: 20px;
+			overflow: hidden;
+			position: relative;
+			vertical-align: middle;
+			
+			&.spin-right:hover .bg-expand {
+				@include transform(scale(1.4) rotate(28deg));
+			}
+			&.spin-left:hover .bg-expand {
+				@include transform(scale(1.4) rotate(-28deg));
+			}
+			&.zoom-in:hover .bg-expand {
+			   @include transform(scale(2));
+			}
+			&.zoom-out:hover .bg-expand {
+			   @include transform(scale(.5));
+			}
+			&.pan-left:hover .bg-expand {
+				img {
+					margin-left: 0;
+				}
+			}
+			&.pan-right:hover .bg-expand {
+				img {
+					margin-left: -50%;
+				}
+			}
+			&:hover .img1 {
+				opacity: 0;
+			}
+
+			.bg-expand {
+				    @include transition(all 0.5s);
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+
+				img {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					display: block;
+					top: 0;
+					left: 0;
+					vertical-align: middle;
+					@include transition(all 0.5s);
+				}
+				.img2 {
+					position: absolute;
+				}
+			}
+			&.zoom-out .bg-expand {
+				img {
+					@include transform(scale(2));
+				}
+			}
+			&.pan-left .bg-expand {
+				
+				img {
+					height: 445px/2-8px;
+					max-height: 100%;
+					width: auto;
+					max-width: inherit;
+					margin-left: -50%;
+				}
+			}
+			&.pan-right .bg-expand {
+				img {
+					height: 445px/2-8px;
+					max-height: 100%;
+					width: auto;
+					max-width: inherit;
+					margin-left: 0;
+				}
+			}
+
+		}
+		.text {
+			position: relative;
+			z-index: 5;
+		}
+	}
+}
+#go-to-majors {
+	a {
+		margin-top: 2em;
+		width: 100%;
+	}
+}
+.home {
+	#home-main-cta {
+		text-align: left;
+		background: #222 url(../images/linesBG.png) no-repeat center;
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		a {
+			color:#000;
+			display: inline-block;
+			padding: 20px 25px;
+			border: 1px #555 solid;
+			margin: 5px 10px;
+			font-weight: bold!important;
+			font-size:1.1em;
+			text-decoration: none;
+			font-weight: normal;
+			cursor: pointer;
+
+			&:first-child {
+				margin-left: 0;
+			}
+			&:hover {
+				background-color: $color-campusGold;
+			}
+
+		}
+	}
+	#inner-page-content {
+		background: #000 url('../images/Bursts-home3-rgb.png') no-repeat center 6%; 
+		background-size:130%;
+		padding-top: 0;
+	}
+	#intro-text h1 {
+		text-shadow: 2px 2px 8px #000;
+		white-space: nowrap;
+	}
+	#majors {
+		.majors-content {
+			display: inline-block;
+			width: auto;
+			vertical-align: middle;
+			margin: 10px;
+			
+			p {
+				white-space: nowrap;
+			}
+			#school-choice,
+			#interest-choice {
+				border-color: transparent;
+				color: #fff!important;
+				padding: 10px 20px;
+				background: #2e2e2e url(../images/visitBG.png) center;
+				
+				&:focus {
+					outline: none;
+					outline: 0;
+					outline-style: none;
+					box-shadow: none;
+					-webkit-box-shadow: none;
+					border: 1px solid #444;
+				}
+			}
+			
+			#school-choice-title,
+			#interest-choice-title {
+				color: #fff!important;
+				white-space: nowrap;
+				margin: 0;
+				font: 1.4em/1 $font-archivo-narrow;
+				margin: 0;
+				line-height: 1.2;
+				color: $color-campusGold;
+				font-weight: 400;
+				outline: none;
+			}
+		}
+		#majors-list ul {
+			padding: 0;
+			
+			li {
+			display: inline-block;
+			width: inherit;
+			overflow: hidden;
+			margin: 0;
+			height: 44px;
+			
+				a {
+					color: #000;
+					background-color: #ddd;
+					display: inline-block;
+					margin: 0 2px;
+					padding: 10px 20px;
+					text-decoration: none;
+					white-space: nowrap;
+					font-weight: 600;
+				}
+			}
+		}
+		
+		.note a {
+			color: $color-campusGold;
+		}
+		
+	} 
+	#top-link {
+		color: #ddd;
+		font-size: 25px;
+		top: 285px;
+	}
+}
+.home-title {
+	text-transform: uppercase;
+	font-size: 2.5em;
+}
+.mySlides { /* don't insert to parent element css - will override dynamic js */
+	display: none;
+}
+.mySlides:first-child {
+	display: block;
+}
+#purdue-example {
+	position: relative;
+	
+	.closeXP {
+		color: #000!important;
+		background: $color-campusGold url(../images/gold-black-lines.png) no-repeat center;
+		background-size: cover;
+		padding: 0;
+		display: block;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		
+		span {
+			display: inline-block;
+			background: $color-campusGold;
+			padding: .6em 1.7em;
+			text-transform: uppercase;
+			font-weight: bold;
+			line-height: 1;
+		}
+	}
+	.example-header {
+		margin-top: 0;
+		color: #777;
+	}
+	.faq-rank-nav {
+		color: #888;
+		margin-top: .5em;
+		font-size: .9em;
+	}
+	.faq-square-row {
+		a {
+
+			text-align: center;
+			color: #fff!important;
+			font: 1.5em/1 $font-champion-welter;
+			text-transform: uppercase;
+			text-shadow: 0 0 8px #000, 0 0 5px #000;
+			font-weight: normal!important;
+		}
+	}
+	.inner-text {
+		&.cut-off {
+			overflow: auto;
+			overflow-x: hidden;
+			padding-right: 10%;
+			width: 110%;
+			cursor: url(../images/scroll-cursor.png), auto;
+
+			p:last-child {
+				padding-bottom: 30px;
+			}
+		}
+	}
+	.interactive-exampleP {
+		position: absolute;
+		height: 445px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		padding: 20px;
+		background-color: #000;
+		border: 1px solid $color-campusGold;
+		color: #ddd;
+		z-index: 100;
+		
+	}
+	.rankings {
+		border-top: 5px #222 solid;
+		padding-top: 1em;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		
+		&.stop {
+			.carousel-text-item.mobile-tablet {
+				opacity: 1;
+				position: static;
+			}
+			.faq-rank-nav {
+				display: none;
+			}
+			.rank {
+				white-space: normal;
+				
+				br {
+					display: none;
+				}
+			}
+		}
+	}
+	.rank {
+		white-space: nowrap;
+		line-height: 1;
+
+		&.extra-light {
+			font-family: $font-champion-feather;
+		}
+		&.light {
+			font-family: $font-champion-light;
+		}
+		&.medium {
+			font-family: $font-champion-welter;
+		}
+		&.heavy {
+			font-family: $font-champion-middle;
+		}
+		&.extra-heavy {
+			font-family: $font-champion-heavy;
+		}
+	}
+	.rm-it {
+		display: block;
+		height: 1.5em;
+		width: 1.5em;
+		overflow: hidden;
+		padding: .3em;
+		@include border-radius(100%);
+		background-color: #222;
+		text-align: center;
+		vertical-align: bottom;
+		position: absolute;
+		top: inherit;
+		left: inherit;
+		margin-top: -1em;
+		color: $color-campusGold;
+		line-height: 1;
+		font-size: 1.5em;
+	}
+	.slideshow-container {
+		max-width: 1000px;
+		position: relative;
+		margin: auto;
+		width: 100%;
+		
+		.prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			margin-top: -22px;
+			padding: 16px;
+			color: white;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			background-color: rgba(#000,0.9);
+			font-weight: bold;
+			font-size: 22px;
+		}
+		.prev {
+			left: 0;
+		}
+		.next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+			box-sizing: border-box;
+		}
+	}
+	.source {
+		display: block;
+		color: #888;
+		font-size: .9em;
+		font-weight: bold;
+	}
+}
+#roi {
+    color: $color-campusGold;
+	
+	.carousel {
+		position: relative;
+		padding: 20px 0;
+	}
+	.carousel-inner {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		
+		> .item {
+			display: none;
+			position: relative;
+			
+			> img, 
+			> a > img {
+				vertical-align: middle;
+				display: block;
+				max-width: 100%;
+				height: auto;
+				line-height: 1;
+				vertical-align: middle;
+			}
+		}
+	}
+	.carousel-item {
+		text-align: center;
+	}
+	.carousel-indicators {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	.carousel-wrap {
+		/*border-bottom: #222 1px solid;
+		border-top: #222 4px solid;*/
+		margin-bottom: 20px;
+		padding-bottom: 5px;
+	}
+	.lead {
+		font-family: $font-arial;
+		font-weight: normal;
+	}
+	#roi-links a {
+		display: block;
+		padding: 10px;
+		margin-top: 5px;
+		text-align: center;
+		background-color: #222;
+		text-decoration: none;
+		font-family: $font-archivo-narrow;
+		font-size: 1.1em;
+		font-weight: bold;
+		color: $color-ameliaSkyBlue;
+		
+		&:hover {
+			background-color: #333;
+		}
+	}
+}
+#side-cta {
+	padding-top: 6em;
+	
+	a {
+		display: block;
+		padding: 20px;
+		margin: 2px 0;
+		color: #000;
+		
+		i {
+			float:right;
+			font-size: 22px;
+		}
+		
+		&:hover {
+			@include animation(bg 2s ease infinite);
+		}
+
+		&.teal:hover {
+
+			background: linear-gradient(220deg, #2db39e, #2db39e, #2db39e, #2db39e, #32c9b3, #2db39e, #2db39e);
+			background-size: 600% 600%;
+
+		}
+		&.rossadegreen:hover {
+
+			background: linear-gradient(-220deg, #92ad2f, #92ad2f, #92ad2f, #92ad2f, #9fbd33, #92ad2f,#92ad2f);
+			background-size: 600% 600%;
+
+		}
+		&.brick:hover {
+
+			background: linear-gradient(220deg, #c96c14, #c96c14, #c96c14, #c96c14, #d67315, #c96c14,#c96c14);
+			background-size: 600% 600%;
+
+		}
+		&.purple:hover {
+
+			background: linear-gradient(-220deg, #bf2271, #bf2271, #bf2271, #bf2271, #cc2578, #bf2271,#bf2271);
+			background-size: 600% 600%;
+
+		}
+	}
+	
+}
+
+#student-profile,
+#faculty-profile {
+	background-color: rgba($color-ameliaSkyBlue,0.2);
+	@include transition(transform 0.3s);
+	transition-timing-function: ease-in;
+	background-position: -20px center;
+    background-repeat: no-repeat;
+	padding: 40px 0;
+	
+	h4 {
+		text-transform: none;
+		padding: 10px 10px 0 200px;
+		margin: 0;
+		font-size: 1.2em;
+		font-family: $font-champion-welter;
+		font-weight: normal;
+		color: $color-campusGold!important;
+		color: #000;
+		
+	}
+	
+	&:hover {
+		background-color: $color-campusGold;
+		@include transform(scale(1.05));
+		z-index:100;
+		@include box-shadow(2px 2px 15px, #000, 1);
+		
+		h4,
+		p {
+			color: #000!important;
+		}
+		
+	}
+	p {
+		color: #000;
+		font-weight: bold;
+		padding: 0 10px 10px 200px;
+		line-height: 1.2;
+		margin: 0;
+		font-size: .8em;
+		margin: 0;
+		line-height: 1.7;
+		color: $color-campusGold!important;
+	}
+	a {
+		color: inherit!important;
+	}
+}
+#faculty-profile {
+	background-color: rgba($color-ameliaSkyBlue,0.1);
+}
+#social {
+	padding-top: 6em;
+    padding-bottom: 5em;
+	
+	#social-media-title {
+		color: #000;
+		font-size: 3em;
+		margin-top: 0;
+		text-align: center;
+		font-family: $font-champion-middle;
+	}
+}
+
+#video-container {
+    height: 550px;
+	overflow: hidden;
+	padding: 0!important;
+	
+	video {
+		
+		display: block;
+		object-fit: cover;
+	}
+}
+
+#virtual-tour {
+	margin-top: 5px;
+	overflow:hidden;
+	
+	.virtualtour_embed,
+	> div,
+	> div > div {
+		overflow:hidden;
+	}
+	
+}
+
+#visit-btn-wrap {
+	background: url(../images/visit-btn-bg.png) no-repeat center;
+	overflow:hidden;
+	
+	a {
+		display: block;
+		margin: 0 auto;
+		background-color: $color-campusGold;
+		color:#000;
+		padding: .7em;
+		font-size: 2em;
+		text-decoration: none;
+		font-family: $font-champion-welter; 
+		font-weight: normal;
+		width: 300px;
+		@include transition((transform 0.3s, width 0.6s, background-color 0.6s, color 0.6s));
+		
+		&:hover {
+			background-color: #222;
+			color: $color-campusGold;
+			width: 100%;
+			@include transform(scale(1.3));
+		}
+	}
+}
+
+/* animations */
+@-webkit-keyframes bg {
+	0%{background-position:91% 0%}
+	50%{background-position:10% 100%}
+	100%{background-position:91% 0%}
+}
+@-moz-keyframes bg {
+	0%{background-position:91% 0%}
+	50%{background-position:10% 100%}
+	100%{background-position:91% 0%}
+}
+@-o-keyframes bg {
+	0%{background-position:91% 0%}
+	50%{background-position:10% 100%}
+	100%{background-position:91% 0%}
+}
+@keyframes bg { 
+	0%{background-position:91% 0%}
+	50%{background-position:10% 100%}
+	100%{background-position:91% 0%}
+}
+
+/* media queries */
+@include desktopLargeMax {
+	#faq-squares {
+		height: 365px; 
+		border-spacing: 5px;
+		.faq-square-row {
+			a {
+				font-size: 1.3em;
+			}
+		}
+	}
+	#purdue-example .interactive-exampleP {
+		height: 365px;
+	}
+}
+@include desktopSmallMax {
+	
+	.carousel-wrap {
+		/*background-color: rgba($color-ameliaSkyBlue,0.1);*/
+		border-top: #222 4px solid;
+	}
+	.carousel-text-item,
+	.rankings,
+	.faq-rank-nav {
+		text-align: center;
+		width: 100%;
+	}
+	#dates-header {
+		font-size: 2.2em!important;
+	}
+	.faq-rank-nav {
+		margin-bottom: 2em;
+	}
+	#faq-squares {
+		display: block;
+		height: inherit;
+		
+		.faq-square-row {
+			width: 50%;
+			display: block;
+			float: left;
+			
+			a {
+				@include mobile-faq-btn;
+				
+				.bg-expand {
+					display: none;
+				}
+				.text {
+					position: static;
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+		
+	}
+	#interactive-examples-wrap {
+		position: relative;
+		clear: both;
+		
+		.interactive-exampleP {
+			position: relative;
+			height: inherit;
+			padding-bottom: 50px;
+			
+			.inner-text {
+				height: inherit!important;
+				width: auto;
+				cursor: inherit;
+				padding: 0;
+			}
+		}
+	}
+	.home #majors {
+		.majors-content {
+			display: block!important;
+			width: 690px!important;
+			margin: 5px auto!important;
+			text-align: right;
+			max-width: 100%;
+			
+			#school-choice-title,
+			#interest-choice-title {
+				background-color: rgba(#222,0.8);
+				color: $color-ameliaSkyBlue!important;
+			}
+			
+			select {
+				width: 75%;
+			}
+		}
+		#majors-list {
+			@include containerHome690;
+			font-size: 90%;
+			
+			li {
+				max-width: 99%!important;
+			}
+			a {
+				overflow: hidden;
+				text-overflow: ellipsis!important;
+			}
+		}
+		#majors-title,
+		p.note,
+		#no-match-note {
+			@include containerHome690;
+			
+		}
+		.spacer {
+			font-size: 50%;
+		}
+	}
+	#home-main-cta {
+		a {
+			margin-left: 0!important;
+			padding: 15px 25px!important;
+		}
+	}
+	.home-title {
+		font-size: 2.2em!important;
+		
+	}
+	.mySlides {
+		text-align: center;
+	}
+	#social-media-title {
+		font-size: 2.5em!important;
+	}
+	.spacer.large,
+	.spacer.extra-large {
+		font-size: 50%;
+	}
+	#video-container {
+		height: 400px;
+	}
+	#visit-btn-wrap {
+		font-size: 90%;
+		
+		a {
+			width: 250px;
+		}
+		
+	}
+}
+@include tablet {
+	.faq-button {
+		display: none;
+	}
+}
+@include tabletMax {
+	.carousel-wrap {
+		margin-top: 50px;
+	}
+	#dates-header {
+		margin-top: .5em!important;
+	}
+	#faq-squares,
+	.closeXP {
+		display: none!important;
+	}
+	.faq-button {
+		@include mobile-faq-btn;
+		width: 100%;
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+		cursor: pointer;
+	}
+	#home-main-cta {
+		font-size: 90%;
+		
+		a {
+			margin: 4px 2px!important;
+			padding: 12px 25px!important;
+		}
+	}
+	.home .container.wide-tab {
+		max-width: 100%;
+	}
+	.interactive-exampleP {
+		font-size: 90%;
+		padding-bottom: 20px!important;
+		
+		.col-lg-7 {
+			width: 70%;
+			float:right;
+			
+			.carousel-text-item {
+				text-align: left;
+			}
+		}
+		.col-lg-5 {
+			position: static;
+			width: 30%;
+			float:right;
+		}
+	}
+	#inner-page-content {
+		background-image: none!important;
+	}
+	#majors-title,
+	.home-title {
+		text-align: center!important;
+	}
+	#majors {
+		margin-top: 30px;
+		
+		.note {
+			text-align: center!important;
+		}
+	}
+	#purdue-example .inner-text.cut-off p:last-child {
+		padding-bottom: 0;
+	}
+	.rankings {
+		border-top: none!important;
+	}
+	#roi,
+	#blog, 
+	.profiles,
+	#dates-content {
+		font-size: 90%;
+	}
+	.slideshow-container {
+		
+		.mySlides {
+			display:block!important;
+		}
+		.prev, 
+		.next {
+			display: none;
+		}
+	}
+	#side-cta {
+		margin-top: 1em;
+		padding-top: 2em!important;
+		border-top: solid 1px $color-campusGold;
+	}
+	#social,
+	#dates-content {
+		padding-top: 3em!important;
+		padding-bottom: 2em!important;
+	}
+	#social-media-title {
+		font-size: 2em!important;
+	}
+	
+	#video-container {
+		height: 320px;
+	}
+	#visit-btn-wrap a {
+		font-size: 1.5em;
+	}
+}
+@include phoneMax {
+	#blog {
+		border-bottom: 1px solid $color-campusGold;
+	}
+	.blog-entry {
+		background-color: transparent!important;
+		padding: 0!important;
+		
+		a {
+			font-size: 1.1em;
+			margin-bottom: 20px;
+			color: #fff!important;
+		}
+	}
+	
+	.carousel-wrap {
+		display: none;
+	}
+	#dates-header {
+		font-size: 1.9em!important;
+	}
+	#dates-content {
+		padding-top: 1.2em!important;
+		
+		p {
+			font-size: .9em;
+			margin: 0;
+			padding: 5px;
+		}
+	}
+	
+	.faq-button,
+	.home-title {
+		text-align: left!important;
+	}
+	.home-title {
+		font-size: 1.7em!important;
+	}
+	#home-main-cta a {
+		width: 100%;
+	}
+	.interactive-exampleP .col-lg-7,
+	.interactive-exampleP .col-lg-5 {
+		float: none;
+		width: 100%;
+	}
+	.interactive-exampleP {
+		font-size: 80%;
+		border: none!important;
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+	
+	.home main .container #student-profile,
+	.home main .container #faculty-profile {
+		background-image: none!important;
+		background-color: transparent!important;
+		color: $color-campusGold!important;
+		
+		h4,
+		p {
+			padding: 0!important;
+		}
+		h4 {
+			color: $color-ameliaSkyBlue!important;
+		}
+		
+		&:hover {
+			-webkit-transform: none!important; 
+			-moz-transform: none!important;
+			-o-transform: none!important;
+			transform: none!important;
+			box-shadow: none!important;
+			-webkit-box-shadow: none!important;
+			-webkit-transition: none!important;
+			-moz-transition: none!important;
+			-o-transition: none!important;
+			transition: none!important;
+			
+			p {
+				color: $color-campusGold!important;
+			}
+			h4 {
+				color: $color-ameliaSkyBlue!important;
+			}
+			
+			a {
+				color: #ddd!important;
+			}
+		}
+		
+		a {
+			font-weight: bold!important;
+			display: block;
+			font-size: 1.2em;
+			color: #ddd!important;
+		}
+	}
+	#majors {
+		display: none;
+	}
+	.profiles {
+		padding: 20px 0!important;
+		background-size: contain;
+		
+		p, h4 {
+			padding-left: 20%!important;
+		}
+	}
+	
+	#roi {
+		border-top: 5px solid #333;
+		margin-top: 20px;
+		padding-top: 20px;
+		
+		.lead {
+			font-size: 1.2em!important;
+		}
+	}
+	#roi-links a {
+		text-align: left!important;
+	}
+	#side-cta a {
+		padding-right: 50px;
+		position: relative;
+		
+		i {
+			position: absolute;
+			right: 20px;
+			top: 20px;
+		}
+	}
+	.slideshow-container {
+		margin-top: 20px!important;
+		.mySlides {
+			display: none!important;
+
+			&:first-child {
+				display: block!important;
+			}
+		}
+	} 
+	#video-container {
+		height: 280px;
+	}
+	#virtual-tour {
+		display: none;
+	}
+	#visit-btn-wrap {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		a {
+			font-size: 1.23em;
+			width: 100%;
+		}
+	}
+	
+}
+@media screen and (max-width: 400px ) {
+	#video-container {
+		height: 180px;
+	}
+}

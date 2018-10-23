@@ -1,0 +1,34 @@
+/* no javascript fixes */
+.no-js {
+	.accordion__content.collapse {
+		display: block!important;
+	}
+	button[data-toggle="modal"],
+	button[data-dismiss="modal"] {
+		display: none;
+	}
+	.fade:not(.show) {
+		opacity: 1!important;
+	}
+	.hide-no-js {
+		display: none!important;
+	}
+	.modal {
+		display: block!important;
+		position: static!important;
+		
+		.modal-dialog {
+			transition: none!important;
+			-webkit-transform: none!important;
+			transform: none!important;
+			
+		}
+	}
+	.nav-tabs {
+		display: none;
+	}
+	.tab-pane {
+		position: static!important;
+		display: block!important;
+	}
+}

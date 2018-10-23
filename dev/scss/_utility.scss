@@ -1,0 +1,104 @@
+
+body.noScroll { 
+  overflow: hidden;
+	margin-right:20px;
+}
+.blur-content {
+	filter: blur(3px);
+}
+.hide,
+#preload {
+	display: none!important;
+}
+hr {
+	border-color: $color-campusGold;
+	clear: both;
+	margin: 2em 0;
+	
+	&.spacer {
+		border-color: transparent;
+		clear: both;
+		margin: 2em 0;
+	}
+	&.striped-gold {
+		margin: 2em 0;
+		padding: 0;
+		border: none;
+		height: 20px;
+		background: transparent url(../images/hr-gold.png) no-repeat center;
+	}
+	
+	&.extra-large {
+		margin: 5em 0;
+	}
+	&.large {
+		margin: 3.5em 0;
+	}
+	&.small {
+		margin: 1em 0;
+	}
+	
+}
+.left {
+	float: left;
+}
+.note {
+	font-size:.8em;
+}
+.right {
+	float: right;
+}
+
+/* media querues */
+@include tablet {
+	.show-md {
+		display: none!important;
+	}
+}
+@include tabletMax {
+	.hide-md {
+		display: none!important;
+	}
+	hr.spacer {
+		margin: 1em 0;
+		
+		&.extra-md {
+			margin: 2em 0;
+		}
+	}
+	hr.large {
+		margin: 1.7em 0;
+	}
+	hr.small {
+		margin: .7em 0;
+	}
+}
+@include phone {
+	.show-sm {
+		display: none!important;
+	}
+}
+@include phoneMax {
+	.hide-sm {
+		display: none!important;
+	}
+	hr.spacer {
+		margin: .5em 0;
+	}
+	hr.large {
+		margin: .9em 0;
+	}
+	hr.small {
+		margin: .1em 0;
+	}
+}
+@include desktopSmall {
+	.show-lg {
+		display: none!important;
+	}
+}
+@include desktopSmallMax {
+	.hide-lg {
+		display: none!important;
+	}
+}

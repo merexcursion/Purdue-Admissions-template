@@ -1,0 +1,134 @@
+/* classes used to add specific colors to content individually */
+
+.ameliablue {
+	background-color: $color-ameliaSkyBlue;
+}
+.ameliablue-text {
+	color: $color-ameliaSkyBlue;
+}
+.black {
+	background-color: #000;
+	color: $color-campusGold;
+}
+.brick {
+	background-color: $color-bellTowerBrick;
+}
+.brick-text {
+	color: $color-bellTowerBrick;
+}
+.brown {
+	background-color: $color-oakenBucketBrown;
+}
+.brown-text {
+	color: $color-oakenBucketBrown;
+}
+
+.celerygreen {
+	background-color: $color-celeryBogGreen;
+}
+.celerygreen-text {
+	color: $color-celeryBogGreen;
+}
+.gold {
+	background-color: $color-campusGold;
+	color: #000;
+}
+.gold-text {
+	color: $color-campusGold;
+}
+.gray {
+	background-color: $color-coalGray;
+}
+.gray-text {
+	color: $color-coalGray;
+}
+.gray40 {
+	background-color: $color-gray40;
+	color: #000;
+}
+.gray70 {
+	background-color: $color-gray70;
+	color: #fff;
+}
+.grayDrk {
+	background-color: $color-gray90;
+}
+.grayLt {
+	background-color: $color-gray15;
+}
+.landgreen {
+	background-color: $color-landGrantGreen;
+}
+.landgreen-text {
+	color: $color-landGrantGreen;
+}
+.moon {
+	background-color: $color-moonDustGray;
+}
+.moon-text {
+	color: $color-moonDustGray;
+}
+.orange {
+	background-color: $color-mackeyOrange;
+}
+.orange-text {
+	color: $color-mackeyOrange;
+}
+.purple {
+	background-color: $color-pappysPurple;
+}
+.purple-text {
+	color: $color-pappysPurple;
+}
+.rossadegreen {
+	background-color: $color-rossAdeGreen;
+}
+.rossadegreen-text {
+	color: $color-rossAdeGreen;
+}
+.slayterblue {
+	background-color: $color-slayterSkyBlue;
+}
+.slayterblue-text {
+	color: $color-slayterSkyBlue;
+}
+.springgreen {
+	background-color: $color-springFestGreen;
+}
+.springgreen-text {
+	color: $color-springFestGreen;
+}
+.teal {
+	background-color: $color-fountainRunTeal;
+}
+.teal-text {
+	color: $color-fountainRunTeal;
+}
+.trueblue {
+	background-color: $color-everTrueBlue;
+	color: #fff;
+}
+.trueblue-text {
+	color: $color-everTrueBlue;
+}
+.white {
+	background-color: #fff;
+}
+.yellow {
+	background-color: $color-yellowWalk;
+}
+.yellow-text {
+	color: $color-yellowWalk;
+}
+
+.slayterblue td,
+.rossadegreen td,
+.brick td,
+.teal td,
+.purple td,
+.trueblue td,
+.gray td,
+.brown td,
+.landgreen td {
+	color: #fff;
+}

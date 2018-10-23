@@ -1,0 +1,589 @@
+/* general */
+p.lead {
+		font-family: $font-archivo-narrow;
+		font-weight: 900;
+		font-size: 1.3em;
+		line-height: 1.4;
+		color: $color-headlineGold;
+	
+}
+.dark-bg {
+	.lead {
+		color: $color-campusGold;
+	}
+}
+/* leaving this here for now, not sure if it's being used... */
+.content  .nav-pills > li > a {
+    border-radius: 4px;
+}
+/* 	
+=============================================
+Purdue accordion altered + 
+=============================================
+*/
+.accordion {
+    display: block;
+    width: 100%;
+    background-color: $color-gray15;
+	margin-bottom: 1em;
+	line-height: 1.4em;
+	
+	.accordion__heading {
+		position: relative;
+		display: block;
+		width: 100%;
+		border: solid 1px #fff;
+		margin: 0 auto;
+		padding: 15px;
+		cursor: pointer;
+		outline: none;
+		font-size: 20px;
+		text-align: left;
+		line-height: 1;
+		font-weight: 700;
+		
+		&:first-child {
+			border-top: 0;
+		}
+		
+		i {
+			display: block;
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			
+		}
+		&.collapsed {
+			.closex {
+				display:none;
+			}
+		}
+		
+	}
+	.accordion__content {
+		overflow: hidden;
+		margin: 0;
+		padding: 15px;
+		list-style-type: none;
+	}
+	
+}
+
+.dark-bg .accordion {
+	.accordion__content {
+		background-color: #333;
+	}
+	.accordion__heading {
+		border-color: #222;
+	}
+}
+
+/* 	
+=============================================
+Jumbotron
+=============================================
+*/
+.main-content .jumbotron {
+	font-size: 1.2em;
+	@include border-radius(0);
+	background-color: $color-campusGold;
+	color: #000;
+	margin-top: 0;
+	padding: 4rem;
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1;
+		font-family: $font-champion-welter;
+		
+		&:first-child {
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+	
+	.right,
+	.left {
+		+ h1,
+		+ h2,
+		+ h3,
+		+ h4,
+		+ h5,
+		+ h6 {
+			margin-top: 0;
+			padding-top: 0;
+		}
+		
+	}
+	&.cta a {
+		
+		font-family: $font-archivo-narrow;
+		text-decoration: none!important;
+		font-size: .8em;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: $color-campusGold;
+		}
+		
+	}
+	&.profile {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: $font-archivo-narrow;
+		}
+		.text {
+			font-size: 70%;
+		}
+	}
+
+}
+
+/* 	
+=============================================
+List Groups 
+=============================================
+*/
+
+.list-group {
+	margin-bottom: 1em;
+	.list-group-heading {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 10px;
+		color: $color-headlineGold;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+.list-group-heading { 
+	font-size: 1.7em;
+	font-weight: normal;
+	font-family: $font-archivo-narrow;
+	line-height: 1.2;
+}
+.dark-bg .list-group-item {
+	background-color: transparent;
+}
+.content  .list-group {
+	@include border-radius(0);
+	
+	.list-group-item {
+		border-color: #c28e0e;
+		@include border-radius(0);
+		padding: 15px;
+	}
+}
+
+/* 	
+=============================================
+Modals
+=============================================
+*/
+.modal-dialog.modal-lg {
+	font-size: 110%;
+}
+.modal-content {
+	background-color: #fff;
+	color: #000;
+	border: none;
+	@include border-radius(0);
+}
+.modal-header {
+	border-width: 2px;
+	padding-bottom: 5px;
+}
+
+.modal-header, 
+.modal-footer {
+	border-color: $color-campusGold;
+}
+.modal-footer button {
+	@include border-radius(0);
+}
+.modal-backdrop {
+    background-color: $color-campusGold;
+	
+}
+.dark-bg {
+	.modal-content {
+		background-color: #000;
+		color: #ddd;
+	}
+	.modal-title {
+		color: $color-campusGold;
+		text-transform: uppercase;
+		font-weight: normal!important;
+	}
+	.modal-footer button {
+		background-color: #444;
+		color: #ccc;
+	}
+	.main-content .panel-default {
+		background-color: transparent!important;
+		.panel-body {
+			background-color: #343434!important;
+			color: #ddd;
+		}
+	}
+}
+
+/* 	
+=============================================
+Panels
+=============================================
+*/
+.content .panel {
+	margin-bottom: 20px;
+    border: 1px solid transparent;
+    @include border-radius(0);
+	
+	&.panel-default, 
+	&.panel-default > .panel-heading {
+		@include border-radius(0);
+	}
+	
+	.panel-heading {
+		padding: 10px 15px;
+		border-bottom: 1px solid transparent;
+		@include border-radius(0);
+	}
+	
+	.panel-body {
+		padding: 15px;
+		background-color: #fff;
+	}
+}
+.main-content .panel {
+	.panel-heading {
+		    font-family: $font-archivo-narrow;
+			font-size: 1.5em;
+			font-weight: bold;
+			line-height: 1;
+	}
+	.panel-body {
+		
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&.panel-default, 
+	&.panel-default > .panel-heading {
+		border-color: $color-campusGold;
+		background-color: #fff;
+		color: #000;
+		
+	}
+	&.gold {
+		border-color: $color-campusGold;
+		&.panel-default > .panel-heading {
+			border-color: $color-campusGold;
+			background-color: $color-campusGold;
+			color: #000;
+
+		}
+	}
+	&.black {
+		border-color: #000;
+		&.panel-default > .panel-heading {
+			border-color: #000;
+			background-color: #000;
+			color: $color-campusGold;
+
+		}
+	}
+	&.trueblue {
+		border-color: $color-everTrueBlue;
+		&.panel-default > .panel-heading {
+			border-color: $color-everTrueBlue;
+			background-color: $color-everTrueBlue;
+			color: #fff;
+
+		}
+	}
+	&.gray70 {
+		border-color: $color-gray70;
+		&.panel-default > .panel-heading {
+			border-color: $color-gray70;
+			background-color: $color-gray70;
+			color: #fff;
+
+		}
+	}
+}
+.image-panel-wrap {
+	display: table;
+	border: 1px solid $color-campusGold;
+}
+.panel-default.image-panel {
+	display: table-row;
+	
+	> div {
+		display: table-cell;
+		vertical-align: top;
+	}
+	.panel-body {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $color-headlineGold;
+		}
+	}
+	.panel-image {
+		width: 40%;
+		border-left: 1px solid $color-campusGold;
+		background: transparent url('../images/Female-Latino-student-performing.jpg') center no-repeat;
+		background-size: cover;
+		img {
+			display: none;
+		}
+	}
+}
+
+/* 	
+=============================================
+Tables
+=============================================
+*/
+.table {
+	margin-top: 1em;
+	margin-bottom:2em;
+	width: 100%;
+	
+	caption {
+		color: $color-headlineGold;
+		caption-side: top;
+
+	}
+	&.table-responsive {
+		margin-bottom:1em;
+	}
+}
+.table-striped {
+	caption {
+		background: transparent url('../images/table-caption-bg.png') no-repeat center;
+		
+		span {
+			display: inline-block;
+			margin: 0 auto;
+			width: inherit;
+			background: #fff;
+			padding: 15px 3%;
+		}
+	}
+	td {
+		line-height: 1.2;
+		font-size: .95em;
+	}
+	th {
+		vertical-align: bottom;
+	}
+}
+.dark-bg .table-striped {
+	* {
+		border-color: #8C8C8C;
+	}
+	caption span {
+		background: #222;
+		color: $color-campusGold;
+	}
+	th {
+		color: lighten($color-campusGold, 5);
+	}
+	tbody tr:nth-of-type(odd) {
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+}
+.table-responsive {
+	margin-bottom: 2em;
+	
+	.table {
+		margin-bottom: 0;
+	}
+}
+
+/* 	
+=============================================
+Tabs & Tabbed content
+=============================================
+*/
+.nav-tabs {
+	margin-top: 30px;
+	.nav-link {
+		border-bottom: $color-campusGold 2px solid;
+		color: $color-headlineGold;
+		
+		&:hover {
+			background-color: #eee;
+			color: $color-headlineGold;
+		}
+		
+		&.active, 
+		&.active:focus, 
+		&.active:hover {
+			border: $color-campusGold 2px solid;
+			border-bottom-color: #fff;
+			background-color: #fff;
+			color: $color-headlineGold;
+		}
+	}
+}
+.dark-bg {
+	.nav-tabs {
+		border-color: #444;
+	}
+	.nav-link {
+		color: lighten($color-campusGold,5);
+		
+		&.active, 
+		&.active:focus, 
+		&.active:hover {
+			border: $color-campusGold 2px solid;
+			border-bottom-color: #444;
+			background-color: #333;
+			color: lighten($color-campusGold,7);
+		}
+		&:hover {
+			background-color: #333;
+			border-bottom-color: #444;
+			border-color: #333;
+			color: lighten($color-campusGold,7);
+		}
+	}
+}
+.nav-tabs.nav-justified > li {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	
+	> a {
+		text-transform: uppercase;
+		text-align: center;
+		font-family: $font-champion-welter;
+		font-size: 1.2em;
+		font-weight: normal;
+		text-decoration: none;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+
+.tab-pane {
+	margin-bottom: 30px;
+	padding: 20px 0;
+}
+
+/* 	
+=============================================
+Media Queries
+=============================================
+*/
+@include desktopSmallMax {
+	
+	div.main-content .image-panel .panel-body,
+	div.main-content .image-panel .panel-body {
+		font-size: 90%;
+	}
+	.dark-bg {
+		.nav-tabs.nav-justified {
+			.nav-item {
+
+				.nav-link {
+					border: 1px solid $color-campusGold;
+					@include border-radius(0);
+
+					&.active {
+						background-color: #333;
+					}
+				}
+
+			}
+		}
+	}
+	.main-content .jumbotron {
+		padding: 2rem;
+		font-weight: 700;
+		.right {
+			float: none;
+			padding-left: 0;
+			margin-left: 0;
+		}
+		.left {
+			float: none;
+			padding-right: 0;
+			margin-left: 0;
+		}
+	}
+	.modal-content {
+		font-size: 90%;
+	}
+	.nav-tabs.nav-justified {
+		.nav-item {
+			flex-basis: 100%;
+			
+			.nav-link {
+				border: 1px solid $color-headlineGold;
+				@include border-radius(0);
+				
+				&.active {
+					background-color: $color-gray15;
+				}
+			}
+			
+		}
+	}
+	.tab-pane {
+		border: 1px $color-campusGold solid;
+		padding: 20px;
+	}
+}
+@include tabletMax {
+	.modal-content {
+		font-size: 80%;
+	}
+}
+@include phoneMax {
+	
+	.image-panel-wrap,
+	.panel-default.image-panel,
+	.panel-default.image-panel .panel-image,
+	.panel-default.image-panel > div {
+		display: block;
+		width: 100%;
+		border: none;
+	}
+	.panel-default.image-panel {
+		margin-bottom: 0!important;
+		border: 1px solid $color-campusGold;
+		
+		.panel-image {
+			border-top: 1px solid $color-campusGold;
+			img {
+				display: block;
+
+			}
+		}
+	}
+	.main-content .jumbotron {
+		padding: 1rem;
+	}
+	.modal-content {
+		font-size: 70%;
+	}
+	.tab-pane {
+		padding: 10px;
+	}
+}

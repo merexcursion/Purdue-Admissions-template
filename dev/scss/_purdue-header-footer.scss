@@ -1,0 +1,831 @@
+// these are found in components > css > global && some in blank.css
+
+/* Purdue header footer */
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.transition {
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-ms-transition-duration: 0.3s;
+}
+
+
+.bottom{
+	overflow:hidden;
+	padding:10px;
+	background-color:#3b3b3b;
+	color:#ccc;
+	text-align:center;
+	line-height:1.1em;
+	a:link{
+		color:#ccc;
+	}
+	a:visited{
+		color:#ccc;
+	}
+	a:hover{
+		color:#ccc;
+	}
+	a:active{
+		color:#ccc;
+	}
+	p{
+		margin:0 !important;
+		padding-bottom:2px;
+	}
+}
+
+@media (min-width:768px){
+	.bottom{
+		font-size:10/16 * 1em;
+	}
+	
+}
+@media (max-width:767px){
+	.bottom{
+		font-size:10/18 * 1em;
+	}
+}
+
+
+.top {
+	width:100%;
+	background-color:#000;
+	background-repeat:repeat;
+	.row{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	.logo{
+		padding: 25px 25px 25px 15px;
+		align-items: center;
+        &::after{
+            display:block;
+            position:absolute;
+            content:"";
+            width:2px;
+            height:60%;
+            right: 0;
+            top: 20%;
+            background-color:#999;
+        }
+		a{
+			display:block;
+			img{
+				width:100%;
+			}
+			&:link,&:visited,&:hover,&:active{
+				color:#fff;
+			}
+			&:focus{
+				outline:1px dotted #dedede;
+				outline-offset:5px;
+			}
+		}
+		@media (min-width:768px){
+			a{
+				width:100%;
+			}
+		}
+		@media (max-width:767px){
+			a{
+				img{
+					width:100%;
+				}
+			}
+		}
+		.svgLinkContainer {
+			  display: block;
+			  position: relative;
+			  height: 1px;
+			  width: 100%;
+			  padding-bottom: 29.95839%;
+			  z-index: 2;
+				&::after{
+					content:"";
+					display:block;
+					position:absolute;
+					top:0;
+					right:0;
+					bottom:0;
+					left:0;
+				  }
+			}
+			.svgContainer {
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  z-index: -1;
+			  padding-right: 0px;
+			}
+			@media (max-width:767px){
+			  .svgLinkContainer{
+					margin:0 auto;
+					// width: 50%;
+					// padding-bottom:14.9792%;
+					width: 40%;
+					padding-bottom:12.9792%;
+			  	}
+        }
+    }
+	.department{
+		color:#fff;
+		font-family:$font-archivo-narrow;
+		letter-spacing:0.015em;
+		padding-left: 15px;
+		padding-right: 15px;
+		> a{
+			display:inline-block;
+			line-height:1.2em;
+			border:none;
+			padding:0;
+			&:focus{
+			    outline:1px dotted #dedede;
+			    outline-offset:1px;
+			}
+		}
+		@media (min-width:992px) and (max-width:1199px){
+			> a{
+			display:inline-block;
+			padding:2px 0px;
+			line-height:1.1em;
+			}
+		}
+		> a:link, a:visited, a:hover, a:active{
+			color:inherit;
+			font-weight:600;
+			text-decoration:none;
+		}
+		.tagline{
+			display:block;
+			clear:left;
+			color:inherit;
+			font-family:$font-archivo-narrow;
+			font-size:14/23 * 1em;
+			line-height:1.2em;
+			letter-spacing:.5px;
+			text-transform: uppercase;
+			a:link, a:visited, a:hover, a:active{
+				color:inherit;
+				font-weight:100;
+				text-decoration:none;
+				&:focus{
+		    outline:1px dotted #dedede;
+		    outline-offset:1px;
+				}
+			}
+		}
+	}
+	@media (min-width:992px){
+			.department{
+				font-size:23/16 * 1em;
+			}
+		}
+	@media (min-width:768px) and (max-width:991px){
+			.row{
+					display: flex;
+					align-items: center;
+	        flex-direction: row;
+		    }
+			.department{
+					font-size:20/16 * 1em;
+			}
+		}
+	@media (min-width:768px){
+        .row{
+            flex-direction: row;
+	    	}
+        .department{
+						padding-left:25px;
+				}
+		}
+	@media (max-width:767px){
+		.logo{
+			padding:25px;
+	        &::after{
+	            display:none;
+	        }
+				}
+			.department{
+	  		font-size:25/18 * 1em;
+				text-align:center;
+			}
+			.tagline{
+				padding: 0px 0px 10px 0px;
+				line-height: 1.2em;
+				border:none;
+			}
+		}
+	}
+
+.footer {
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+    padding-bottom: 15px;
+
+    // footer links are stacked in expandable accordions
+    // with horizontal tagline and social icons underneath
+    #accordion {
+        margin-bottom: 0;
+
+        .panel {
+            border: none;
+            background-color: transparent;
+            margin-top: 0;
+            padding: 15px;
+            border-bottom: solid 1px #333;
+            font-size: calc-toEm(14);
+            line-height: calc-toEm(37);
+
+            a {
+                display: inline-block;
+                width: 100%;
+            }
+
+            a:link, a:visited {
+                color: #adadad;
+                font-weight: 400;
+                text-decoration: none;
+            }
+
+            a:hover, a:active {
+                color: #fff;
+                font-weight: 400;
+                text-decoration: none;
+            }
+
+            .panel-heading {
+                padding: 0;
+                background-color: transparent;
+                font-size: calc-toEm(21);
+
+                .panel-title {
+                    font-family: $font-champion-welter;
+                    font-size: calc-toEm(16);
+                }
+
+                a {
+                    display: block;
+                }
+
+                a:link, a:visited, a:hover, a:active {
+                    color: $color-campusGold;
+                    text-decoration: none;
+                }
+            }
+
+            .panel-collapse {
+
+                .panel-body {
+                    border: none;
+                    padding: 0;
+
+                    ul {
+                        padding: 0;
+                        list-style-type: none;
+                    }
+                }
+            }
+        }
+
+        .motto {
+            clear: both;
+            padding: 15px 15px 0;
+            font-size: calc-toEm(20);
+            text-align: center;
+
+            .taglineContainer {
+                width: 90%;
+                margin: 0 auto;
+            }
+            .tagline {
+                position:relative;
+                padding-bottom:60/430*100%;
+                .horizontal,.vertical{
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    bottom:0;
+                    left:0;
+                }
+            }
+            .vertical {
+                display: none;
+            }
+
+            .social {
+                display: block;
+                width: 100%;
+                padding-top: 5px;
+            }
+
+            // social icons
+            a {
+                display: inline-block;
+                position: relative;
+                margin: 2.5px 2%;
+                text-align: center;
+
+                .text-hidden {
+                    position: absolute;
+                    display: block;
+                    top: -1000px;
+                    left: -1000px;
+                }
+
+            }
+
+            a:link, a:visited {
+                color: #999;
+                text-decoration: none;
+            }
+
+            a:hover, a:active {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            img {
+                display:block;
+                float:none;
+                max-width: 100%;
+                margin:0 auto 5px;
+            }
+        }
+    } 
+	// end #accordion
+
+    // styles for expanding/contracting accordions
+    @media (max-width:767px) {
+        #accordion {
+            .panel {
+                .panel-heading {
+                    a {
+                        .fa-plus {
+                            display: none;
+                        }
+
+                        .fa-minus {
+                            display: block;
+                        }
+                    }
+
+                    a.collapsed {
+                        .fa-plus {
+                            display: block;
+                        }
+
+                        .fa-minus {
+                            display: none;
+                        }
+                    }
+                }
+
+                .panel-collapse {
+                    padding-left: 15px;
+                }
+            }
+
+            .motto {
+                .taglineContainer {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    // footer is 2 columns and 2 rows of footer links and one spanning row for motto and social icons
+    // @media (min-width:768px) and (max-width:991px) 
+    @media (min-width:768px) {
+        padding: 20px 0; 
+
+        #accordion {
+            margin: 0 -30px;
+            padding: 0 15px 0;
+
+            .panel {
+                float: left;
+                width: 50%;
+                padding: 0 30px 15px;
+                border: none;
+                font-size: calc-toEm(14);
+                line-height: calc-toEm(27);
+
+                .panel-heading {
+                    display: block;
+                    padding: 0;
+                    background-color: transparent;
+                    font-size: calc-toEm(21);
+                    line-height: 1em;
+
+                    .panel-title {
+                        font-family: $font-champion-welter;
+                        padding-top: 0;
+                        padding-bottom: 5px;
+                        font-size: 1em;
+                        font-weight: 300;
+
+                        a {
+                            cursor: default;
+                            color: $color-campusGold;
+                            border-bottom: none;
+                        }
+
+                        .fa {
+                            display: none;
+                        }
+                    }
+                }
+
+                a {
+                    padding: 8px 0 2px;
+                    border-bottom: solid 1px #474747;
+                }
+
+                .panel-collapse {
+                    display: block;
+                    height: auto !important;
+                }
+            }
+
+            .motto {
+                clear: none;
+                padding: 15px 30px;
+                font-size: calc-toEm(29.6);
+                text-align: center;
+
+                .taglineContainer {
+                    display: block;
+                    width: 70%;
+                }
+                .vertical {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // footer is 5 columns, first four contain footer links, 5th column is
+    // the vertical tagline and social icons underneath
+    // @media (min-width:992px) and (max-width:1199px) 
+    @media (min-width:992px) {
+
+        #accordion {
+            .panel {
+                width: 20%;
+                padding: 0 15px;
+            }
+
+            .motto {
+                float: left;
+                width: 20%;
+                padding: 40px 15px 15px;
+                font-size: calc-toEm(21.6);
+
+                .taglineContainer {
+                    width: auto;
+                    .tagline {
+                        margin-bottom:10px;
+                        padding-bottom:71/202*100%;
+                    }
+                }
+
+                .vertical {
+                    display: block;
+                }
+
+                .horizontal {
+                    display: none;
+                }
+
+                .social {
+                    border-top: solid 1px #474747;
+                    
+                    a {
+                        float: left;
+                        margin: 4px 2.7%;
+                    }
+                }
+            }
+        }
+    }
+} 
+// Admissions add-ons
+// plus Purdue header broken. taking too long to figure out where all styles are and why not working correctly so altering and adding that here
+.bottom {
+	font-size:75%;
+}
+
+
+#goldbar {
+	background-color: $color-campusGold;
+	color: #000;
+	font-size: 90%;
+	padding: 5px 0;
+	
+	a {
+		color: inherit;
+	}
+	.dropdown-menu {
+		background-color: $color-campusGold;
+		padding: 15px;
+		color: inherit;
+		white-space: nowrap;
+		border-radius: 0;
+		border: none;
+		padding-bottom: 5px;
+		font-size: 100%;
+		@include box-shadow(1px 4px 3px, #000, 0.3);
+		position: absolute;
+		left: inherit;
+		top: inherit;
+
+		li {
+			margin-bottom: 5px;
+
+			a {
+				padding: 0;
+			}
+		}
+	}
+	.quicklinks {
+		display: table-row;
+
+		li {
+			display: table-cell;
+			vertical-align: middle;
+
+			a {
+				display: inline-block;
+				padding: 0 10px;
+				line-height: 1;
+			}
+		}
+		input {
+			padding: 0;
+			margin: 0;
+			margin-left: 15px;
+			height: 1em;
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid #000;
+			outline: none;
+			font-weight: 700;
+			
+			&.closed {
+				border-color: transparent;
+			}
+
+		}
+		.search-icon {
+			font-size: 130%;
+			vertical-align: top;
+		}
+	}
+	.quicklinks-wrapper {
+		display: table;
+	}
+	.navbar-header {
+		display: none;
+		
+		button {
+			border: none;
+			outline: none;
+			background-color: $color-campusGold;
+			color: #000;
+			font-size: 1.1em;
+
+		}
+	}
+	#open-search {
+		padding-left: 0;
+	}
+}
+#site-nav {
+	&.navbar-inverse {
+		background-color: #000;
+
+
+		.dropdown-menu {
+			background-color: #000;
+			padding: 15px;
+			padding-bottom: 5px;
+			color: inherit;
+			white-space: nowrap;
+			border-radius: 0;
+			border: none;
+			@include box-shadow(1px 4px 3px, #000, 0.3);
+
+			li {
+				margin-bottom: 5px;
+
+				a {
+					padding: 0;
+				}
+			}
+		}
+		.navbar-nav {
+
+			a {
+				display: inline-block;
+				color: #9D9D9D;
+				padding: 15px 30px 5px 0;
+				text-decoration: none;
+
+				&:hover {
+					color: #fff;
+				}
+				&:focus {
+					color: $color-campusGold;
+				}
+			}
+		}
+		.navbar-header {
+			margin-left: 10px;
+			
+			button {
+				border: none;
+				outline: none;
+				background-color: #000;
+				color: #9D9D9D;
+				font-size: 1.1em;
+				margin-top: 30px;
+
+				&:hover {
+					color: $color-campusGold;
+
+				}
+			}
+		}
+	}
+}
+
+
+@include desktopSmallMax {
+	.bottom {
+		p {
+			text-align: left;
+			padding-bottom: 10px;
+		}
+	}
+	.motto {
+		text-align: left!important;
+		
+		img.horizontal {
+			margin-left: 0!important;
+		}
+	}
+	#goldbar {
+		.dropdown-toggle {
+			display: none;
+		}
+		.dropdown-menu {
+			display: block;
+			position: static;
+			box-shadow: none;
+			padding-left: 0;
+		}
+		.quicklinks,
+		.information,
+		#google-search-item {
+			display: block;
+			width: 100%;
+		}
+		.quicklinks {
+			li {
+				display: block;
+				margin-bottom: 5px; 
+				a {
+					padding-left: 0;
+				}
+			}
+		} 
+		.information {
+			margin: 10px 0;
+		}
+		#google-search-item {
+			margin: 10px 0;
+			input {
+				margin-left: 0;
+			}
+		} 
+		.navbar-header {
+			display: block;
+			
+		}
+		.nav.information,
+		.quicklinks-wrapper {
+			display: none;
+		}
+		
+	}
+	#gold-bar-menu {
+		display: block;
+	}
+	
+}
+@include tablet {
+	#site-nav.navbar .navbar-header {
+		display:none;
+	}
+}
+@include tabletMax {
+	.footer {
+		#accordion {
+			.panel-default {
+				width: 100%;
+			}
+		}
+	}
+	#site-nav {
+		.navbar .navbar-header,
+		.navbar-collapse .nav {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		&.navbar-inverse {
+			.navbar-nav a {
+				color: #fff;
+
+				&:hover {
+					color: $color-campusGold;
+				}
+			}
+			.dropdown-menu {
+				padding-top: 5px;
+				margin-top: 0;
+
+				li {
+					margin-bottom: 15px;
+					a {
+						color: $color-campusGold;
+					}
+
+					border-bottom: 1px solid #9D9D9D;
+					width: 100%;
+				}
+			}
+
+		}
+	}
+	
+}
+@include phoneMax {
+	#site-nav {
+		font-size: 90%;
+		
+		li {
+			margin-bottom: 5px!important;
+			a {
+				padding-top: 5px!important;
+			}
+			
+			li {
+				font-size: 90%;
+			}
+		} 
+		&.navbar-inverse .navbar-header {
+			margin-left: 0;
+		}
+	}
+	.bottom {
+		font-size: 70%;
+	}
+}
+
+#google-search,
+.nav-skipto {
+	display: none;
+}
+
+.no-js {
+	.dropdown-toggle::after,
+	#google-search-item,
+	#goldbar .navbar-header,
+	.nav.information {
+		display: none!important;
+	}
+	#goldbar .quicklinks-wrapper {
+		display: table!important;
+		
+		li:first-child a {
+			padding-left: 0;
+		}
+	}
+	
+}
+
+

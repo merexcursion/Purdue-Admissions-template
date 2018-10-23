@@ -1,0 +1,25 @@
+<script>
+
+	var slideIndex = [1,1,1,1,1,1,1,1,1,1];
+	var slideId = ['clssrm','sL','atmo','rsch','tech','Ocamp','spprt','opp','cmps','ath']
+	
+
+	// Next/previous controls
+	function plusSlides(n, c) {
+	  showSlides(slideIndex[c] += n, c);
+	}
+
+
+	function showSlides(n, c) {
+	  var i;
+	  var slides = document.getElementsByClassName(slideId[c]);
+	  if (n > slides.length) {slideIndex[c] = 1} 
+	  if (n < 1) {slideIndex[c] = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+			  slides[i].style.display = "none"; 
+	  }
+
+	  slides[slideIndex[c]-1].style.display = "block"; 
+	}
+	
+</script>

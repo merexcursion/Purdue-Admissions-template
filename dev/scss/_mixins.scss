@@ -1,0 +1,101 @@
+@mixin animation($what){
+	-webkit-animation: $what;
+	-moz-animation: $what;
+	-o-animation: $what;
+	animation: $what;
+}
+@mixin black-lines-on-gray(){
+	background: #222 url(../images/linesBG.png) no-repeat center;
+    background-size: cover;
+}
+@mixin border-radius($amount){
+	-webkit-border-radius: $amount;
+	-moz-border-radius: $amount;
+	border-radius: $amount;
+}
+@mixin box-shadow($specs, $hex, $alpha){
+	box-shadow: $specs rgba($hex, $alpha);
+	-webkit-box-shadow: $specs rgba($hex, $alpha);
+}
+@mixin containerHome690(){
+	text-align: left;
+	width: 690px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+@mixin mobile-faq-btn(){
+	display: block;
+	max-width: 100%;
+	margin: 5px;
+	font-family: $font-archivo-narrow;
+	text-shadow: none;
+	text-transform: capitalize;
+	text-align: left;
+	padding: 15px 20px;
+	color: #fff !important;
+	background-color: #222;
+	border: none;
+	
+	i {
+		color: $color-ameliaSkyBlue;
+	}
+}
+@mixin transition($what){
+	-webkit-transition: $what; 
+	-moz-transition: $what;
+	-o-transition: $what;
+    transition: $what;
+}
+@mixin transform($what){
+	-webkit-transform: $what; 
+	-moz-transform: $what;
+	-o-transform: $what;
+    transform: $what;
+}
+
+/* media queries */
+@mixin phone {
+	@media screen and (min-width: 576px ) {
+		@content
+	}
+}
+@mixin tablet {
+	@media screen and (min-width: 768px ) {
+		@content
+	}
+}
+@mixin desktopSmall {
+	@media screen and (min-width: 992px ) {
+		@content
+	}
+}
+@mixin desktopLarge {
+	@media screen and (min-width: 1200px ) {
+		@content
+	}
+}
+
+
+@mixin phoneMax {
+	@media screen and (max-width: 575.98px ) { /* sm */
+		@content
+	}
+}
+@mixin tabletMax {
+	@media screen and (max-width: 767.98px ) { /* md */
+		@content
+	}
+}
+@mixin desktopSmallMax {
+	@media screen and (max-width: 991.98px ) { /* lg */
+		@content
+	}
+}
+@mixin desktopLargeMax {
+	@media screen and (max-width: 1199.98px ) { /* xl */
+		@content
+	}
+}
+
+	
