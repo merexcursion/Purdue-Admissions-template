@@ -10,6 +10,9 @@
 	.fade:not(.show) {
 		opacity: 1!important;
 	}
+	#faq-squares {
+		display: none;
+	}
 	.hide-no-js {
 		display: none!important;
 	}
@@ -27,8 +30,44 @@
 	.nav-tabs {
 		display: none;
 	}
+	#purdue-example {
+		.carousel-text-item:first-child {
+			display: block;
+			position: static;
+			opacity: 1;
+		}
+		.carousel-text-wrap {
+			margin-bottom: 15px;
+		}
+		.interactive-exampleP {
+			position: static;
+			height: auto;
+		}
+		.prev,
+		.next,
+		.faq-rank-nav,
+		.closeXP {
+			display: none;
+		}
+	}
 	.tab-pane {
 		position: static!important;
 		display: block!important;
+	}
+	.home #majors #school,
+	.home #majors #interest,
+	#no-match-note,
+	#social {
+		display: none!important;
+	}
+	.virtualtour_embed {
+		display: block;
+		background-color: #555;
+		padding: 20px;
+		color: #fff;
+		text-align: center;
+		font-weight: bold;
+		font-size: 1.2em;
+		margin-bottom: 5px;
 	}
 }
