@@ -1,5 +1,4 @@
 $(function(){ 
-"use strict";
 if($('body').hasClass('all-majors')){
 			 
 		var $collegePanels = $('#college-panels');

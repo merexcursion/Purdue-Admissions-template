@@ -69,8 +69,8 @@ gulp.task('sass', function(){
 		.pipe(gulp.dest(APPPATH.css));
 });
 gulp.task('scripts', ['clean-scripts'], function(){
-	var jqueryJS = gulp.src('./node_modules/jquery/dist/jquery.js');
-	var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/bootstrap.js');
+	var jqueryJS = gulp.src('./node_modules/jquery/dist/jquery.min.js');
+	var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js');
 	var jsFiles;
 	
 	jsFiles = gulp.src(SOURCEPATHS.jsSource) 
@@ -92,24 +92,26 @@ gulp.task('serve', ['sass'], function(){
 
 /* production */
 gulp.task('compress', function(){
-	gulp.src(SOURCEPATHS.jsSource)
-		.pipe(concat('main.js'))
+	//gulp.src(SOURCEPATHS.jsSource)
+		//.pipe(concat('main.js'))
+		gulp.src('prod/js/main.js')
 		.pipe(minify())
 		.pipe(gulp.dest(APPPATH.js))
 });
 gulp.task('compresscss', function(){
-	var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');
-	var sassFiles;
+	//var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');
+	//var sassFiles;
 	
-	sassFiles = gulp.src(SOURCEPATHS.sassSource)
+	//sassFiles = gulp.src(SOURCEPATHS.sassSource)
+	sassFiles = gulp.src('prod/css/main.css')
 		.pipe(autoprefixer({
 				browsers: ['last 2 versions'],
 				cascade: false
 			}))
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 	
-	return merge(sassFiles, bootstrapCSS)
-		.pipe(concat('main.css'))
+	//return merge(sassFiles, bootstrapCSS)
+		//.pipe(concat('main.css'))
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(APPPATH.css));

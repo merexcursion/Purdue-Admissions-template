@@ -1,6 +1,5 @@
 
 $(function(){ 
-"use strict";
 if($('body').hasClass('home')){
 		
 	
