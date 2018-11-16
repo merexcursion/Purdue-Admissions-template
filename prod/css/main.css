@@ -10869,6 +10869,11 @@ table {
 }
 
 body {
+  color: #111;
+  background-color: #fff;
+}
+
+body.dark-bg, body.light-bg {
   color: #ddd;
   background-color: #000;
 }
