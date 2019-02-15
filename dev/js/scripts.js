@@ -1,5 +1,8 @@
 document.getElementsByTagName("html")[0].classList = ''; // removes no-js
-document.createElement("video"); // make sure video tag will render bg imag as fallback
+document.createElement("video"); // make sure video tag will render bg image as fallback
+
+var doc = document.documentElement;
+doc.setAttribute('data-useragent', navigator.userAgent);
 
 // scroll to top btn
 window.onscroll = function() {
@@ -15,6 +18,7 @@ function scrollFunction() {
 }
 
 jQuery(document).ready(function($){
+	$('html').removeClass('no-js'); // the first is faster but doesn't work in IE
 	$('.nojs-warning').remove();
 	var $googleInput = $('#google-input');
 
@@ -24,6 +28,11 @@ jQuery(document).ready(function($){
 			scrollTop: 0
 		}, 800);
 		return false;
+	});
+	
+	// disabled links
+	$('a[disabled="disabled"]').click(function(event){
+		event.preventDefault();
 	});
 
 	// Google Search

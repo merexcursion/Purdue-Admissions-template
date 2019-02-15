@@ -1,4 +1,10 @@
-
+a[disabled="disabled"]{
+	opacity: 0.5;
+	
+	&:hover {
+		cursor: not-allowed;
+	}
+}
 body.noScroll { 
   overflow: hidden;
 	margin-right:20px;
@@ -49,7 +55,7 @@ hr {
 	float: right;
 }
 
-/* media querues */
+/* media queries */
 @include tablet {
 	.show-md {
 		display: none!important;
@@ -92,6 +98,7 @@ hr {
 		margin: .1em 0;
 	}
 }
+/* these seem backwards - need to be updated throughout where used to be switched here and there */
 @include desktopSmall {
 	.show-lg {
 		display: none!important;

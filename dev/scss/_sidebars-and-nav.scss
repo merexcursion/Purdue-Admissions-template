@@ -46,6 +46,7 @@
 		background-color: $color-campusGold;
 		margin: 0;
 		padding: 0;
+		
 	}
 	.text {
 		font-size: .8em;
@@ -100,9 +101,9 @@
 }
 #footer-sidebar,
 #social-sidebar {
-	width: 200px;
+	width: 250px;
 	position: fixed;
-	left: -210px;
+	left: -260px;
 	margin-right: 50px;
 	top: 320px;
 	overflow: visible;
@@ -185,10 +186,10 @@
 			font-family: $font-archivo-narrow;
 		}
 		
-		li:first-child a {
+		li.top-level a {
 			color: #ddd!important;
 			font-size: 1.1em;
-
+			text-transform: uppercase;
 		}
 		.list-group-item.header {
 			font-family: $font-archivo-narrow;
@@ -232,14 +233,11 @@
 		&:hover {
 			background-color: #aaa;
 		}
-		&:first-child {
+		&.header {
 			border-top: none;
 			background-color: #333;
 			color: #ddd;
 		}
-	}
-	.list-group-item.header {
-		color: #ddd;
 	}
 	.list-group-item.active {
 		background-color: #aaa;
@@ -279,7 +277,7 @@
 }
 
 /* media queries */
-@media screen and (max-width: 1070px ) {
+@media screen and (max-width: 1070px ), screen and  (max-height: 720px) {
 	#footer-sidebar,
 	#social-sidebar {
 		font-size: 90%;
@@ -343,24 +341,56 @@
 			padding-top: 10px;
 			
 			img {
-				padding: 0 10px;
+				padding: 10px;
+				padding-top: 0;
 			}
 		}
 	}
 }
 
 @include tabletMax {
-	
+	#additional-links {
+		clear: both;
+		padding-top: 5px;
+	}
 	#footer-sidebar #additional-links li a {
 		color: #ccc!important;
+		background-color: #191919!important;
+	}
+	#footer-sidebar #sidenav li.top-level a {
+			color: $color_campusGold!important;
 	}
 	#sidenav,
 	#additional-links {
 		li a {
-			display: inline-block;
+			display: block;
+			float: left;
 			padding: 5px 10px!important;
+		}
+	}
+	#footer-sidebar .nav-pills li a {
+		background-color: #111!important;
+		width: 48%;
+		text-align: center;
+		margin: 1px;
+	}
+	#footer-sidebar .nav-pills li.top-level a {
+		background-color: transparent!important;
+		width: 100%;
+		text-align: left;
+	}
+	#footer-sidebar {
+		#sidenav,
+		#additional-links {
+			li::after {
+				content: none;
+			}
 			
 		}
+	}
+	#social-sidebar {
+		clear: both;
+		padding-top: 40px;
 	}
 	#sidebar {
 		a {
@@ -374,5 +404,9 @@
 @include phoneMax {
 	#sidebar {
 		font-size: 90%;
+	}
+	#footer-sidebar .nav-pills li a {
+		width: 100%;
+		text-align: left;
 	}
 }

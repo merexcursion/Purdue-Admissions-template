@@ -166,6 +166,9 @@
 		.text {
 			position: relative;
 			z-index: 5;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
 		}
 	}
 }
@@ -316,7 +319,7 @@
 			background: $color-campusGold;
 			padding: .6em 1.7em;
 			text-transform: uppercase;
-			font-weight: bold;
+			font-weight: 700;
 			line-height: 1;
 		}
 	}
@@ -346,7 +349,7 @@
 			overflow-x: hidden;
 			padding-right: 10%;
 			width: 110%;
-			cursor: url(../images/scroll-cursor.png), auto;
+				cursor: url(../images/scroll-cursor.png), auto;
 
 			p:last-child {
 				padding-bottom: 30px;
@@ -369,8 +372,8 @@
 	.rankings {
 		border-top: 5px #222 solid;
 		padding-top: 1em;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		position: relative;
+		z-index: 1000;
 		
 		&.stop {
 			.carousel-text-item.mobile-tablet {
@@ -464,7 +467,7 @@
 	}
 }
 #roi {
-    color: $color-campusGold;
+    color: lighten($color-campusGold, 3%);
 	
 	.carousel {
 		position: relative;
@@ -511,6 +514,7 @@
 	.lead {
 		font-family: $font-arial;
 		font-weight: normal;
+		color: lighten($color-campusGold, 2%);
 	}
 	#roi-links a {
 		display: block;
@@ -548,31 +552,150 @@
 		}
 
 		&.teal:hover {
-
-			background: linear-gradient(220deg, #2db39e, #2db39e, #2db39e, #2db39e, #32c9b3, #2db39e, #2db39e);
+			background: linear-gradient(220deg, 
+				lighten($color-fountainRunTeal, 3%), 
+				lighten($color-fountainRunTeal, 3%), 
+				lighten($color-fountainRunTeal, 3%), 
+				lighten($color-fountainRunTeal, 3%), 
+				lighten($color-fountainRunTeal, 10%), 
+				lighten($color-fountainRunTeal, 3%), 
+				lighten($color-fountainRunTeal, 3%)
+			);
 			background-size: 600% 600%;
-
 		}
 		&.rossadegreen:hover {
-
-			background: linear-gradient(-220deg, #92ad2f, #92ad2f, #92ad2f, #92ad2f, #9fbd33, #92ad2f,#92ad2f);
+			background: linear-gradient(-220deg, 
+				lighten($color-rossAdeGreen, 3%), 
+				lighten($color-rossAdeGreen, 3%), 
+				lighten($color-rossAdeGreen, 3%), 
+				lighten($color-rossAdeGreen, 3%), 
+				lighten($color-rossAdeGreen, 10%), 
+				lighten($color-rossAdeGreen, 3%), 
+				lighten($color-rossAdeGreen, 3%)
+			);
 			background-size: 600% 600%;
-
 		}
 		&.brick:hover {
-
-			background: linear-gradient(220deg, #c96c14, #c96c14, #c96c14, #c96c14, #d67315, #c96c14,#c96c14);
+			background: linear-gradient(220deg, 
+				lighten($color-bellTowerBrick, 3%), 
+				lighten($color-bellTowerBrick, 3%), 
+				lighten($color-bellTowerBrick, 3%), 
+				lighten($color-bellTowerBrick, 3%), 
+				lighten($color-bellTowerBrick, 10%), 
+				lighten($color-bellTowerBrick, 3%), 
+				lighten($color-bellTowerBrick, 3%)
+			);
 			background-size: 600% 600%;
-
 		}
 		&.purple:hover {
-
-			background: linear-gradient(-220deg, #bf2271, #bf2271, #bf2271, #bf2271, #cc2578, #bf2271,#bf2271);
+			background: linear-gradient(-220deg, 
+				lighten($color-pappysPurple, 3%), 
+				lighten($color-pappysPurple, 3%), 
+				lighten($color-pappysPurple, 3%), 
+				lighten($color-pappysPurple, 3%), 
+				lighten($color-pappysPurple, 10%), 
+				lighten($color-pappysPurple, 3%), 
+				lighten($color-pappysPurple, 3%)
+			);
 			background-size: 600% 600%;
-
+		}
+		&.gold:hover {
+			background: linear-gradient(220deg, 
+				lighten($color-campusGold, 3%), 
+				lighten($color-campusGold, 3%), 
+				lighten($color-campusGold, 3%), 
+				lighten($color-campusGold, 3%), 
+				lighten($color-campusGold, 10%), 
+				lighten($color-campusGold, 3%), 
+				lighten($color-campusGold, 3%)
+			);
+			background-size: 600% 600%;
+		}
+		&.moon:hover {
+			background: linear-gradient(-220deg, 
+				lighten($color-moonDustGray, 3%), 
+				lighten($color-moonDustGray, 3%), 
+				lighten($color-moonDustGray, 3%), 
+				lighten($color-moonDustGray, 3%), 
+				lighten($color-moonDustGray, 10%), 
+				lighten($color-moonDustGray, 3%), 
+				lighten($color-moonDustGray, 3%)
+			);
+			background-size: 600% 600%;
+		}
+		&.slayterblue:hover {
+			background: linear-gradient(220deg, 
+				lighten($color-slayterSkyBlue, 3%), 
+				lighten($color-slayterSkyBlue, 3%), 
+				lighten($color-slayterSkyBlue, 3%), 
+				lighten($color-slayterSkyBlue, 3%), 
+				lighten($color-slayterSkyBlue, 10%), 
+				lighten($color-slayterSkyBlue, 3%), 
+				lighten($color-slayterSkyBlue, 3%)
+			);
+			background-size: 600% 600%;
+		}
+		&.ameliablue:hover {
+			background: linear-gradient(-220deg, 
+				lighten($color-ameliaSkyBlue, 3%), 
+				lighten($color-ameliaSkyBlue, 3%), 
+				lighten($color-ameliaSkyBlue, 3%), 
+				lighten($color-ameliaSkyBlue, 3%), 
+				lighten($color-ameliaSkyBlue, 10%), 
+				lighten($color-ameliaSkyBlue, 3%), 
+				lighten($color-ameliaSkyBlue, 3%)
+			);
+			background-size: 600% 600%;
+		}
+		&.celerygreen:hover {
+			background: linear-gradient(220deg, 
+				lighten($color-celeryBogGreen, 3%), 
+				lighten($color-celeryBogGreen, 3%), 
+				lighten($color-celeryBogGreen, 3%), 
+				lighten($color-celeryBogGreen, 3%), 
+				lighten($color-celeryBogGreen, 10%), 
+				lighten($color-celeryBogGreen, 3%), 
+				lighten($color-celeryBogGreen, 3%)
+			);
+			background-size: 600% 600%;
+		}
+		&.springgreen:hover {
+			background: linear-gradient(-220deg, 
+				lighten($color-springFestGreen, 3%), 
+				lighten($color-springFestGreen, 3%), 
+				lighten($color-springFestGreen, 3%), 
+				lighten($color-springFestGreen, 3%), 
+				lighten($color-springFestGreen, 10%), 
+				lighten($color-springFestGreen, 3%), 
+				lighten($color-springFestGreen, 3%)
+			);
+			background-size: 600% 600%;
+		}
+		&.orange:hover {
+			background: linear-gradient(220deg, 
+				lighten($color-mackeyOrange, 3%), 
+				lighten($color-mackeyOrange, 3%), 
+				lighten($color-mackeyOrange, 3%), 
+				lighten($color-mackeyOrange, 3%), 
+				lighten($color-mackeyOrange, 10%), 
+				lighten($color-mackeyOrange, 3%), 
+				lighten($color-mackeyOrange, 3%)
+			);
+			background-size: 600% 600%;
+		}
+		&.yellow:hover {
+			background: linear-gradient(-220deg, 
+				lighten($color-yellowWalk, 3%), 
+				lighten($color-yellowWalk, 3%), 
+				lighten($color-yellowWalk, 3%), 
+				lighten($color-yellowWalk, 3%), 
+				lighten($color-yellowWalk, 10%), 
+				lighten($color-yellowWalk, 3%), 
+				lighten($color-yellowWalk, 3%)
+			);
+			background-size: 600% 600%;
 		}
 	}
-	
 }
 
 #student-profile,
@@ -645,9 +768,9 @@
 	padding: 0!important;
 	
 	video {
-		
 		display: block;
 		object-fit: cover;
+		height: 115%;
 	}
 }
 
@@ -662,10 +785,13 @@
 	}
 	
 }
-
+#view-all-majors .button {
+	margin: 0;
+}
 #visit-btn-wrap {
 	background: url(../images/visit-btn-bg.png) no-repeat center;
 	overflow:hidden;
+	margin-top: 5px;
 	
 	a {
 		display: block;
@@ -769,7 +895,6 @@
 		
 	}
 	#interactive-examples-wrap {
-		position: relative;
 		clear: both;
 		
 		.interactive-exampleP {
@@ -800,7 +925,7 @@
 			}
 			
 			select {
-				width: 75%;
+				width: 100%;
 			}
 		}
 		#majors-list {
@@ -820,6 +945,9 @@
 		#no-match-note {
 			@include containerHome690;
 			
+		}
+		p.note {
+			text-align: center;
 		}
 		.spacer {
 			font-size: 50%;
@@ -1111,6 +1239,7 @@
 	} 
 	#video-container {
 		height: 280px;
+		
 	}
 	#virtual-tour {
 		display: none;

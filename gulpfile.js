@@ -16,6 +16,7 @@ var streamqueue = require('streamqueue');
 
 var SOURCEPATHS = {
 	sassSource: 'dev/scss/*.scss',
+	cssSource: 'dev/scss/*.css',
 	htmlSource: 'dev/*.html',
 	htmlPartialSource: 'dev/partials/*.html',
 	jsSource: 'dev/js/*.js',
@@ -59,24 +60,32 @@ gulp.task('sass', function(){
 	
 	sassFiles = gulp.src(SOURCEPATHS.sassSource)
 		.pipe(autoprefixer({
-				browsers: ['last 2 versions'],
+				browsers: ['last 2 versions', 'ie 7-9'],
 				cascade: false
 			}))
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 	
-	return merge(sassFiles, bootstrapCSS)
+	return merge(sassFiles, bootstrapCSS) 
 		.pipe(concat('main.css'))
+		.pipe(gulp.dest(APPPATH.css));
+});
+gulp.task('css', function(){
+	var cssFiles;
+	
+	cssFiles = gulp.src(SOURCEPATHS.cssSource)
 		.pipe(gulp.dest(APPPATH.css));
 });
 gulp.task('scripts', ['clean-scripts'], function(){
 	var jqueryJS = gulp.src('./node_modules/jquery/dist/jquery.min.js');
 	var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js');
+	var objectFitPolyfill = gulp.src('./node_modules/objectFitPolyfill/dist/objectFitPolyfill.min.js');
 	var jsFiles;
 	
 	jsFiles = gulp.src(SOURCEPATHS.jsSource) 
 	return streamqueue({objectMode: true },
 			jqueryJS, 
 			bootstrapJS, 
+			objectFitPolyfill,
 			jsFiles
 		)
 		.pipe(concat('main.js'))
@@ -120,8 +129,9 @@ gulp.task('compresscss', function(){
 
 /* --- CLI TASKS --- */
 
-gulp.task('watch', ['serve', 'sass', 'clean-html','scripts', 'moveFonts', 'images', 'html'], function(){
+gulp.task('watch', ['serve', 'sass', 'css', 'clean-html','scripts', 'moveFonts', 'images', 'html'], function(){
 	gulp.watch([SOURCEPATHS.sassSource], ['sass']);
+	gulp.watch([SOURCEPATHS.cssSource], ['css']);
 	gulp.watch([SOURCEPATHS.jsSource], ['scripts']);
 	gulp.watch([SOURCEPATHS.imgSource], ['images']);
 	gulp.watch([SOURCEPATHS.htmlSource, SOURCEPATHS.htmlPartialSource], ['html'])

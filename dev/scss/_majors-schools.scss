@@ -1,5 +1,6 @@
 /* for all the college & schools pages, and majors pages */
 
+/* mockup version */
 $arts: darken($color-moonDustGray,15);
 $athletics: lighten($color-moonDustGray, 5);
 $aviation: $color-ameliaSkyBlue;
@@ -20,6 +21,59 @@ $randd: lighten($color-oakenBucketBrown, 30);
 $science: lighten($color-campusGold, 16);
 $education: lighten($color-campusGold, 35);
 
+/* actual version */
+$iAg: lighten($color-landGrantGreen, 47);
+$iAth: lighten($color-rossAdeGreen, 17);
+$iBiz: lighten($color-celeryBogGreen,23);
+$iProg: lighten($color-yellowWalk, 13);
+$iEngin: lighten($color-campusGold, 6);
+$iEnviro: $color-mackeyOrange;
+$iHealth: lighten($color-bellTowerBrick, 10);
+$iLaw: lighten($color-oakenBucketBrown, 30);
+$iMarket: lighten($color-pappysPurple, 15);
+$iMath: lighten($color-pappysPurple, 28);
+$iPub: lighten($color-moonDustGray, 5);
+$iSci: lighten($color-everTrueBlue, 28);
+$iTeach: lighten($color-slayterSkyBlue, 10);
+$iUn: $color-ameliaSkyBlue;
+$iArts: lighten($color-fountainRunTeal, 5);
+
+
+/* AGRICULTURE
+ATHLETICS
+BUSINESS / MANAGEMENT
+COMPUTER PROGRAMMING AND INFORMATION SYSTEMS
+ENGINEERING AND TECHNOLOGY
+ENVIRONMENT AND ECOLOGY
+HEALTHCARE
+LAW
+MARKETING, ADVERTISING, COMMUNICATION, AND WRITING
+MATHEMATICS
+PUBLIC SERVICE OR SOCIAL SCIENCES
+SCIENCE AND RESEARCH
+TEACHING AND EDUCATION
+UNDECIDED
+VISUAL OR PERFORMING ARTS 
+
+
+Agriculture  -- agriculture
+Athletics  -- athletics
+Business / Management -- business-management
+Computer Programming and Information Systems -- computer-programming-information-systems
+Engineering and Technology --  engineering-technology
+Environment and Ecology  --  environment-ecology
+Healthcare  --  healthcare
+Law  --  law
+Marketing, Advertising, Communication, and Writing  --  marketing-advertising-communication-writing
+Mathematics  --  mathematics
+Public Service or Social Sciences --- public-service-social-sciences
+Science and Research  --  science-research
+Teaching and Education  -- teaching-education
+Undecided  --  undecided
+Visual or Performing Arts  --  visual-performing-arts
+
+*/
+
 .alpha {
 	display: block;
 	float: left;
@@ -33,11 +87,15 @@ $education: lighten($color-campusGold, 35);
 	&:hover,
 	&:focus {
 		background-color: #111;
-		color: #fff!important;
+		color: $color-campusGold!important;
 	}
 	
 }
-
+#career-text {
+	border-top: 5px solid #333;
+	border-bottom: 5px solid #333;
+	color: #bbb;
+}
 .college-list-group {
     margin: 0;
     padding: 0;
@@ -69,6 +127,13 @@ $education: lighten($color-campusGold, 35);
 		}
 	}
 }
+
+#clear-all {
+	font-size: .8em!important;
+	font-weight: bold;
+	margin-top: -2em;
+}
+
 #college-panels {
 	ul {
 		margin: 0;
@@ -90,13 +155,43 @@ $education: lighten($color-campusGold, 35);
 				font-weight: bold;
 				font-size: .9em;
 				
+				&:hover {
+					background-color: #222;
+					color: $color-campusGold;
+				}
+				
 				i {
 					display:none;
 				}
 			}
 		}
 	}
+	&.interests {
+		li a {
+			background-color: $color_campusGold;
+			color: #000;
+			display: block;
+			float: left;
+			margin: 2px;
+			padding: 10px 20px;
+		}
+		.all-majors a {
+			background-color: transparent;
+			color: #ccc;
+			
+			
+			&:hover {
+				color: $color-campusGold;
+			}
+			
+			i {
+				display: inline!important;
+				color: $color_campusGold;
+			}
+		}
+	}
 	
+	/* mock-up */
 	&.arts {
 		.arts .arts {
 			color: $arts;
@@ -211,6 +306,98 @@ $education: lighten($color-campusGold, 35);
 			display: inline;
 		}
 	}
+	/* final */
+	&.agriculture {
+		.agriculture .agriculture {
+			color: $iAg;
+			display: inline;
+		}
+	}
+	&.athletics {
+		.athletics .athletics {
+			color: $iAth;
+			display: inline;
+		}
+	}
+	&.business-management {
+		.business-management .business-management {
+			color: $iBiz;
+			display: inline;
+		}
+	}
+	&.computer-programming-information-systems {
+		.computer-programming-information-systems .computer-programming-information-systems {
+			color: $iProg;
+			display: inline;
+		}
+	}
+	&.engineering-technology {
+		.engineering-technology .engineering-technology {
+			color: $iEngin;
+			display: inline;
+		}
+	}
+	&.environment-ecology {
+		.environment-ecology .environment-ecology {
+			color: $iEnviro;
+			display: inline;
+		}
+	}
+	&.healthcare {
+		.healthcare .healthcare {
+			color: $iHealth;
+			display: inline;
+		}
+	}
+	&.law {
+		.law .law {
+			color: $iLaw;
+			display: inline;
+		}
+	}
+	&.marketing-advertising-communication-writing {
+		.marketing-advertising-communication-writing .marketing-advertising-communication-writing {
+			color: $iMarket;
+			display: inline;
+		}
+	}
+	&.mathematics {
+		.mathematics .mathematics {
+			color: $iMath;
+			display: inline;
+		}
+	}
+	&.public-service-social-sciences {
+		.public-service-social-sciences .public-service-social-sciences {
+			color: $iPub;
+			display: inline;
+		}
+	}
+	&.science-research {
+		.science-research .science-research {
+			color: $iSci;
+			display: inline;
+		}
+	}
+	&.teaching-education {
+		.teaching-education .teaching-education {
+			color: $iTeach;
+			display: inline;
+		}
+	}
+	&.undecided {
+		.undecided .undecided {
+			color: $iUn;
+			display: inline;
+		}
+	}
+	
+	&.visual-performing-arts {
+		.visual-performing-arts .visual-performing-arts {
+			color: $iArts;
+			display: inline;
+		}
+	}
 }
 .dark-bg {
 	&.school {
@@ -253,6 +440,7 @@ $education: lighten($color-campusGold, 35);
 	color: #c28e0e;
 }
 #interest-check  {
+	/* mock up */
 	.arts {
 		color: $arts;
 	}
@@ -310,6 +498,52 @@ $education: lighten($color-campusGold, 35);
 	.teach {
 		color: $education;
 	}
+	/* final */
+	.agriculture {
+		color: $iAg;
+	}
+	.athletics {
+		color: $iAth;
+	}
+	.business-management {
+		color: $iBiz;
+	}
+	.computer-programming-information-systems {
+		color: $iProg;
+	}
+	.engineering-technology {
+		color: $iEngin;
+	}
+	.environment-ecology {
+		color: $iEnviro;
+	}
+	.healthcare {
+		color: $iHealth;
+	}
+	.law {
+		color: $iLaw;
+	}
+	.marketing-advertising-communication-writing {
+		color: $iMarket;
+	}
+	.mathematics {
+		color: $iMath;
+	}
+	.public-service-social-sciences {
+		color: $iPub;
+	}
+	.science-research {
+		color: $iSci;
+	}
+	.teaching-education {
+		color: $iTeach;
+	}
+	.undecided {
+		color: $iUn;
+	}
+	.visual-performing-arts {
+		color: $iArts;
+	}
 }
 
 #open-all, #close-all {
@@ -350,6 +584,12 @@ $education: lighten($color-campusGold, 35);
 				margin-top: 0; 
 				padding-top: 0
 			}
+			hr {
+				border-color: #999;
+				width: 80%;
+				margin: 1em auto;
+				border-style: dashed;
+			}
 		}
 
 	}
@@ -373,17 +613,16 @@ $education: lighten($color-campusGold, 35);
 		}
 	}
 }
+.majors .desc > p:first-child {
+	font-family: $font-archivo-narrow;
+	font-weight: 900;
+	font-size: 1.3em;
+	line-height: 1.4;
+	color: $color-campusGold;
+}
 .all-majors #inner-page-content {
 	background: #222 url('../images/Bursts-grey-majors.png') no-repeat center; 
 	background-size:120%
-}
-.major-personal {
-    font-size: 90%;
-	
-	button {
-		font-family: $font-archivo-narrow;
-		font-weight: bold;
-	}
 }
 .m-legend {
 	font-size: 13px;
@@ -395,8 +634,20 @@ $education: lighten($color-campusGold, 35);
 		font-weight: 900;
 	}
 }
+.no-js {
+	.school .college-list-group {
+		display: none!important;
+	}
+}
 
 .school {
+	.additional {
+		h2, h3, h4 {
+			&:first-child {
+				margin-top: .5em;
+			}
+		}
+	}
 	.aside .list-inline li {
 		display: block;
 		margin: 0;
@@ -439,14 +690,36 @@ $education: lighten($color-campusGold, 35);
 		}
 	}
 	.major-personal {
+		font-size: 90%;
 		background-color: darken($color-everTrueBlue, 6);
 		color: #eee;
-		padding: 15px;
+		padding: 30px;
 		margin: 1em 0;
 
+		button {
+			font-family: $font-archivo-narrow;
+			font-weight: bold;
+		}
+		img {
+			max-width: 200px;
+			height: auto;
+		}
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: #eee!important;
+		}
+		hr {
+			border-color: #999;
+			width: 80%;
+			margin: 1em auto;
+			border-style: dashed;
+		}
 		.major-personal-title {
 			margin-top: 0;
-			color: #eee!important;
 			display: inline-block;
 		}
 		button {
@@ -625,6 +898,7 @@ $education: lighten($color-campusGold, 35);
 		} 
 		
 	}
+	
 }
 @include phoneMax {
 	.alpha {
@@ -665,6 +939,9 @@ $education: lighten($color-campusGold, 35);
 			display: block!important;
 			margin-bottom: 1em;
 		}
+		img {
+			max-width: 100%;
+		}
 	}
 	.school {
 		.cta-link {
@@ -683,6 +960,10 @@ $education: lighten($color-campusGold, 35);
 				margin: 0 auto;
 				max-width: 100%;
 			}
-		} 
+		}
+		.major-personal {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 	}
 }

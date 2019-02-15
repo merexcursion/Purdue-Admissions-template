@@ -11,14 +11,15 @@
     <meta content="width=device-width, user-scalable=no" name="viewport" />
     <link href="https://www.purdue.edu/purdue/images/favicon.ico" rel="shortcut icon" />
     
-    <!-- Font Awesome 5.3.1 -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	
     <link rel="stylesheet" text="text/css" href="css/main.css" />
     
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700" rel="stylesheet">
-    
+	<!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/ie-2019.css" />
+	<![endif]-->
 </head>
 <!-- partial -->
 
@@ -190,8 +191,10 @@
         		</div>
         	</div>
         </section>
+		
         <section id="inner-page-content">
 			<div class="container">
+				
 				<!-- ==================================================================== -->
 				<!-- Cascade template will not use css for colors - instead add them to   -->
 				<!-- the elements (<i> and <label>) so new ones can be added dynamically, -->
@@ -202,6 +205,7 @@
 				<div class="row hide-no-js">
 					<div class="col-xl-6 main-content">
 						<h2 class="filter-title">Narrow and Highlight Majors by Interest</h2>
+						
 							<div id="interest-check">
 						
 								<label class="arts"><input data-icon="paint-brush" type="checkbox" value="arts"> Art &amp; Design</label>
@@ -241,13 +245,17 @@
 								<label class="sci"><input data-icon="flask" type="checkbox" value="sci"> Science</label>
 								
 								<label class="teach"><input data-icon="graduation-cap" type="checkbox" value="teach"> Teaching &amp; Education</label>
-					
+								
 						</div>
 					</div>
+					
+					
+					
 					<div class="col-xl-6 main-content">
 						
 						<h2 class="filter-title">Narrow Majors by School</h2>
 						<div id="school-check">
+							
 							<label><input name="school-check" type="radio" value="agriculture">Agriculture</label>
 							
 							<label><input name="school-check" type="radio" value="education">Education</label>
@@ -272,11 +280,10 @@
 							
 							<br>
 							<button id="show-all-schools" class="button button-slim button-gray40 button-light button-hollow disabled">show all schools</button>	
-					
+							
 						</div>
 					</div>
 				</div>
-					
 				<hr class="spacer small">
 				
 				<div class="row hide-no-js">
@@ -311,9 +318,12 @@
 				</div>
 				
 				<hr class="hide-no-js">
-					
+				
+				<button id="clear-all" class="button button-light button-slim hide-no-js disabled">Clear All Selections</button>
+				
 				<div id="college-panels" class="row">
 					<div class="col-md-12 main-content">
+						
 						<ul>
 						<!-- <ul id="agriculture"> -->
 							<li class="agriculture"><a class="business math" href="#">Accounting </a></li>
@@ -577,12 +587,10 @@
 						<!-- <ul id="vet-med"> -->
 							<li class="vet-med"><a class="health" href="#">Veterinary Nurse</a></li>
 						</ul>
-					
+						
+						
 						<div class="clearfix"></div>
 						
-       
-						<!-- ********** college buttons ********** -->       
-       
        						<button class="agriculture learn-more button button-bar button-light hide-major">Learn more about the College of Agriculture</button>
 							<button class="education learn-more button button-bar button-light hide-major">Learn more about the College of Education</button>
 							<button class="engineering learn-more button button-bar button-light hide-major">Learn more about the College of Engineering</button>
@@ -595,17 +603,14 @@
 							<button class="science learn-more button button-bar button-light hide-major">Learn more about the College of Science</button>
 							<button class="vet-med learn-more button button-bar button-light hide-major">Learn more about the College of Vet Medicine</button>
 							
-       					
 					</div>
 				</div>
-				
 				<hr>
-				
 				<div class="row text-center">
       				<div class="col-lg-4 col-md-6 main-content">
 						<img src="images/public-university-rank-lt.png" alt=""  />
 					</div>
-       				<div class="col-lg-4 col-md-6 main-content">
+       				<div class="col-lg-4 hide-md col-md-6 main-content">
 						<img style="max-width:400px;width: 100%"  src="images/majors-500.png" alt="" />
 					</div>
       			
@@ -613,7 +618,6 @@
 						<img src="images/countries-represented-500.png" alt="" />
 					</div>
        			</div>
-					
 			</div>
 		</section>
     </main>
@@ -637,12 +641,12 @@
 	<!-- partial -->
    
     <!-- partial:partials/_footer-sidebar.html -->
-	 <section id="footer-sidebar">
+	<section id="footer-sidebar">
     <div class="container">
 	<a id="side-menu-btn"><i class="fa fa-bars"></i></a>
 
 	<ul id="sidenav" class="nav nav-pills flex-column">
-	  <li class="active"><a style="text-transform: uppercase;color:#ddd" href="#">Section Home</a></li>
+	  <li class="top-level"><a href="#">Section Home</a></li>
 	  <li><a class="" href="#">Sub Menu Item</a></li>
 	  <li><a class="active" href="#">Current Page</a></li>
 	  <li><a class="" href="#">Sub Menu Item</a></li>
@@ -752,7 +756,7 @@
 				</div>
 			</div>
 			<div class="motto">
-				<img alt="We are Purdue. What we make moves the world forward." class="horizontal" src="https://www.purdue.edu/purdue/images/templateElements/2015/footer-mottoHorizontal.png"/> <img alt="We are Purdue. What we make moves the world forward." class="vertical" src="https://www.purdue.edu/purdue/images/templateElements/2015/footer-mottoVertical.png"/> 
+				<img style="margin-top: 20px" alt="150 Years of Giant Leaps. Purdue University." class="horizontal" src="images/footer-logo-horizontal.png"/> <img alt="150 Years of Giant Leaps. Purdue University." class="vertical" src="images/footer-logo-vertical.png"/>
 				
 				<a title="Facebook" href="http://www.facebook.com/PurdueAdmissions" target="_blank">
 					<i class="fab fa-facebook-f"></i></a> 

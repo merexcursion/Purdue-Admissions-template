@@ -1,0 +1,56 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	
+	// https://github.com/constancecchen/object-fit-polyfill
+	#video-container {
+	  //width: 100%; /* Or whatever you want it to be */
+	  height: 100%; /* Or whatever you want it to be */
+	}
+	.media {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover; /* Or whatever object-fit you want */
+	}
+	
+	.home #intro .container-fluid {
+		padding: 0;
+	}
+	
+	#purdue-example .inner-text.cut-off {
+		cursor: all-scroll!important;
+	}
+	.landing .landing-image-links {
+		display: block!important;
+	}
+	.landing .landing-image-links-row {
+		display: inline-block!important;
+		text-align: center;
+	}
+	.landing .landing-image-links-block  {
+		display: inline-block!important;
+		vertical-align: top;
+	}
+	.landing .three .landing-image-links-block  {
+		width: 32%;
+	}
+	.landing .two .landing-image-links-block  {
+		width: 49%;
+	}
+	.landing .four .landing-image-links-block  {
+		width: 24%;
+	}
+
+}
+@media screen and (max-width: 768px ) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.top .row {
+		display: block!important;
+		
+		a {
+			text-align: left;
+		}
+	}
+}
+
+// 10 only
+html[data-useragent*='MSIE 10.0'] .no-ie10 {
+	display: none!important;
+}

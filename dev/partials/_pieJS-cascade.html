@@ -1,0 +1,109 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+<![CDATA[#protect
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+var stats = document.getElementById("piechart");
+var employed = parseFloat(stats.getAttribute("data-employed"));
+var continuing = parseFloat(stats.getAttribute("data-continue"));
+var emp = parseFloat(stats.getAttribute("data-seeking-emp"));
+var ed = parseFloat(stats.getAttribute("data-seeking-ed"));
+var other = parseFloat(stats.getAttribute("data-other"));
+	
+var checkTotal = employed + continuing + emp + ed + other;
+if(checkTotal < 100){
+   var diff = 100 - checkTotal;
+	other = other + diff;
+}
+if(checkTotal > 100){
+	var diff = checkTotal - 100;
+	other = other - diff;
+}
+
+var addLegend = ''; // for mobile
+var dataSet = [
+	  ['Action', 'Percent'],
+	  ['Employed', employed],
+	  ['Continuing Education', continuing],
+	  ['Seeking Employment', emp],
+	  ['Seeking Education', ed],
+	  ['Other', other],
+	]
+var colorSet = ['#A3D6D7','#FFD100','#FF9B1A','#C3BE0B','#ccc'];
+for(var a = 0; a < dataSet.length; a++){
+	if(a !== 0){
+		addLegend += '<p style="border-left: 13px solid ' + colorSet[a-1] + '" class="m-legend">' + dataSet[a][0] + ': <span>' + dataSet[a][1] + '%</span></p>';
+	}
+}
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable(dataSet);
+
+	
+  // Optional; add a title and set the width and height of the chart
+	// Couldn't get legend to display correctly for mobile with the settings
+	// below
+	var legendPos, fontSize, chartHeight, chartWidth;
+	if (window.innerWidth < 576){
+		legendPos = 'none'; // tried with top
+		fontSize = 12;
+		chartHeight = '90%';
+		chartWidth = '80%';
+	} else {
+		legendPos = null;
+		fontSize = 16;
+		chartHeight = '90%';
+		chartWidth = '100%';
+	}
+	
+  var options = {
+	  
+	  pieStartAngle: 110,
+	  'backgroundColor': 'transparent',
+	  'colors': colorSet,
+	  //tooltip: { trigger: 'none' },
+	  'pieSliceTextStyle': {
+            color: 'black',
+		   'fontName':'Champion Welterweight',
+       },
+	  'chartArea':{
+		  left: '5%',
+		  top: '5%',
+		  width: chartWidth,
+		  height: chartHeight
+	  },
+	  'pieSliceBorderColor' : '#5B6870',
+	  'fontSize':'16',
+	  'fontName':'Archivo Narrow',
+	  'legend':{
+		  maxLines: 100,
+		  position: legendPos,
+		  alignment: 'start',
+		  textStyle: {
+			  fontSize: fontSize,
+			  color: '#000',
+		  }
+	  }
+  };
+	
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+	
+	// create legend in place of google's not displaying well
+	if (window.innerWidth < 576){
+		document.getElementById('mobile-legend').innerHTML = addLegend;
+	} 
+	
+}
+	
+	$(document).ready(function(){
+		// remove majors not related to college
+		var collegeCode = $('#intro').attr('data-college-code');
+		$('.college-list-group .college-list-group-item').not('.' + collegeCode).remove();
+	});
+	#protect]]>
+</script>

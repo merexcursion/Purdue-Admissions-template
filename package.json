@@ -4,7 +4,9 @@
   "description": "html templates for the Purdue Admissions website",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "bootstrap-ie8": "^4.1.3",
+    "gulp": "^3.9.1",
+    "objectFitPolyfill": "^2.1.1"
   },
   "devDependencies": {
     "bootstrap": "^4.1.3",

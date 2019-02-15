@@ -2,6 +2,44 @@
 * {
     box-sizing: border-box;
 }
+/* user ALERTS */
+.error-alert {
+	padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.notice-alert {
+	padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.success-alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.info-alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
 body {
 	color: #111;
 	background-color: #fff;
@@ -35,11 +73,11 @@ blockquote {
 		display: block;
 		padding: 0;
 		margin: 0;
+		margin-bottom: .5rem;
 	}
 	.quote__source {
 		display: block;
 		padding: 0;
-		padding-top: .5rem;
 		margin-bottom: 0;
 	}
 }
@@ -64,6 +102,9 @@ button:focus {
 	}
 }
 .dark-bg {
+	figure figcaption {
+		color: lighten($color-campusGold,10);
+	}
 	main {
 		background-color: #222;
 		color: #ddd;
@@ -83,6 +124,9 @@ button:focus {
 			color: lighten($color-campusGold,5);
 		}
 	}
+	.vid-wrapper {
+		background-color: #111;
+	}
 }
 .feature .main-content .jumbotron {
 	p:nth-last-child(-n+2) {
@@ -93,15 +137,19 @@ button:focus {
 
 
 figure {
-	margin-top: 10px;
+	
 	padding: 0;
 	display: inline-block;
 	
 	&.right {
-		margin-left: 10px;
+		margin-left: 20px;
 	}
 	&.left {
-		margin-right: 10px;
+		margin-right: 20px;
+	}
+	&.center {
+		width: 100%;
+		margin-top: 10px;
 	}
 	img {
 		padding: 0;
@@ -110,7 +158,7 @@ figure {
 	}
 	figcaption {
 		color : #98700D;
-		background-color: #fff;
+		background-color: transparent;
 		padding: 10px;
 		width: 100%;
 	}
@@ -172,6 +220,28 @@ main {
 			&.left {
 				padding-left: 0;
 			}
+			&.center {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		iframe.single {
+			padding: 1rem;
+			padding-top: 0;
+			display: block;
+			margin: 0 auto;
+
+			&.right {
+				padding-right: 0;
+			}
+			&.left {
+				padding-left: 0;
+			}
+			&.center {
+				width: 100%;
+				height: 550px;
+				padding: 0;
+			}
 		}
 		.row div[class*="col"] img {
 			padding: 0!important;
@@ -192,33 +262,96 @@ main {
 .vid-wrapper {
 		background-color: $color-gray15;
 	}
-iframe.video {
+iframe {
 	display: block;
-    border-top: 5px solid $color-campusGold;
-    border-bottom: 5px solid $color-campusGold;
 	margin: 0 auto;
-    margin-bottom: 10px;
-	max-width: 100%;
+	
+	&.video {
+		border-top: 5px solid $color-campusGold;
+		border-bottom: 5px solid $color-campusGold;
+		margin-bottom: 10px;
+		max-width: 100%;
+	}
+	&.j-side {
+		margin-bottom: 1em;
+	}
 }
+
 
 
 /* media queries */
 @include desktopLargeMax {
-	iframe.video {
-		width: 609px;
-		height: 350px;
+	iframe {
+		&.video {
+			width: 609px;
+			height: 350px;
+		}
+		&.j-side {
+			height: 139px;
+		}
+		&.full {
+			width: 100%;
+			height: 535px;
+		}
+	}
+	.main-content .jumbotron {
+		iframe.single {
+
+			&.center {
+				height: 449px;
+			}
+		}
 	}
 }
 @include desktopSmallMax {
-	iframe.video {
-		width: 690px;
-		height: 400px;
+	iframe {
+		&.video {
+			width: 690px;
+			height: 398px;
+		}
+		
+		&.j-side {
+			height: 106px;
+		}
+	}
+	.main-content .jumbotron {
+		iframe.single {
+
+			&.right,
+			&.left {
+				width: 100%;
+				height: 350px;
+				padding: 0;
+				margin-bottom: 3rem;
+			}
+			&.center {
+				height: 350px;
+			}
+		}
 	}
 }
 @include tabletMax {
-	iframe.video {
-		width: 510px;
-		height: 295px;
+	iframe {
+		&.video {
+			width: 510px;
+			height: 295px;
+		}
+		&.j-side {
+			height: 251px;
+		}
+	}
+	#sidebar {
+		padding-top: 2em;
+	}
+	.main-content .jumbotron {
+		iframe.single {
+
+			&.center,
+			&.left,
+			&.right {
+				height: 250px;
+			}
+		}
 	}
 	blockquote.quote-mark {
 		 padding-left: 2.5rem;
@@ -228,12 +361,31 @@ iframe.video {
 			top: 14px;
 		}
 	} 
+	figure {
+		display: block;
+		width: 100%;
+	}
 }
 @include phoneMax {
-	iframe.video {
-		width: 280px;
-		height: 160px;
-		border: none;
+	iframe {
+		&.video,
+		&.j-side,
+		&.center,
+		&.right,
+		&.left {
+			width: 280px!important;
+			height: 158px!important;
+			max-width: 280px;
+			border: none;
+		}
+		&.right,
+		&.left {
+			margin-bottom: 2em!important;
+			margin-left: 0!important;
+		}
+		&.center {
+			margin-left: 0!important;
+		}
 	}
 	blockquote.quote-mark {
 		padding-left: 0;
@@ -246,8 +398,4 @@ iframe.video {
 			text-indent: 30px;
 		}
 	} 
-	figure {
-		display: block;
-		width: 100%;
-	}
 }

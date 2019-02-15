@@ -282,17 +282,18 @@ if($('body').hasClass('home')){
 		self.find('.faq-rank-nav a').click(function(event){
 			event.preventDefault();
 			clearInterval(self.cycle);
+			clearTimeout(self.startRestart);
 			self.find('.carousel-text-item.current').removeClass('current');
 			self.find($(this).attr('href')).addClass('current');
 			self.setIndicators();
-			
-			setTimeout(function(){
-				self.cycle = setInterval(function(){
-					showNext();
-				}, settings.delay);
-			}, settings.delay + 2000);
-			
+			self.startRestart = setTimeout( restart(), settings.delay + 4000);
 		});
+	
+		function restart(){
+			self.cycle = setInterval(function(){
+				showNext();
+			}, settings.delay);
+		}
 		
 		function showNext(){
 			self.find('.carousel-text-item.current').addClass('trans').removeClass('current');

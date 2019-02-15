@@ -65,6 +65,7 @@ Purdue accordion altered +
 		margin: 0;
 		padding: 15px;
 		list-style-type: none;
+		background-color: #efefef;
 	}
 	
 }
@@ -341,16 +342,19 @@ Panels
 		h6 {
 			color: $color-headlineGold;
 		}
+		
 	}
 	.panel-image {
 		width: 40%;
 		border-left: 1px solid $color-campusGold;
-		background: transparent url('../images/Female-Latino-student-performing.jpg') center no-repeat;
 		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		img {
 			display: none;
 		}
 	}
+	
 }
 
 /* 	
@@ -388,7 +392,13 @@ Tables
 		line-height: 1.2;
 		font-size: .95em;
 	}
-	th {
+	tbody th {
+		text-transform: uppercase;
+		text-align: right;
+		font-size: .75em;
+		font-weight: bold;
+	}
+	thead th {
 		vertical-align: bottom;
 	}
 }
@@ -414,6 +424,7 @@ Tables
 		margin-bottom: 0;
 	}
 }
+
 
 /* 	
 =============================================
@@ -570,10 +581,12 @@ Media Queries
 		border: 1px solid $color-campusGold;
 		
 		.panel-image {
-			border-top: 1px solid $color-campusGold;
+			background-color: $color-gray15;
+			
 			img {
 				display: block;
-
+				width: 100%;
+				height: auto;
 			}
 		}
 	}

@@ -11,7 +11,7 @@
         	<div class="container-fluid">
         		<div id="video-container" class="row">
         		<!-- set negative top margin via Cascade so is adjustable for different vids since the vids are cut off height wise. Add fallback as the background image to the video tag.  -->
-					<video style="margin-top:-15px;background-image:url(images/vid-img.jpg);background-size:cover;background-position: center"  width="100%" height="auto" autoplay muted>
+					<video class="media" data-object-fit="cover" style="margin-top:-15px;background-image:url(images/vid-img.jpg);background-size:cover;background-position: center"  width="100%" height="auto" autoplay muted>
 					  	<source src="images/Fountain_Run_Video_HHSVideo_nomusic.mp4" type="video/mp4">
 					</video>
         		</div>
@@ -35,7 +35,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<a href="https://www.admissions.purdue.edu/apply/apply.php" id="customize-title" class="purple"><i class="fas fa-pencil-alt"></i> Apply Now  </a>
+							<a href="https://www.admissions.purdue.edu/apply/apply.php" id="customize-title" class="trueblue"><i class="fas fa-pencil-alt"></i> Apply Now  </a>
 
 							<a class="teal"><i class="fas fa-university"></i> Visit  </a>
 
@@ -564,7 +564,7 @@
 													tablet and smaller. all rest will be hidden -->
 											<div class="carousel-text-wrap">
 												<div id="item1b" class="carousel-text-item mobile-tablet">
-													<span class="rank medium" style="color:#FFD100;font-size: 1.5em">400+ Study Abroad Opportunities in 60 Countries</span>
+													<span class="rank medium ameliablue-text" style="font-size: 1.5em">400+ Study Abroad Opportunities in 60 Countries</span>
 
 													<span class="source">Provided by Brian Harley, Study Abroad</span>
 												</div>
@@ -573,7 +573,7 @@
 													<span class="source">Another source goes here</span>
 												</div>
 												<div id="item3b" class="carousel-text-item">
-													<span class="rank heavy" style="color:#FFD100;font-size: 1.5em">Another Ranking Here...</span>
+													<span class="rank heavy" style="color:#FFD100;font-size: 1.1em">Another Ranking Here...</span>
 													<span class="source">Another source goes here</span>
 												</div>
 											</div>
@@ -978,8 +978,10 @@
 						</div>
 						
 					<p id="no-match-note">Nothing matches this combination. Try a different college or another interest.</p>
+						
+					<p id="view-all-majors" class="hide-sm"><a class="button button-light button-hollow button-icon" href="https://www.admissions.purdue.edu/apply/deadlines.php"> View All Majors <span class="button__icon fas fa-external-link-square-alt" aria-hidden="true"></span> </a></p>
 					
-					<p class="note">Looking for graduate majors? <a href="#"> Graduate School <i class="fas fa-graduation-cap"></i></a></p>
+					<div class="note"><p>Looking for graduate majors? <a href="#"> Graduate School <i class="fas fa-graduation-cap"></i></a></p></div>
 					</div>
 					<div id="go-to-majors" class="col-lg-12 show-sm">
 						<a class="button button-icon" href="https://www.admissions.purdue.edu/apply/deadlines.php"> Find Your Major <span class="button__icon fas fa-bullseye" aria-hidden="true"></span> </a>
@@ -1128,10 +1130,10 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<h4 id="social-media-title">#OnlyPurdue</h4>
-
+							<div class="no-ie10">
 							<script async src="https://cdn.hypemarks.com/pages/a5b5e5.js"></script>
-							<div class="tintup" data-id="emcomm-onlypurdue" data-columns="" data-expand="true"    data-infinitescroll="true" data-personalization-id="873103" style="height:900px;width:100%;"></div>
-
+							<div class="tintup" data-id="emcomm-onlypurdue" data-columns="" data-expand="true" data-infinitescroll="true" data-personalization-id="873103" style="height:900px;width:100%;"></div>
+							</div>
 						</div>
 					</div>
 			   </div>
@@ -1174,7 +1176,7 @@
 		<div class="modal-content">
 		  <div class="modal-header">
 			
-			<h4 class="modal-title">Visitng Purdue</h4>
+			<h4 class="modal-title">Visiting Purdue</h4>
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
 		  </div>
 		  <div class="modal-body">
@@ -1200,6 +1202,7 @@
    
 	<!-- partial:partials/_footer.html -->
 	<!-- partial -->
+
 	
 	<script>
 	$( document ).ready(function() {
@@ -1212,7 +1215,7 @@
 		// mobile users
 		// Also can use stop if only one point added via cascade
 		// ------------------------------------------------------------------------
-		$('#campus-carousel').not('.stop').cycleRanks(); 
+		$('#campus-carousel').not('.stop').cycleRanks({}); 
 		$('#athletics-carousel').not('.stop').cycleRanks(); 
 		$('#opp-carousel').not('.stop').cycleRanks();
 		$('#life-carousel').not('.stop').cycleRanks();
@@ -1231,5 +1234,6 @@
 		<img src="images/gabby-color.jpg" alt="">
 		<img src="images/faculty-color.jpg" alt="">
 	</div>
+	
 </body>
 </html>

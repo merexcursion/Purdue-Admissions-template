@@ -671,6 +671,10 @@
   transition: color, transform 0.1s;
 }
 
+#register-link.button {
+	background-color: $color-rossAdeGreen!important;
+}
+
 @media (min-width: 1200px) {
   .button {
     padding: 0.625rem 2px;

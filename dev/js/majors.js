@@ -8,6 +8,7 @@ if($('body').hasClass('all-majors')){
 		var $showSchoolsBtn = $('#show-all-schools');
 		var $learnMoreBtns = $('.learn-more');
 		var $alpha = $('.alpha');
+		var $clearAllBtn = $('#clear-all');
 		var collegeClasses = [];
 		var icons = [];
 			 
@@ -26,6 +27,7 @@ if($('body').hasClass('all-majors')){
 			}
 			showHide();
 		});
+	
 		$schoolChecks.click(function(){
 			$majorLinks.css('display','inline-block'); // reset for alpha
 			$majorLinks.removeClass('show-major');
@@ -42,8 +44,22 @@ if($('body').hasClass('all-majors')){
 			var whichLetter = $(this).text().trim();
 			$majorLinks.css('display','none');
 			$('#college-panels ul li a[data-letter="' + whichLetter + '"]').css('display','inline-block');
+			$clearAllBtn.removeClass('disabled');
 		});
 		
+		$clearAllBtn.click(function(){
+			$showSchoolsBtn.addClass('disabled');
+			$schoolChecks.each(function(){
+				$(this).prop('checked',false);
+			});
+			$interestChecks.each(function(){
+				$(this).prop('checked',false);
+			});
+			$learnMoreBtns.addClass('hide-major');
+			$collegePanels.attr('class','').addClass('row');
+			showHide();
+			$majorLinks.css('display','inline-block');
+		});
 		
 		$showSchoolsBtn.click(function(){
 			$showSchoolsBtn.addClass('disabled');
@@ -68,6 +84,8 @@ if($('body').hasClass('all-majors')){
 		});
 		
 		function showHide(){
+			$clearAllBtn.removeClass('disabled');
+			
 			// if all unchecked, show all
 			var intCheck = false, schCheck = false;
 			$interestChecks.each( function(){
@@ -86,6 +104,7 @@ if($('body').hasClass('all-majors')){
 					$(this).removeClass('hide-major');
 				});
 				$alpha.show();
+				$clearAllBtn.addClass('disabled');
 				
 			} else {
 				
@@ -107,7 +126,6 @@ if($('body').hasClass('all-majors')){
 						} else {
 							$(this).removeClass('hide-major');
 						}
-						//$showSchoolsBtn.removeClass('disabled');
 						
 					} else if( intCheck === false && schCheck === true ){
 						
