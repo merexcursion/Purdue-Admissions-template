@@ -1,18 +1,20 @@
-/* --- VARS --- */	
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var autoprefixer = require('gulp-autoprefixer');
-var clean = require('gulp-clean');
-var concat = require('gulp-concat');
-var merge = require('merge-stream');
-var newer = require('gulp-newer');
-var injectPartials = require('gulp-inject-partials');
-var minify = require('gulp-minify');
-var rename = require('gulp-rename');
-var cssmin = require('gulp-cssmin');
-var streamqueue = require('streamqueue');
+
+const { series, parallel, watch, src, dest, task } = require('gulp');
+const log = require('fancy-log');
+
+const browserSync = require('browser-sync').create();
+
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const clean = require('gulp-clean');
+const concat = require('gulp-concat');
+const merge = require('merge-stream');
+const newer = require('gulp-newer');
+const injectPartials = require('gulp-inject-partials');
+const minify = require('gulp-minify');
+const rename = require('gulp-rename');
+const cssmin = require('gulp-cssmin');
+const streamqueue = require('streamqueue');
 
 var SOURCEPATHS = {
 	sassSource: 'dev/scss/*.scss',
@@ -30,58 +32,90 @@ var APPPATH = {
 	img: 'prod/images'
 }
 
-/* --- TASKS --- */	
-/* dev */
-gulp.task('clean-html', function(){
-	return gulp.src(APPPATH.root + '/*.html', {read: false, force: true })
+/* ------------------------------------------------- */
+// dev 
+
+function browserSyncRun(done) {
+  browserSync.init({
+    server: {
+      baseDir: APPPATH.root
+    },
+    port: 3000
+  });
+  done();
+}
+function reload(){
+	browserSync.reload();
+};
+
+			 
+function cleanHTML(cb){
+	return src(APPPATH.root + '/*.html', {read: false, force: true })
 		.pipe(clean());
-});
-gulp.task('clean-scripts', function(){
-	return gulp.src(APPPATH.js + '/*.js', {read: false, force: true })
+	cb();
+};
+
+function cleanScripts(cb){
+	return src(APPPATH.js + '/*.js', {read: false, force: true })
 		.pipe(clean());
-});
-gulp.task('html', function(){
-	return gulp.src(SOURCEPATHS.htmlSource)
+	cb();
+};
+
+function html(cb){
+	return src(SOURCEPATHS.htmlSource)
 		.pipe(injectPartials())
-		.pipe(gulp.dest(APPPATH.root))
-});
-gulp.task('images', function(){
-	return gulp.src(SOURCEPATHS.imgSource)
+		.pipe(dest(APPPATH.root));
+	cb();
+};
+
+function images(cb){
+	return src(SOURCEPATHS.imgSource)
 		.pipe(newer(APPPATH.img))
-		.pipe(gulp.dest(APPPATH.img));
-});
-gulp.task('moveFonts', function(){
-	gulp.src('./node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2}')
-		  .pipe(gulp.dest(APPPATH.fonts))
-});
-gulp.task('sass', function(){
-	var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');
+		.pipe(dest(APPPATH.img));
+	cb();
+};
+
+function moveFonts(cb){
+	src('./node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2}')
+		  .pipe(dest(APPPATH.fonts));
+	cb();
+};
+
+function runSass(cb){
+	var bootstrapCSS = src('./node_modules/bootstrap/dist/css/bootstrap.css');
 	var sassFiles;
 	
-	sassFiles = gulp.src(SOURCEPATHS.sassSource)
+	sassFiles = src(SOURCEPATHS.sassSource)
 		.pipe(autoprefixer({
 				browsers: ['last 2 versions', 'ie 7-9'],
 				cascade: false
 			}))
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
 	
+	
 	return merge(sassFiles, bootstrapCSS) 
 		.pipe(concat('main.css'))
-		.pipe(gulp.dest(APPPATH.css));
-});
-gulp.task('css', function(){
+		.pipe(dest(APPPATH.css))
+	cb();
+};
+
+function css(cb){
 	var cssFiles;
 	
-	cssFiles = gulp.src(SOURCEPATHS.cssSource)
-		.pipe(gulp.dest(APPPATH.css));
-});
-gulp.task('scripts', ['clean-scripts'], function(){
-	var jqueryJS = gulp.src('./node_modules/jquery/dist/jquery.min.js');
-	var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js');
-	var objectFitPolyfill = gulp.src('./node_modules/objectFitPolyfill/dist/objectFitPolyfill.min.js');
+	cssFiles = src(SOURCEPATHS.cssSource)
+		.pipe(dest(APPPATH.css));
+	
+	cb();
+};
+
+
+function combineScripts(cb){
+	var jqueryJS = src('./node_modules/jquery/dist/jquery.min.js');
+	var bootstrapJS = src('./node_modules/bootstrap/dist/js/bootstrap.min.js');
+	var objectFitPolyfill = src('./node_modules/objectFitPolyfill/dist/objectFitPolyfill.min.js');
 	var jsFiles;
 	
-	jsFiles = gulp.src(SOURCEPATHS.jsSource) 
+	jsFiles = src(SOURCEPATHS.jsSource) 
 	return streamqueue({objectMode: true },
 			jqueryJS, 
 			bootstrapJS, 
@@ -89,56 +123,50 @@ gulp.task('scripts', ['clean-scripts'], function(){
 			jsFiles
 		)
 		.pipe(concat('main.js'))
-		.pipe(gulp.dest(APPPATH.js))
-});
-gulp.task('serve', ['sass'], function(){ 
-	browserSync.init([ APPPATH.css + '/*.css', APPPATH.root +  '/*.html', APPPATH.js +  '/*.js'], {
-		server: {
-			baseDir: APPPATH.root
-		}
-	})
-});
-
-/* production */
-gulp.task('compress', function(){
-	//gulp.src(SOURCEPATHS.jsSource)
-		//.pipe(concat('main.js'))
-		gulp.src('prod/js/main.js')
-		.pipe(minify())
-		.pipe(gulp.dest(APPPATH.js))
-});
-gulp.task('compresscss', function(){
-	//var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');
-	//var sassFiles;
+		.pipe(dest(APPPATH.js));
 	
-	//sassFiles = gulp.src(SOURCEPATHS.sassSource)
-	sassFiles = gulp.src('prod/css/main.css')
+	cb();
+};
+
+function watchAll(){
+	watch([SOURCEPATHS.sassSource], runSass).on('change', reload),
+	watch([SOURCEPATHS.cssSource], css).on('change', reload),
+	watch([SOURCEPATHS.jsSource], series(cleanScripts, combineScripts)).on('change', reload),
+	watch([SOURCEPATHS.imgSource], images).on('change', reload),
+	watch([SOURCEPATHS.htmlSource, SOURCEPATHS.htmlPartialSource], html).on('change', reload);
+	return
+};
+
+
+
+/* GULP RUN DEFAULT */
+exports.default = parallel(
+	series(runSass, browserSyncRun), 
+	css, 
+	cleanHTML, 
+	series(cleanScripts, combineScripts), 
+	moveFonts, 
+	images, 
+	html, 
+	watchAll
+);
+
+
+/* ------------------------------------------------- */
+// production tasks
+
+task('compresscss', (done) => {
+	
+	sassFiles = src('prod/css/main.css')
 		.pipe(autoprefixer({
 				browsers: ['last 2 versions'],
 				cascade: false
 			}))
 		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-	
-	//return merge(sassFiles, bootstrapCSS)
-		//.pipe(concat('main.css'))
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(APPPATH.css));
+		.pipe(dest(APPPATH.css));
+		done();
 });
 
 
-/* --- CLI TASKS --- */
-
-gulp.task('watch', ['serve', 'sass', 'css', 'clean-html','scripts', 'moveFonts', 'images', 'html'], function(){
-	gulp.watch([SOURCEPATHS.sassSource], ['sass']);
-	gulp.watch([SOURCEPATHS.cssSource], ['css']);
-	gulp.watch([SOURCEPATHS.jsSource], ['scripts']);
-	gulp.watch([SOURCEPATHS.imgSource], ['images']);
-	gulp.watch([SOURCEPATHS.htmlSource, SOURCEPATHS.htmlPartialSource], ['html'])
-});
-
-gulp.task('default', ['watch']);
-
-gulp.task('production', ['compresscss', 'compress'])
-						 
-						 
