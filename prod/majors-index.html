@@ -10,11 +10,29 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, user-scalable=no" name="viewport" />
     <link href="https://www.purdue.edu/purdue/images/favicon.ico" rel="shortcut icon" />
+	
+	<!-- partial:_twitter-card.html -->
+	<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@PurdueAdmission" />
+<meta name="twitter:title" content="Purdue Admissions" />
+<meta name="twitter:description" content="150 Years of Giant Leaps." />
+<meta name="twitter:image" content="https://admissions.purdue.edu/images/twitter-card-2-1ratio.png" />
+	<!-- partial -->
+	<!-- partial:_meta-og.html -->
+	<meta property="og:url" name="og:url" content="https://www.admissions.purdue.edu/" />
+<meta property="og:type" name="og:type" content="website" />
+<meta property="og:title" name="og:title" content="Purdue Admissions" />
+<meta property="og:description" name="og:description" content="150 Years of Giant Leaps." />
+<meta property="og:image" name="og:image" content="https://admissions.purdue.edu/images/fb-og-image.png" />
+<meta property="fb:app_id" name="fb:app_id" content="492762947795038" />
+
+	<!-- partial -->
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	
     <link rel="stylesheet" text="text/css" href="css/main.css" />
+	<link rel="stylesheet" text="text/css" href="css/print.css" media="print" />
     
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700" rel="stylesheet">
 	<!--[if IE]>
@@ -59,7 +77,7 @@
 				
 				<ul class="nav navbar-nav mr-auto information">
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Find Info For <b class="caret"></b></a>
-						<ul class="dropdown-menu"><p class="hide">Find Info For</p>
+						<ul class="dropdown-menu">
 							<li><a href="/index.php">Prospective Students</a></li>
 							<li><a href="/admitted/index.php">Admitted Students</a></li>
 							<li><a href="http://www.purdue.edu/purdue/current_students/index.php" target="_blank">Current Students</a></li>
@@ -93,14 +111,16 @@
 		<div class="top">
 			<div class="container">
 				<div class="row">
-					<div class="logo col-lg-2 col-md-3 col-sm-12">
+					
+					<div class="logo col-lg-2 col-md-3 col-sm-12 screen-only">
 						<a href="https://www.purdue.edu">
 							<img alt="Purdue University" src="https://www.purdue.edu/purdue/images/logo.png"/>
 						</a>
 					</div>
-					<div class="department col-lg-9 col-md-9 col-sm-9 col-xs-12">
+					<div class="department col-lg-9 col-md-9 col-sm-9 col-xs-12 screen-only">
 						<a href="/index.php">Undergraduate Admissions</a><!--<span class="tagline"><a href="#">Website tagline</a></span>-->
 					</div>
+					<div class="col-lg-12 print-only"><img style="margin-top:30px" alt="print-logo" src="images/print-logo.png"/></div>
 				</div>
 			</div>
 		</div>
@@ -202,7 +222,7 @@
 				<!-- interests)					                                          -->
 				<!-- ==================================================================== -->
 			
-				<div class="row hide-no-js">
+				<div class="row hide-no-js screen-only">
 					<div class="col-xl-6 main-content">
 						<h2 class="filter-title">Narrow and Highlight Majors by Interest</h2>
 						
@@ -251,7 +271,7 @@
 					
 					
 					
-					<div class="col-xl-6 main-content">
+					<div class="col-xl-6 main-content screen-only">
 						
 						<h2 class="filter-title">Narrow Majors by School</h2>
 						<div id="school-check">
@@ -284,9 +304,9 @@
 						</div>
 					</div>
 				</div>
-				<hr class="spacer small">
+				<hr class="spacer small screen-only">
 				
-				<div class="row hide-no-js">
+				<div class="row hide-no-js screen-only">
 					<div class="col-lg-12 main-content">
 						<a href="#" class="alpha">A</a>
 						<a href="#" class="alpha">B</a>
@@ -317,18 +337,18 @@
 					</div>
 				</div>
 				
-				<hr class="hide-no-js">
+				<hr class="hide-no-js screen-only">
 				
-				<button id="clear-all" class="button button-light button-slim hide-no-js disabled">Clear All Selections</button>
+				<button id="clear-all" class="button button-light button-slim hide-no-js disabled screen-only">Clear All Selections</button>
 				
 				<div id="college-panels" class="row">
 					<div class="col-md-12 main-content">
 						
 						<ul>
 						<!-- <ul id="agriculture"> -->
-							<li class="agriculture"><a class="business math" href="#">Accounting </a></li>
-							<li class="agriculture"><a class="business marketing" href="#">Agribusiness (multiple concentrations) </a></li>
-							<li class="agriculture"><a class="comm" href="#">Agricultural Communication </a></li>
+							<li class="agriculture"><a class="business math" href="https://www.admissions.purdue.edu/majors/index.php">Accounting </a></li>
+							<li class="agriculture"><a class="business marketing" href="https://www.admissions.purdue.edu/majors/index.php">Agribusiness (multiple concentrations) </a></li>
+							<li class="agriculture"><a class="comm" href="https://www.admissions.purdue.edu/majors/index.php">Agricultural Communication </a></li>
 							<li class="agriculture"><a class="business" href="#">Agricultural Economics (multiple concentrations) </a></li>
 							<li class="agriculture"><a class="teach" href="#">Agricultural Education </a></li>
 							<li class="agriculture"><a class="engin" href="#">Agricultural Engineering </a></li>
@@ -605,8 +625,41 @@
 							
 					</div>
 				</div>
+				
+				<hr class="striped-gold"/>
+				<hr class="print-only" />
+				
+				<div id="all-colleges" class="row">
+					
+					<div class="col-md-12 main-content">
+						
+						<button class="button button-icon screen-only">
+							<a href="#">Undergrad Minors</a>
+							<span class="button__icon fas fa-university" aria-hidden="true"></span>
+						</button>
+						
+						<!-- colleges block -->
+						<ul class="college-list-group">
+							<li class="college-list-group-item"><a href="https://www.admissions.purdue.edu/majors/index.php">College of Agriculture</a></li>
+							<li class="college-list-group-item"><a href="https://www.admissions.purdue.edu/majors/index.php">College of Education</a></li>
+							<li class="college-list-group-item"><a href="https://www.admissions.purdue.edu/majors/index.php">College of Engineering</a></li>
+							<li class="college-list-group-item"><a href="#">Exploratory Studies</a></li>
+							<li class="college-list-group-item"><a href="#">College of Health &amp; Human Sciences</a></li>
+							<li class="college-list-group-item"><a href="#">College of Liberal Arts</a></li>
+							<li class="college-list-group-item"><a href="#">Krannert School of Management</a></li>
+							<li class="college-list-group-item"><a href="#">College of Pharmacy</a></li>
+							<li class="college-list-group-item"><a href="#">Purdue Polytechnic Institute</a></li>
+							<li class="college-list-group-item"><a href="#">College of Science</a></li>
+							<li class="college-list-group-item"><a href="#">College of Vet Med</a></li>
+						</ul>
+						<!-- /colleges block -->
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				
+				
 				<hr>
-				<div class="row text-center">
+				<div class="row text-center screen-only">
       				<div class="col-lg-4 col-md-6 main-content">
 						<img src="images/public-university-rank-lt.png" alt=""  />
 					</div>
@@ -643,7 +696,7 @@
     <!-- partial:partials/_footer-sidebar.html -->
 	<section id="footer-sidebar">
     <div class="container">
-	<a id="side-menu-btn"><i class="fa fa-bars"></i></a>
+	<a id="side-menu-btn"><i class="fas fa-bars"></i><a class="sr-only">menu</a></a>
 
 	<ul id="sidenav" class="nav nav-pills flex-column">
 	  <li class="top-level"><a href="#">Section Home</a></li>
@@ -665,16 +718,28 @@
 	<!-- partial -->
    
     <!-- partial:partials/_social-sidebar.html -->
-	 <section id="social-sidebar">
+	 <section class="hide-no-js" id="social-sidebar">
     <div class="container">
-	<a id="side-social-btn"><i class="fa fa-share-alt"></i></a>
+	<a id="side-social-btn"><i class="fa fa-share-alt"></i><span class="sr-only">Share this page:</span></a>
 
 	<ul id="social-links" class="nav nav-pills flex-column">
-		<li><a class="slayterblue-text" href="#"><i class="fab fa-facebook-square"></i></a></li>
-		<li><a class="ameliablue-text" href="#"><i class="fab fa-twitter"></i></a></li>
-		<li><a class="orange-text" href="#"><i class="fab fa-instagram"></i></a></li>
-		<li><a class="yellow-text" href="#"><i class="fab fa-snapchat-ghost"></i></a></li>
-		<li><a class="purple-text" href="#"><i class="fab fa-pinterest"></i></a></li>
+		
+		<li><a class="fb-share" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">Facebook</span></a></li>
+		
+		<li><a data-hashes="" class="twitter-share" href="https://twitter.com/share?url=https://www.admissions.purdue.edu/"><i class="fab fa-twitter"></i><span class="sr-only">Tweet</span></a>
+		</li>
+		
+		<li><a id="reddit-share" class="" href="#"><i class="fab fa-reddit-alien"></i><span class="sr-only">Reddit</span></a></li>
+		
+		<li><a id="tumblr-share" class="" href="#"><i class="fab fa-tumblr-square"></i><span class="sr-only">Tumblr</span></a></li>
+		
+		<li><a id="blogger-share" class="" href="#"><i class="fab fa-blogger-b"></i><span class="sr-only">Blogger</span></a></li>
+		
+		<li class="show-sm"><a id="sms-share" href="#"><i class="fas fa-sms"></i><span class="sr-only">Text</span></a></li>
+		
+		<li><a id="email-share" href="#"><i class="fas fa-envelope"></i><span class="sr-only">Email</span></a></li>
+		
+		
 	</ul>
 	</div>
 </section>
@@ -786,7 +851,6 @@
 </div>
 
 <script type="text/javascript" src="js/main.js"></script>
-
 
 	<!-- partial -->
 </body>

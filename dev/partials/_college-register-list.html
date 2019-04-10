@@ -1,0 +1,58 @@
+<style type="text/css">
+.college-list {
+padding-left: 0;
+}
+.college-list li {
+display: inline;
+	/*position: relative;*/
+}
+.college-list li a {
+display: block;
+float: left;
+margin: 3px;
+padding: 5px 10px;
+background-color: #5b6870;
+color: #fff!important;
+text-decoration: none;
+font-family: "Archivo Narrow","Arial Narrow","Arial",sans-serif;
+	
+}
+	.college-list li a[disabled="disabled"] {
+		opacity: 1!important;
+		color: #ddd!important;
+	}
+.college-list li .full {
+	color: #E9E45B;
+	/*position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 1!important;
+	z-index: 10;*/
+}
+.college-list li .limited {
+	color: #E9E45B;
+	/*position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 1!important;
+	z-index: 10;*/
+}
+.college-list li a:hover {
+background-color: #c28e0e;
+}
+</style>
+
+<ul class="college-list">
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-ag" target="_blank" rel="noopener">College of Agriculture</a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-edu" target="_blank" rel="noopener">College of Education</a></li>
+<li><a disabled="disabled" href="https://apply.purdue.edu/portal/admissions-pfm-engr" target="_blank" rel="noopener">College of Engineering <strong class="full"><i class="fas fa-ban"></i> FULL</strong></a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-hhs" target="_blank" rel="noopener">College of Health and Human Sciences (including Nursing)</a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-la" target="_blank" rel="noopener">College of Liberal Arts</a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-sci" target="_blank" rel="noopener">College of Science <strong class="limited"><i class="fas fa-exclamation-circle"></i> Limited</strong></a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-phrm" target="_blank" rel="noopener">College of Pharmacy</a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-exp" target="_blank" rel="noopener">Exploratory Studies</a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-mgmt" target="_blank" rel="noopener">Krannert School of Management <strong class="limited"><i class="fas fa-exclamation-triangle"></i> Waitlist Only</strong></a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-tech" target="_blank" rel="noopener">Purdue Polytechnic Institute</a></li>
+<li><a href="https://apply.purdue.edu/portal/admissions-pfm-vet" target="_blank" rel="noopener">Veterinary Technology</a></li>
+</ul>
+<div class="clearfix"></div>

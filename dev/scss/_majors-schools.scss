@@ -94,7 +94,7 @@ Visual or Performing Arts  --  visual-performing-arts
 #career-text {
 	border-top: 5px solid #333;
 	border-bottom: 5px solid #333;
-	color: #bbb;
+	color: #ccc;padding-top: 1em;
 }
 .college-list-group {
     margin: 0;
@@ -613,15 +613,65 @@ Visual or Performing Arts  --  visual-performing-arts
 		}
 	}
 }
-.majors .desc > p:first-child {
-	font-family: $font-archivo-narrow;
-	font-weight: 900;
-	font-size: 1.3em;
-	line-height: 1.4;
-	color: $color-campusGold;
+.majors {
+	button[data-target="#mailing-list"] {
+		background-color: $color-rossAdeGreen!important;
+		
+		&:hover,
+		&:focus {
+			background-color: darken($color-rossAdeGreen, 10%)!important;
+		}
+	}
+	
+	.desc > p:first-child {
+		font-family: $font-archivo-narrow;
+		font-weight: 900;
+		font-size: 1.3em;
+		line-height: 1.4;
+		color: lighten($color-campusGold,5);
+	}
+	.col-lg-8 {
+		h2,
+		h3,
+		h4 {
+			color: $color-campusGold!important;
+		}
+		#POS {
+			background: -1880px center url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat;
+			
+			.list-group-item {
+				border: #222 solid 5px;
+				padding: 5px;
+				border-left: none;
+				padding-left: 40px;
+				text-transform: capitalize!important;
+			}
+		} 
+	}
+	.aside {
+		.accordion {
+			background-color: transparent;
+			margin-top: 1em;
+			
+		}
+		.majors-accordion {
+			background-color: transparent;
+			padding: 0;
+			padding-top: 1em;
+		}
+	}
+	
+	hr {
+		border-color: #333;
+		&.spacer,
+		&.striped-gold {
+			border-color: transparent;
+		}
+	}
+	
 }
 .all-majors #inner-page-content {
-	background: #222 url('../images/Bursts-grey-majors.png') no-repeat center; 
+	background: #222 url('https://admissions.purdue.edu/images/design-elements/Bursts-grey-majors.png') no-repeat center;
 	background-size:120%
 }
 .m-legend {
@@ -657,9 +707,10 @@ Visual or Performing Arts  --  visual-performing-arts
 		a {
 			display: block;
 			margin: 0;
-			padding: 10px;
-			background-color: #111;
-			color: #c28e0e;
+			margin-bottom: 5px;
+			padding: 5px 10px;
+			background-color: #1e1e1e;
+			color: $color-campusGold;
 			font-size: 1.2em;
 			text-decoration: none;
 			font-weight: bold;
@@ -793,6 +844,82 @@ Visual or Performing Arts  --  visual-performing-arts
 		}
 	}
 }
+
+
+/* ------------------------------------------------
+	Get on mailing list form 
+-------------------------------------------------*/
+#mailing-list {
+	margin-top: 2em;
+	
+	.action {
+		margin: 2em 0;
+		
+		button {
+			padding: 10px 25px;
+			border: none;
+			font-weight: bold;
+			background-color: $color-campusGold;
+			color: #000;
+		}
+	}
+	
+	label,
+	input[type="text"],
+	input[type="email"],
+	textarea,
+	div {
+		display: block!important;
+		width: 100%!important;
+		float: none;
+	}
+	input[type="email"],
+	textarea,
+	input[type="text"],
+	select {
+		border: none!important;
+		border-bottom: #aaa solid 1px!important;
+		color: lighten($color-campusGold, 10)!important;
+		background-color: #222!important;
+		padding: 2px 10px!important;
+		margin-bottom: 10px;
+	}
+	select {
+		margin-bottom: 10px;
+	}
+	fieldset .form_responses {
+		padding-left: 2em!important;
+		
+		label {
+			margin-top: 10px;
+		}
+		
+		.form_response {
+			margin-left: -2em!important;
+		}
+	}
+	input[type="checkbox"] + label {
+		display: inline!important;
+		padding: 2px 10px!important;
+		margin-bottom: 10px;
+	}
+	input[type="checkbox"] {
+		width: 1em;
+		height: 1em;
+	}
+}
+div.form_header.form_layout_table .form_label {
+    color: #c28e0e!important;
+	background: transparent!important;
+	font-family: "Archivo Narrow","Arial Narrow",Arial,sans-serif;
+	border-bottom: 2px solid #c28e0e;
+	margin-bottom: .5em;
+	margin-top: 1em;
+}
+/* ------------------------------------------------
+	end Get on mailing list form 
+-------------------------------------------------*/
+
 
 /*  media queries */
 @include desktopLargeMax {

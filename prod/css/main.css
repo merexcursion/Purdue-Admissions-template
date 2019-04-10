@@ -10829,8 +10829,7 @@ table {
   border: none;
   padding-bottom: 5px;
   font-size: 100%;
-  box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.3);
+  /*@include box-shadow(1px 4px 3px, #000, 0.3);*/
   position: absolute;
   left: inherit;
   top: inherit;
@@ -10902,6 +10901,7 @@ table {
 
 #site-nav.navbar-inverse {
   background-color: #000;
+  padding-top: 0;
 }
 
 #site-nav.navbar-inverse .dropdown-menu {
@@ -10912,8 +10912,7 @@ table {
   white-space: nowrap;
   border-radius: 0;
   border: none;
-  box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 1px 4px 3px rgba(0, 0, 0, 0.3);
+  /*@include box-shadow(1px 4px 3px, #000, 0.3);*/
 }
 
 #site-nav.navbar-inverse .dropdown-menu li {
@@ -10927,7 +10926,7 @@ table {
 #site-nav.navbar-inverse .navbar-nav a {
   display: inline-block;
   color: #9D9D9D;
-  padding: 15px 30px 5px 0;
+  padding: 0 30px 5px 0;
   text-decoration: none;
 }
 
@@ -11937,6 +11936,11 @@ table {
   box-sizing: border-box;
 }
 
+/* older browsers  */
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
 /* user ALERTS */
 .error-alert {
   padding: 0.75rem 1.25rem;
@@ -12070,6 +12074,10 @@ button:focus {
   color: #da9f10;
 }
 
+.dark-bg table {
+  color: #ddd;
+}
+
 .dark-bg .vid-wrapper {
   background-color: #111;
 }
@@ -12124,7 +12132,7 @@ picture {
 }
 
 #intro {
-  background: #222 url(../images/linesBG.png) no-repeat center;
+  background: #222 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
   background-size: cover;
 }
 
@@ -12249,6 +12257,13 @@ iframe.j-side {
     width: 100%;
     height: 535px;
   }
+  div[class*="-12 "] iframe.video {
+    width: 100%;
+    height: 535px;
+  }
+  .col-md-8 iframe.video {
+    height: 350px;
+  }
   .main-content .jumbotron iframe.single.center {
     height: 449px;
   }
@@ -12256,12 +12271,17 @@ iframe.j-side {
 
 @media screen and (max-width: 991.98px) {
   /* lg */
-  iframe.video {
+  iframe.video,
+  div[class*="-12 "] iframe.video {
     width: 690px;
     height: 398px;
   }
-  iframe.j-side {
+  iframe.j-side,
+  div[class*="-12 "] iframe.j-side {
     height: 106px;
+  }
+  .col-md-8 iframe.video {
+    height: 263px;
   }
   .main-content .jumbotron iframe.single.right, .main-content .jumbotron iframe.single.left {
     width: 100%;
@@ -12276,12 +12296,17 @@ iframe.j-side {
 
 @media screen and (max-width: 767.98px) {
   /* md */
-  iframe.video {
+  iframe.video,
+  div[class*="-12 "] iframe.video {
     width: 510px;
     height: 295px;
   }
-  iframe.j-side {
+  iframe.j-side,
+  div[class*="-12 "] iframe.j-side {
     height: 251px;
+  }
+  .col-md-8 iframe.video {
+    height: 295px;
   }
   #sidebar {
     padding-top: 2em;
@@ -12305,17 +12330,25 @@ iframe.j-side {
 
 @media screen and (max-width: 575.98px) {
   /* sm */
-  iframe.video, iframe.j-side, iframe.center, iframe.right, iframe.left {
+  iframe.video, iframe.j-side, iframe.center, iframe.right, iframe.left,
+  div[class*="-12 "] iframe.video,
+  div[class*="-12 "] iframe.j-side,
+  div[class*="-12 "] iframe.center,
+  div[class*="-12 "] iframe.right,
+  div[class*="-12 "] iframe.left {
     width: 280px !important;
     height: 158px !important;
     max-width: 280px;
     border: none;
   }
-  iframe.right, iframe.left {
+  iframe.right, iframe.left,
+  div[class*="-12 "] iframe.right,
+  div[class*="-12 "] iframe.left {
     margin-bottom: 2em !important;
     margin-left: 0 !important;
   }
-  iframe.center {
+  iframe.center,
+  div[class*="-12 "] iframe.center {
     margin-left: 0 !important;
   }
   blockquote.quote-mark {
@@ -12740,7 +12773,7 @@ hr.striped-gold {
   padding: 0;
   border: none;
   height: 20px;
-  background: transparent url(../images/hr-gold.png) no-repeat center;
+  background: transparent url(https://admissions.purdue.edu/images/design-elements/hr-gold.png) no-repeat center;
 }
 
 hr.extra-large {
@@ -12761,6 +12794,10 @@ hr.small {
 
 .note {
   font-size: .8em;
+}
+
+.print-only {
+  display: none;
 }
 
 .right {
@@ -12867,6 +12904,7 @@ Purdue accordion altered +
   border: solid 1px #fff;
   margin: 0 auto;
   padding: 15px;
+  padding-right: 50px;
   cursor: pointer;
   outline: none;
   font-size: 20px;
@@ -12877,6 +12915,10 @@ Purdue accordion altered +
 
 .accordion .accordion__heading:first-child {
   border-top: 0;
+}
+
+.accordion .accordion__heading.black:focus {
+  background-color: #000;
 }
 
 .accordion .accordion__heading i {
@@ -13238,7 +13280,7 @@ Tables
 }
 
 .table-striped caption {
-  background: transparent url("../images/table-caption-bg.png") no-repeat center;
+  background: transparent url("https://admissions.purdue.edu/images/design-elements/table-caption-bg.png") no-repeat center;
 }
 
 .table-striped caption span {
@@ -13491,6 +13533,37 @@ Media Queries
   text-decoration: none;
 }
 
+.light-bg #footer-sidebar,
+.light-bg #social-sidebar,
+.light-bg #side-menu-btn,
+.light-bg #side-social-btn {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*
+.landing,
+.light-bg {
+	#footer-sidebar,
+	#social-sidebar {
+		background-color: $color_campusGold;
+	}
+	#side-menu-btn,
+	#side-social-btn {
+		background-color: $color_campusGold;
+	}
+	
+}
+.home {
+	#footer-sidebar,
+	#social-sidebar,
+	#side-menu-btn,
+	#side-social-btn {
+		background-color: #222;
+	}
+	
+}*/
 #sidebar a {
   font-weight: 700;
 }
@@ -13552,16 +13625,6 @@ Media Queries
   font-size: 1.4em;
 }
 
-#social-sidebar .nav-pills li a {
-  font-size: 1.5em;
-  text-decoration: none;
-  line-height: 1;
-}
-
-#social-sidebar .nav-pills li a:hover {
-  text-decoration: underline;
-}
-
 #footer-sidebar,
 #social-sidebar {
   width: 250px;
@@ -13578,8 +13641,8 @@ Media Queries
   padding: 20px;
   padding-left: 0;
   padding-right: 30px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.5);
 }
 
 #footer-sidebar:hover,
@@ -13602,16 +13665,20 @@ Media Queries
   padding: 2px;
 }
 
-.light-bg #footer-sidebar,
-.light-bg #social-sidebar,
-.home #social-sidebar {
-  box-shadow: none;
-}
-
 #social-sidebar {
   margin-top: 70px;
   left: -110px;
   width: 100px;
+}
+
+#social-sidebar .nav-pills li a {
+  font-size: 1.5em;
+  text-decoration: none;
+  line-height: 1;
+}
+
+#social-sidebar .nav-pills li a:hover {
+  text-decoration: underline;
 }
 
 #social-sidebar #social-links li a {
@@ -13619,6 +13686,11 @@ Media Queries
   transition: transform 300ms;
   display: inline-block;
   margin-bottom: 5px;
+  color: #c28e0e;
+}
+
+#social-sidebar #social-links li a:visited {
+  color: #c28e0e;
 }
 
 #social-sidebar #social-links li a:hover {
@@ -13735,14 +13807,8 @@ Media Queries
   padding-left: 30px;
   color: #ddd;
   background-color: #333;
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
-  -webkit-box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.7);
-}
-
-.light-bg #side-menu-btn,
-.light-bg #side-social-btn,
-.home #side-social-btn {
-  box-shadow: none;
+  box-shadow: 7px 5px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 7px 5px 6px rgba(0, 0, 0, 0.5);
 }
 
 #top-link {
@@ -13940,7 +14006,7 @@ Media Queries
 }
 
 #dates-content {
-  background: #222 url(../images/linesBG.png) no-repeat center;
+  background: #222 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
   background-size: cover;
   padding-top: 6em;
   padding-bottom: 5em;
@@ -14099,7 +14165,7 @@ Media Queries
 
 .home #home-main-cta {
   text-align: left;
-  background: #222 url(../images/linesBG.png) no-repeat center;
+  background: #222 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -14126,7 +14192,7 @@ Media Queries
 }
 
 .home #inner-page-content {
-  background: #000 url("../images/Bursts-home3-rgb.png") no-repeat center 6%;
+  background: #000 url("https://admissions.purdue.edu/images/design-elements/Bursts-home3-rgb.png") no-repeat center 6%;
   background-size: 130%;
   padding-top: 0;
 }
@@ -14152,7 +14218,7 @@ Media Queries
   border-color: transparent;
   color: #fff !important;
   padding: 10px 20px;
-  background: #2e2e2e url(../images/visitBG.png) center;
+  background: #2e2e2e url(https://admissions.purdue.edu/images/design-elements/visitBG.png) center;
 }
 
 .home #majors .majors-content #school-choice:focus,
@@ -14231,7 +14297,7 @@ Media Queries
 
 #purdue-example .closeXP {
   color: #000 !important;
-  background: #c28e0e url(../images/gold-black-lines.png) no-repeat center;
+  background: #c28e0e url(https://admissions.purdue.edu/images/design-elements/gold-black-lines.png) no-repeat center;
   background-size: cover;
   padding: 0;
   display: block;
@@ -14276,7 +14342,7 @@ Media Queries
   overflow-x: hidden;
   padding-right: 10%;
   width: 110%;
-  cursor: url(../images/scroll-cursor.png), auto;
+  cursor: url(https://admissions.purdue.edu/images/design-elements/scroll-cursor.png), auto;
 }
 
 #purdue-example .inner-text.cut-off p:last-child {
@@ -14653,6 +14719,12 @@ Media Queries
   height: 115%;
 }
 
+@supports (object-fit: cover) and (-ms-ime-align: auto) {
+  #video-container video {
+    height: auto !important;
+  }
+}
+
 #virtual-tour {
   margin-top: 5px;
   overflow: hidden;
@@ -14669,7 +14741,7 @@ Media Queries
 }
 
 #visit-btn-wrap {
-  background: url(../images/visit-btn-bg.png) no-repeat center;
+  background: url(https://admissions.purdue.edu/images/design-elements/visit-btn-bg.png) no-repeat center;
   overflow: hidden;
   margin-top: 5px;
 }
@@ -15192,10 +15264,10 @@ Media Queries
   background-color: #222;
   color: #c28e0e;
   font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
-  font-size: 1.3em;
-  text-align: left;
   font-weight: 700;
   text-decoration: none !important;
+  font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
+  font-size: 1.3em;
 }
 
 .landing .feature-btn:hover {
@@ -15204,6 +15276,12 @@ Media Queries
 }
 
 .landing .landing-links-title {
+  font-family: "Champion Welterweight", "Archivo Black", "Arial Black", "Arial Bold", "Gadget", sans-serif !important;
+  color: #c28e0e !important;
+  font-size: 1.7em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
   font-family: "Champion Welterweight", "Archivo Black", "Arial Black", "Arial Bold", "Gadget", sans-serif !important;
   color: #c28e0e !important;
   font-size: 1.7em;
@@ -15219,6 +15297,15 @@ Media Queries
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 30px 10px;
+  font-weight: 700;
+  font-size: 2vw;
+  font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
+  text-shadow: -1px -1px 3px #000, 0 0 7px #000;
+  line-height: 1;
+}
+
+.landing .image-link-title:hover {
+  text-decoration: none;
 }
 
 .landing #intro {
@@ -15262,33 +15349,28 @@ Media Queries
   padding: 0;
 }
 
-.image-link-title {
-  font-weight: 700;
-  font-size: 2vw;
-  font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
-  text-shadow: -1px -1px 3px #000, 0 0 7px #000;
-  line-height: 1;
+.landing.ad .jumbotron.cta {
+  background: transparent;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 1em 0;
 }
 
-.image-link-title:hover {
-  text-decoration: none;
+.landing.ad .jumbotron.cta a {
+  margin: 5px;
 }
 
-.landing .feature-btn {
-  font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
-  font-size: 1.3em;
-  text-align: left;
-  font-weight: 700;
-  text-decoration: none !important;
+.landing.ad .section {
+  padding: 2em 0 1em 0;
 }
 
-.landing .landing-links-title {
-  font-family: "Champion Welterweight", "Archivo Black", "Arial Black", "Arial Bold", "Gadget", sans-serif !important;
-  color: #c28e0e !important;
-  font-size: 1.7em;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 1;
+.landing.ad .social-links {
+  color: #c28e0e;
+  font-size: 3em;
+}
+
+.landing.ad .social-links a {
+  margin: 5px;
 }
 
 /* media queries */
@@ -15312,6 +15394,9 @@ Media Queries
   /* lg */
   .landing .four .image-link-title {
     font-size: 2.2vw;
+  }
+  .landing.ad .social-links {
+    font-size: 2em;
   }
 }
 
@@ -15372,6 +15457,32 @@ Media Queries
   }
 }
 
+.event-landing .feature-btn {
+  padding: 20px 30px;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: #111;
+  color: #c28e0e;
+  font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
+  font-weight: 700;
+  text-decoration: none !important;
+  font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
+  font-size: 1.3em;
+}
+
+.event-landing .feature-btn:hover {
+  color: #c28e0e;
+  background-color: #333;
+}
+
+@media screen and (max-width: 991.98px) {
+  /* lg */
+  .event-landing .feature-btn {
+    margin-bottom: 5px;
+  }
+}
+
 /* for all the college & schools pages, and majors pages */
 /* mockup version */
 /* actual version */
@@ -15428,7 +15539,8 @@ Visual or Performing Arts  --  visual-performing-arts
 #career-text {
   border-top: 5px solid #333;
   border-bottom: 5px solid #333;
-  color: #bbb;
+  color: #ccc;
+  padding-top: 1em;
 }
 
 .college-list-group {
@@ -15943,16 +16055,61 @@ Visual or Performing Arts  --  visual-performing-arts
   color: #c28e0e;
 }
 
+.majors button[data-target="#mailing-list"] {
+  background-color: #849e2a !important;
+}
+
+.majors button[data-target="#mailing-list"]:hover, .majors button[data-target="#mailing-list"]:focus {
+  background-color: #62761f !important;
+}
+
 .majors .desc > p:first-child {
   font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
   font-weight: 900;
   font-size: 1.3em;
   line-height: 1.4;
-  color: #c28e0e;
+  color: #da9f10;
+}
+
+.majors .col-lg-8 h2,
+.majors .col-lg-8 h3,
+.majors .col-lg-8 h4 {
+  color: #c28e0e !important;
+}
+
+.majors .col-lg-8 #POS {
+  background: -1880px center url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat;
+}
+
+.majors .col-lg-8 #POS .list-group-item {
+  border: #222 solid 5px;
+  padding: 5px;
+  border-left: none;
+  padding-left: 40px;
+  text-transform: capitalize !important;
+}
+
+.majors .aside .accordion {
+  background-color: transparent;
+  margin-top: 1em;
+}
+
+.majors .aside .majors-accordion {
+  background-color: transparent;
+  padding: 0;
+  padding-top: 1em;
+}
+
+.majors hr {
+  border-color: #333;
+}
+
+.majors hr.spacer, .majors hr.striped-gold {
+  border-color: transparent;
 }
 
 .all-majors #inner-page-content {
-  background: #222 url("../images/Bursts-grey-majors.png") no-repeat center;
+  background: #222 url("https://admissions.purdue.edu/images/design-elements/Bursts-grey-majors.png") no-repeat center;
   background-size: 120%;
 }
 
@@ -15985,8 +16142,9 @@ Visual or Performing Arts  --  visual-performing-arts
 .school .aside .list-inline li a {
   display: block;
   margin: 0;
-  padding: 10px;
-  background-color: #111;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  background-color: #1e1e1e;
   color: #c28e0e;
   font-size: 1.2em;
   text-decoration: none;
@@ -16132,6 +16290,86 @@ Visual or Performing Arts  --  visual-performing-arts
   background-color: #c28e0e;
 }
 
+/* ------------------------------------------------
+	Get on mailing list form 
+-------------------------------------------------*/
+#mailing-list {
+  margin-top: 2em;
+}
+
+#mailing-list .action {
+  margin: 2em 0;
+}
+
+#mailing-list .action button {
+  padding: 10px 25px;
+  border: none;
+  font-weight: bold;
+  background-color: #c28e0e;
+  color: #000;
+}
+
+#mailing-list label,
+#mailing-list input[type="text"],
+#mailing-list input[type="email"],
+#mailing-list textarea,
+#mailing-list div {
+  display: block !important;
+  width: 100% !important;
+  float: none;
+}
+
+#mailing-list input[type="email"],
+#mailing-list textarea,
+#mailing-list input[type="text"],
+#mailing-list select {
+  border: none !important;
+  border-bottom: #aaa solid 1px !important;
+  color: #eeaf15 !important;
+  background-color: #222 !important;
+  padding: 2px 10px !important;
+  margin-bottom: 10px;
+}
+
+#mailing-list select {
+  margin-bottom: 10px;
+}
+
+#mailing-list fieldset .form_responses {
+  padding-left: 2em !important;
+}
+
+#mailing-list fieldset .form_responses label {
+  margin-top: 10px;
+}
+
+#mailing-list fieldset .form_responses .form_response {
+  margin-left: -2em !important;
+}
+
+#mailing-list input[type="checkbox"] + label {
+  display: inline !important;
+  padding: 2px 10px !important;
+  margin-bottom: 10px;
+}
+
+#mailing-list input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+}
+
+div.form_header.form_layout_table .form_label {
+  color: #c28e0e !important;
+  background: transparent !important;
+  font-family: "Archivo Narrow","Arial Narrow",Arial,sans-serif;
+  border-bottom: 2px solid #c28e0e;
+  margin-bottom: .5em;
+  margin-top: 1em;
+}
+
+/* ------------------------------------------------
+	end Get on mailing list form 
+-------------------------------------------------*/
 /*  media queries */
 @media screen and (max-width: 1199.98px) {
   /* xl */
@@ -16364,412 +16602,74 @@ Visual or Performing Arts  --  visual-performing-arts
   margin-bottom: 5px;
 }
 
-#temp-note {
-  display: none;
-}
-
-/* this here only temp - gets added to casade page itself */
-.progress #page {
-  display: none;
-}
-
-p .proof-point {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
-  font-weight: 900;
-  font-size: 78%;
-  letter-spacing: 1px;
-  white-space: normal;
-  background-color: #000;
-  background: linear-gradient(to right, #231f20, #111111, #111111, #231f20);
-  text-transform: uppercase;
-  padding: 1px 5px;
-  border-top: 1px solid #c28e0e;
-  border-bottom: 1px solid #c28e0e;
-  color: #c28e0e;
-}
-
-p .proof-point.ameliablue-text {
-  border-color: #A3D6D7;
-  color: #A3D6D7;
-}
-
-p .proof-point.orange-text {
-  border-color: #FF9B1A;
-  color: #FF9B1A;
-}
-
-p .proof-point.teal-text {
-  border-color: #29A592;
-  color: #29A592;
-}
-
-p .proof-point.yellow-text {
-  border-color: #FFD100;
-}
-
-p .proof-point.purple-text {
-  border-color: #AD1F65;
-  color: #AD1F65;
-}
-
-p .proof-point.brick-text {
-  border-color: #B46012;
-  color: #B46012;
-}
-
-p .proof-point.springgreen-text {
-  border-color: #E9E45B;
-  color: #E9E45B;
-}
-
-p .proof-point.celerygreen-text {
-  border-color: #C3BE0B;
-  color: #C3BE0B;
-}
-
-p .proof-point.slayterblue-text {
-  border-color: #6E99B4;
-  color: #6E99B4;
-}
-
-p .proof-point.rossadegreen-text {
-  border-color: #849E2A;
-  color: #849E2A;
-}
-
-p .proof-point.moon-text {
-  border-color: #BAA892;
-  color: #BAA892;
-}
-
-#side-links .link {
-  color: #000;
-  display: block;
-  padding: 15px 20px;
-  border: 1px solid #555;
-  margin: 2px;
-  font-weight: 700 !important;
-  font-size: 1.1em;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-#side-links .link:hover {
-  background-color: #c28e0e;
-}
-
-.major-btn {
-  display: block;
-  float: left;
-  margin: 1px;
-  font-weight: bold !important;
-  text-transform: uppercase;
-}
-
-.major-btn:hover {
-  /*background-color: #98700D!important;*/
-}
-
-.intro.secondary {
-  text-transform: none;
-}
-
-.btn-check {
-  background-color: #C28E0E;
-  color: #000;
-  font-family: 'archivoNarrow',"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 1.4em;
-  font-weight: 700;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.btn-check:hover {
-  background-color: #98700D;
+.social-share .gold h2 {
   color: #000;
 }
 
-.proof-points img {
-  margin: 5px 0;
+.social-share .social-media-row {
+  padding: 2em 0;
 }
 
-#social-links a {
-  font-size: 2em;
-  margin: 0 5px;
-  color: #c28e0e;
+.social-share .social-media-row.bg-burst {
+  background-image: url(https://admissions.purdue.edu/images/design-elements/Bursts-grey-majors.png);
+  background-repeat: no-repeat;
+  background-position: right 70%;
 }
 
-#social-links a:hover {
-  color: #707070;
-}
-
-h2 {
-  color: #999;
-}
-
-.subtitle {
-  font-family: "Champion Lightweight", "Archivo Narrow","Arial Narrow","Arial",sans-serif;
-  font-size: 1.7em;
-  color: #999;
-}
-
-/* VIDEO */
-#controls-container {
-  position: relative;
-}
-
-#seek-bar {
-  display: block;
-  margin-bottom: 20px;
-}
-
-#controls {
-  margin: 0 auto;
-  margin-top: 10px;
-  text-align: center;
-  width: 100%;
-  position: relative;
-  z-index: 20;
-}
-
-#controls button {
-  width: 24%;
-  max-width: 200px;
-  margin-top: 0;
-}
-
-#controls button.off {
-  color: #98700D !important;
-}
-
-video::cue {
-  color: #C28E0E;
-  background-color: #000;
-}
-
-.IIV::-webkit-media-controls-play-button,
-.IIV::-webkit-media-controls-start-playback-button {
-  opacity: 0;
-  pointer-events: none;
-  width: 5px;
-}
-
-#quick-facts {
-  margin: 0 auto;
-  /* margin-top: 30px;
-	padding-top: 20px;
-	margin-bottom: 30px;
-	padding-bottom: 20px;
-		width: 100%;
-	border-top:1px dashed #746C66;
-	border-bottom:1px dashed #746C66; */
-  text-align: center;
-}
-
-#quick-facts .intro img {
-  vertical-align: bottom;
-}
-
-#quick-facts p {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
-}
-
-figure {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  margin: 0;
-  border: 2px #C28E0E solid;
-  max-width: 100%;
-  position: relative;
+.social-share .social-media-row .main-content {
   overflow: hidden;
 }
 
-figcaption {
-  position: absolute;
-  width: 190px;
-  height: 190px;
-  top: 0;
-  left: 0;
-  color: #fff;
-  padding: 10px;
-  margin-top: 200px;
-  margin-left: 200px;
-  -webkit-transition: margin .8s;
-  -moz-transition: margin .8s;
-  -o-transition: margin .8s;
-  transition: margin .8s;
-}
-
-figcaption p {
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  line-height: 1.2;
-}
-
-#quick-facts figcaption h4 {
-  color: #bbb !important;
-  margin: 0;
-  padding: 5px 0;
-  text-align: left;
-  font-size: 17px;
-  line-height: 1;
-  text-transform: uppercase;
-  font-weight: normal !important;
-  font-family: "Champion Welterweight","Archivo Black","Arial Black","Arial Bold","Gadget",sans-serif;
-}
-
-figcaption.show {
-  margin-top: 0;
-  margin-left: 0;
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  height: 400px;
-  width: 400px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  background-color: #000;
-  margin: 20px;
-  -webkit-transform-origin: 20% -20%;
-  -moz-transform-origin: 20% -20%;
-  -ms-transform-origin: 20% -20%;
-  transform-origin: 20% -20%;
-  -webkit-transition: -webkit-transform-origin 1s;
-  -moz-transition: -moz-transform-origin 1s;
-  -o-transition: transform-origin 1s;
-  transition: -ms-transform-origin 1s;
-  transition: transform-origin 1s;
-}
-
-.overlay.cover {
-  -webkit-transform-origin: -70% 50%;
-  -moz-transform-origin: -70% 50%;
-  -ms-transform-origin: -70% 50%;
-  transform-origin: -70% 50%;
-}
-
-.error {
-  display: none !important;
-}
-
-.proof-points .third {
+.social-share .social-media-row .not-mobile-friendly .main-content {
   display: inline-block;
-  width: 32%;
-  vertical-align: middle;
+  width: inherit;
+  vertical-align: top;
+  overflow: hidden;
 }
 
-.proof-points .third img {
-  width: 100%;
-  height: auto;
+.social-share .social-media-row .not-mobile-friendly .main-content.non-responsive {
+  width: 280px;
+  margin-right: 20px;
 }
 
-.proof-img {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
+.social-share .social-media-row .not-mobile-friendly .main-content.responsive {
+  width: calc(99% - (280px + 20px)*2);
 }
 
-.opener {
-  margin: 0 auto;
-  max-width: 600px;
-  padding-top: 150px;
-  padding-bottom: 150px;
+.social-share .vid-wrapper {
+  background-color: rgba(194, 142, 14, 0.3);
 }
 
-@media (max-width: 998px) {
-  #controls {
-    margin-bottom: 30px;
+@media screen and (max-width: 1199.98px) {
+  /* xl */
+  .social-share .social-media-row.bg-burst {
+    background-position: center;
+    background-size: cover;
   }
 }
 
-@media (max-width: 768px) {
-  .major-btn {
-    float: none;
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 5px;
+@media screen and (max-width: 991.98px) {
+  /* lg */
+  .social-share .social-media-row .not-mobile-friendly .main-content.responsive {
+    width: 100%;
+  }
+  .social-share .social-media-row .not-mobile-friendly .main-content.responsive h2 {
+    margin-top: 1em;
   }
 }
 
-@media (max-width: 600px) {
-  strong.proof-point {
-    white-space: normal !important;
+@media screen and (max-width: 767.98px) {
+  /* md */
+  .social-share .social-media-row .not-mobile-friendly .main-content h2 {
+    margin-top: 1em;
   }
-  .collegeContent figcaption p {
-    font-size: 14px !important;
-  }
-  .side-link {
-    font-size: 18px !important;
-  }
-  video::cue {
-    font-size: 200%;
+  .social-share .social-media-row .not-mobile-friendly .main-content:first-child h2 {
+    margin-top: 0;
   }
 }
 
-@media (max-width: 450px) {
-  figure {
-    display: block;
-    width: inherit;
-    background-color: #3a3a3a;
-    margin-bottom: 5px;
-  }
-  figure img {
-    width: 200px;
-  }
-  figcaption {
-    width: inherit;
-  }
-  figcaption h4 {
-    margin-top: 10px;
-  }
-  .overlay {
-    height: 500px;
-    width: 500px;
-    margin: 20%;
-    -webkit-transition: -webkit-transform-origin .7s;
-    -moz-transition: -moz-transform-origin .7s;
-    -o-transition: transform-origin .7s;
-    transition: -ms-transform-origin .7s;
-    transition: transform-origin .7s;
-  }
-}
-
-@media (max-width: 350px) {
-  .overlay {
-    height: 400px;
-    width: 400px;
-    margin: 15%;
-    -webkit-transition: -webkit-transform-origin .7s;
-    -moz-transition: -moz-transform-origin .7s;
-    -o-transition: transform-origin .7s;
-    transition: -ms-transform-origin .7s;
-    transition: transform-origin .7s;
-  }
-}
-
-@media (max-width: 300px) {
-  .side-link {
-    font-size: 16px !important;
-  }
-  .collegeContent p.intro {
-    font-size: 16px !important;
-  }
-  .collegeContent p {
-    font-size: 14px !important;
-  }
-  #controls button {
-    font-size: 18px !important;
-    width: 20% !important;
-  }
-}
+/* CSS Document */
+/*#social-sidebar {
+	display: none!important;
+}*/
+/*@import 'wearepurdue';*/

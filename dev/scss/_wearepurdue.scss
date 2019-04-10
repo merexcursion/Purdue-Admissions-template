@@ -1,4 +1,11 @@
-#temp-note {
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+THIS DOESN'T GET INCLUDED IN FULL SITE CSS
+It is a separate file ncluded only for wearepurdue page
+
+I forgot this earlier so need to remove scss and switch to css before updating
+*/
+.wearepurdue {
+	#temp-note {
 	display: none;
 }
 /* this here only temp - gets added to casade page itself */
@@ -293,10 +300,11 @@ figure img {
 			padding-top: 150px;
 			padding-bottom: 150px;
 		}
+}
 @media (max-width: 998px) { 
 	
 	
-	#controls {
+	.wearepurdue #controls {
 		margin-bottom: 30px;
 	}
 }
@@ -304,7 +312,7 @@ figure img {
 @media (max-width: 768px) { 
 	
 	
-	.major-btn {
+	.wearepurdue .major-btn {
 		float:none;
 		text-align: center;
 		font-size: 1em;
@@ -312,7 +320,7 @@ figure img {
 	}
 }
 @media (max-width: 600px) { 
-	
+	.wearepurdue {
 	strong.proof-point {
 		white-space: normal!important;
 	}
@@ -326,9 +334,11 @@ figure img {
 	video::cue {
 	  font-size: 200%;
 	}
+	}
 	
 }
 @media (max-width: 450px) { 
+	.wearepurdue {
 	figure {
 		display: block;
 		width: inherit;
@@ -354,12 +364,13 @@ figure img {
 		transition: -ms-transform-origin .7s;
 		transition: transform-origin .7s;
 	}
+	}
 
 		
 }
 @media (max-width: 350px) { 
 	
-	.overlay {
+	.wearepurdue .overlay {
 		height: 400px;
 		width: 400px;
 		margin: 15%;
@@ -372,7 +383,7 @@ figure img {
 		
 }
 @media (max-width: 300px) { 
-	
+	.wearepurdue {
 	.side-link {
 		font-size: 16px!important;
 	}
@@ -388,4 +399,6 @@ figure img {
 		font-size: 18px!important;
 		width: 20%!important;
 	}
+	}
 }
+	

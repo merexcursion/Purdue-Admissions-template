@@ -10,8 +10,12 @@ if($('body').hasClass('home')){
 	var $majorsList = $('#majors-list');
 	var $majors = $majorsList.find('li');
 	var $majorsLinks = $majors.find('a');
+	var majorsPadding = $majorsLinks.eq(0).css('padding-left');
 	var $school = $('#school-choice');
 	var $interest = $('#interest-choice');
+	var majorsShowSpeed = 300;
+	var majorsHideSpeed = 300;
+	var majorsAnimationDelay = 300;
 	var $noMatchNote = $('#no-match-note');
 	var windowWidth = $( window ).width();
 	$noMatchNote.hide();
@@ -136,52 +140,50 @@ if($('body').hasClass('home')){
 	// ------------------------------------------------------------------------
 	// Find undergrad majors
 	// ------------------------------------------------------------------------
-	$majors.find('a').css('width','1px');
-	$majors.hide();
 	
-	$school.change(function(){
+	var whichSchool
+	$school.change(function(){ // identify which are current school
 		$noMatchNote.hide();
-		var whichSchool = $(this).val();
-		$majorsList.find('.currentS').not('.currentI').hide().find('a').css('width','1px');
+		whichSchool = $(this).val();
 			
 		$majors.each(function(ind,elem){
-			$(elem).removeClass('currentS');
+			
 			if( $(elem).attr('data-show').indexOf(whichSchool) !== -1 ){
-				$(elem).show().addClass('currentS').find('a').animate({
-					width: '100%'
-				}, 300 );
+				$(elem).addClass('currentS')
+			} else {
+				$(elem).removeClass('currentS');
 			}
 		});
-		removeNoncross();
+		animateMajors(removeNoncross());
 	});
 	
 	var whichInterest;
-	$interest.change(function(){
+	$interest.change(function(){ // identify which are current school
 		$noMatchNote.hide();
 		whichInterest = $(this).val();
-		$majorsList.find('.currentI').not('.currentS').hide().find('a').css('width','1px'); 
 		
-		$majors.delay(5000).each(function(ind,elem){
-			$(elem).removeClass('currentI');
-			if( $(elem).attr('data-show').indexOf(whichInterest) !== -1 ){
-				$(elem).show().addClass('currentI').find('a').animate({
-					width: '100%'
-				}, 300 );
-			}
+		$majors.each(function(ind,elem){
 			
+			if( $(elem).attr('data-show').indexOf(whichInterest) !== -1 ){
+				$(elem).addClass('currentI');
+			} else {
+				$(elem).removeClass('currentI');
+			}
 		});
-		removeNoncross();
+		animateMajors(removeNoncross());
 	});
 	
-	function removeNoncross(){ // remove those that aren't in both if both choices set
+	function removeNoncross(){ 
+		
 		if( $school.val() !== 'initial' && $interest.val() !== 'initial' ){
 			
-			var $noCrosses = $majors.not('.currentS.currentI');
 			var $crosses = $majorsList.find('.currentS.currentI');
-			$noCrosses.hide().find('a').css('width','1px').removeClass('currentS currentI');
 			
 			if($crosses.length === 0) {
 				$noMatchNote.show();
+				return 'hideAll';
+			} else {
+				return 'showBoth';
 			}
 			
 		} else {
@@ -189,38 +191,86 @@ if($('body').hasClass('home')){
 			if( $school.val() === 'initial' && $interest.val() !== 'initial'){
 				
 				$noMatchNote.hide();
-				whichInterest = $interest.val();
-				$majorsList.find('.currentS').hide().find('a').css('width','1px').removeClass('currentS'); 
-
-				$majors.delay(5000).each(function(ind,elem){
-					$(elem).removeClass('currentI');
-					if( $(elem).attr('data-show').indexOf(whichInterest) !== -1 ){
-						$(elem).show().addClass('currentI').find('a').animate({
-							width: '100%'
-						}, 300 );
-					}
-
-				});
-				
+				return 'currentI';
+			
 			}
 			if($school.val() !== 'initial' && $interest.val() === 'initial'){
 				
 				$noMatchNote.hide();
-				whichInterest = $school.val();
-				$majorsList.find('.currentI').hide().find('a').css('width','1px').removeClass('currentI'); 
-
-				$majors.delay(5000).each(function(ind,elem){
-					$(elem).removeClass('currentS');
-					if( $(elem).attr('data-show').indexOf(whichInterest) !== -1 ){
-						$(elem).show().addClass('currentS').find('a').animate({
-							width: '100%'
-						}, 300 );
-					}
-
-				});
+				return 'currentS';
+				
 			}
 		}
 	}
+	function animateMajors(showClass){ 
+		
+		switch(showClass){
+				case 'hideAll' :
+					$majors.each(function(ind,elem){
+						var thisElem = elem;
+						$(elem).find('a').animate({
+							width: '0px',
+							'padding-left': 0,
+							'padding-right': 0,
+							opacity: 0.5
+						}, majorsHideSpeed,'linear', function(thisElem){
+							$(elem).hide();
+						});
+					});
+					
+				break;
+				case 'showBoth' :
+					$majors.each(function(ind,elem){
+						var thisElem = elem;
+						if( $(elem).hasClass( 'currentS' ) && $(elem).hasClass( 'currentI' ) ){
+							$(elem).show().find('a').delay(majorsAnimationDelay).animate({
+								width: '100%',
+								'padding-left': majorsPadding,
+								'padding-right': majorsPadding,
+								opacity: 1
+							}, majorsShowSpeed,'swing' );
+						} else {
+							$(elem).find('a').animate({
+								width: '0px',
+								'padding-left': 0,
+								'padding-right': 0,
+								opacity: 0.5
+							}, majorsHideSpeed,'linear',function(thisElem){
+							$(elem).hide();
+						} );
+						}
+					});
+				break;
+				default :
+					$majors.each(function(ind,elem){
+						var thisElem = elem;
+						if( $(elem).hasClass( showClass ) ){
+							$(elem).show().find('a').delay(majorsAnimationDelay).animate({
+								width: '100%',
+								'padding-left': majorsPadding,
+								'padding-right': majorsPadding,
+								opacity: 1
+							}, majorsShowSpeed,'swing' );
+						} else {
+							$(elem).find('a').animate({
+								width: '0px',
+								'padding-left': 0,
+								'padding-right': 0,
+								opacity: 0.5
+							}, majorsHideSpeed,'linear', function(thisElem){
+							$(elem).hide();
+						});
+						}
+					});
+			   }
+	}
+	// initial set up
+	animateMajors('hideAll');
+	setTimeout(function(){
+        $majorsList.removeClass('hide');
+		$noMatchNote.removeClass('hide');
+    },2000);
+	
 	
 	// for hover colors
 	var majorLinkColorClasses = [

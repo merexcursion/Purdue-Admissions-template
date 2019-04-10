@@ -1,0 +1,83 @@
+.social-share {
+	.gold {
+		h2 {
+			color: #000;
+		}
+	}
+	.social-media-row {
+		padding: 2em 0;
+		
+		&.bg-burst {
+			background-image: url(https://admissions.purdue.edu/images/design-elements/Bursts-grey-majors.png);
+			background-repeat: no-repeat;
+			background-position: right 70%;
+		}
+		
+		.main-content {
+			overflow: hidden;
+		}
+		.not-mobile-friendly {
+			.main-content {
+				display: inline-block;
+				width: inherit;
+				vertical-align: top;
+				overflow: hidden;
+				
+				&.non-responsive {
+					width: 280px;
+					margin-right: 20px;
+				}
+				&.responsive {
+					width: calc(99% - (280px + 20px)*2);
+				}
+			}
+		}
+	}
+	.vid-wrapper {
+		background-color: rgba($color_campusGold, 0.3);
+	}
+}
+@include desktopLargeMax {
+	.social-share {
+		.social-media-row.bg-burst {
+			background-position: center;
+			background-size: cover;
+		}
+	}
+}
+@include desktopSmallMax {
+	.social-share {
+		.social-media-row {
+			.not-mobile-friendly {
+				.main-content {
+					&.responsive {
+						
+						width: 100%;
+						
+						h2 {
+							margin-top: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@include tabletMax {
+	.social-share {
+		.social-media-row {
+			.not-mobile-friendly {
+				.main-content {
+					h2 {
+						margin-top: 1em;
+					}
+					&:first-child {
+						h2 {
+							margin-top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

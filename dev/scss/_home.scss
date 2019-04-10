@@ -41,7 +41,7 @@
 	}
 }
 #dates-content {
-	background: #222 url(../images/linesBG.png) no-repeat center;
+	background: #222 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
     background-size: cover;
 	padding-top: 6em;
     padding-bottom: 5em;
@@ -181,7 +181,7 @@
 .home {
 	#home-main-cta {
 		text-align: left;
-		background: #222 url(../images/linesBG.png) no-repeat center;
+		background: #222 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
 		padding-top: 20px;
 		padding-bottom: 20px;
 
@@ -207,7 +207,7 @@
 		}
 	}
 	#inner-page-content {
-		background: #000 url('../images/Bursts-home3-rgb.png') no-repeat center 6%; 
+		background: #000 url('https://admissions.purdue.edu/images/design-elements/Bursts-home3-rgb.png') no-repeat center 6%; 
 		background-size:130%;
 		padding-top: 0;
 	}
@@ -230,7 +230,7 @@
 				border-color: transparent;
 				color: #fff!important;
 				padding: 10px 20px;
-				background: #2e2e2e url(../images/visitBG.png) center;
+				background: #2e2e2e url(https://admissions.purdue.edu/images/design-elements/visitBG.png) center;
 				
 				&:focus {
 					outline: none;
@@ -304,7 +304,7 @@
 	
 	.closeXP {
 		color: #000!important;
-		background: $color-campusGold url(../images/gold-black-lines.png) no-repeat center;
+		background: $color-campusGold url(https://admissions.purdue.edu/images/design-elements/gold-black-lines.png) no-repeat center;
 		background-size: cover;
 		padding: 0;
 		display: block;
@@ -349,7 +349,7 @@
 			overflow-x: hidden;
 			padding-right: 10%;
 			width: 110%;
-				cursor: url(../images/scroll-cursor.png), auto;
+				cursor: url(https://admissions.purdue.edu/images/design-elements/scroll-cursor.png), auto;
 
 			p:last-child {
 				padding-bottom: 30px;
@@ -772,6 +772,10 @@
 		object-fit: cover;
 		height: 115%;
 	}
+	
+}
+@supports (object-fit: cover) and (-ms-ime-align:auto) {
+	#video-container video{height:auto!important}
 }
 
 #virtual-tour {
@@ -789,7 +793,7 @@
 	margin: 0;
 }
 #visit-btn-wrap {
-	background: url(../images/visit-btn-bg.png) no-repeat center;
+	background: url(https://admissions.purdue.edu/images/design-elements/visit-btn-bg.png) no-repeat center;
 	overflow:hidden;
 	margin-top: 5px;
 	

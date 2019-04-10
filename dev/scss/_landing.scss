@@ -14,10 +14,10 @@
 		background-color: #222;
 		color: $color-campusGold;
 		font-family: $font-archivo-narrow;
-		font-size: 1.3em;
-		text-align: left;
 		font-weight: 700;
 		text-decoration: none!important;
+		font-family: $font-archivo-narrow;
+		font-size: 1.3em;
 
 		&:hover {
 			color: $color-campusGold;
@@ -25,6 +25,12 @@
 		}
 	}
 	.landing-links-title {
+		font-family: $font-champion-welter!important;
+		color: $color-campusGold!important;
+		font-size: 1.7em;
+		text-align: center;
+		text-transform: uppercase;
+		line-height: 1;
 		font-family: $font-champion-welter!important;
 		color: $color-campusGold!important;
 		font-size: 1.7em;
@@ -39,6 +45,15 @@
 		width: 100%;
 		background-color: rgba(0,0,0,0.5);
 		padding: 30px 10px;
+		font-weight: 700;
+		font-size: 2vw;
+		font-family: $font-archivo-narrow;
+		text-shadow: -1px -1px 3px #000, 0 0 7px #000;
+		line-height: 1;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 	#intro {
 		padding-bottom: 1.7em;
@@ -78,34 +93,31 @@
 	}
 }
 
-.image-link-title {
-	font-weight: 700;
-	font-size: 2vw;
-	font-family: $font-archivo-narrow;
-	text-shadow: -1px -1px 3px #000, 0 0 7px #000;
-	line-height: 1;
-	
-	&:hover {
-		text-decoration: none;
+.landing.ad {
+	.jumbotron.cta {
+		background: transparent;
+		margin-bottom: 0;
+		margin-top: 0;
+		padding: 1em 0;
+		
+		a {
+			margin: 5px;
+		}
+	}
+	.section {
+		padding: 2em 0 1em 0;
+	}
+	.social-links {
+		color: $color_campusGold;
+		font-size: 3em;
+		
+		a {
+			margin: 5px;
+		}
+		
 	}
 }
-.landing {
-	.feature-btn {
-		font-family: $font-archivo-narrow;
-		font-size: 1.3em;
-		text-align: left;
-		font-weight: 700;
-		text-decoration: none!important;
-	}
-	.landing-links-title {
-		font-family: $font-champion-welter!important;
-		color: $color-campusGold!important;
-		font-size: 1.7em;
-		text-align: center;
-		text-transform: uppercase;
-		line-height: 1;
-	}
-}
+
 
 /* media queries */
 @include desktopLarge {
@@ -137,6 +149,12 @@
 			.image-link-title {
 				font-size: 2.2vw;
 			}
+		}
+	}
+	.landing.ad {
+		.social-links {
+			font-size: 2em;
+
 		}
 	}
 }
@@ -183,7 +201,9 @@
 		.landing-image-links-block {
 			display: block!important;
 		}
+		
 	}
+	
 }
 @include phoneMax {
 	.landing {
@@ -207,4 +227,5 @@
 			}
 		}
 	}
+	
 }

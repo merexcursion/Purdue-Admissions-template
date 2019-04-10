@@ -35,6 +35,7 @@ Purdue accordion altered +
 		border: solid 1px #fff;
 		margin: 0 auto;
 		padding: 15px;
+		padding-right: 50px;
 		cursor: pointer;
 		outline: none;
 		font-size: 20px;
@@ -44,6 +45,9 @@ Purdue accordion altered +
 		
 		&:first-child {
 			border-top: 0;
+		}
+		&.black:focus {
+			background-color: #000;
 		}
 		
 		i {
@@ -378,7 +382,7 @@ Tables
 }
 .table-striped {
 	caption {
-		background: transparent url('../images/table-caption-bg.png') no-repeat center;
+		background: transparent url('https://admissions.purdue.edu/images/design-elements/table-caption-bg.png') no-repeat center;
 		
 		span {
 			display: inline-block;

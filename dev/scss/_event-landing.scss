@@ -1,0 +1,29 @@
+.event-landing {
+	
+	.feature-btn {
+		padding: 20px 30px;
+		display: inline-block;	
+		width: 100%;
+		margin-bottom: 30px;
+		background-color: #111;
+		color: $color-campusGold;
+		font-family: $font-archivo-narrow;
+		font-weight: 700;
+		text-decoration: none!important;
+		font-family: $font-archivo-narrow;
+		font-size: 1.3em;
+
+		&:hover {
+			color: $color-campusGold;
+			background-color: #333;
+		}
+	}
+	
+}
+@include desktopSmallMax {
+	.event-landing {
+		.feature-btn {
+			margin-bottom: 5px;
+		}
+	}
+}

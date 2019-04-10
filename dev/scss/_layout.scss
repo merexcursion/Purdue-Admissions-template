@@ -2,6 +2,10 @@
 * {
     box-sizing: border-box;
 }
+/* older browsers  */
+header, section, footer, aside, nav, main, article, figure {
+  display: block; 
+}
 /* user ALERTS */
 .error-alert {
 	padding: 0.75rem 1.25rem;
@@ -123,6 +127,9 @@ button:focus {
 		.lead {
 			color: lighten($color-campusGold,5);
 		}
+	}
+	table {
+		color: #ddd;
 	}
 	.vid-wrapper {
 		background-color: #111;
@@ -294,6 +301,17 @@ iframe {
 			height: 535px;
 		}
 	}
+	div[class*="-12 "] iframe {
+		&.video {
+			width: 100%;
+			height: 535px;
+		}
+	}
+	.col-md-8 iframe {
+		&.video {
+			height: 350px;
+		}
+	}
 	.main-content .jumbotron {
 		iframe.single {
 
@@ -304,7 +322,8 @@ iframe {
 	}
 }
 @include desktopSmallMax {
-	iframe {
+	iframe,
+	div[class*="-12 "] iframe {
 		&.video {
 			width: 690px;
 			height: 398px;
@@ -314,6 +333,12 @@ iframe {
 			height: 106px;
 		}
 	}
+	.col-md-8 iframe {
+		&.video {
+			height: 263px;
+		}
+	}
+	
 	.main-content .jumbotron {
 		iframe.single {
 
@@ -331,13 +356,19 @@ iframe {
 	}
 }
 @include tabletMax {
-	iframe {
+	iframe,
+	div[class*="-12 "] iframe {
 		&.video {
 			width: 510px;
 			height: 295px;
 		}
 		&.j-side {
 			height: 251px;
+		}
+	}
+	.col-md-8 iframe {
+		&.video {
+			height: 295px;
 		}
 	}
 	#sidebar {
@@ -367,7 +398,8 @@ iframe {
 	}
 }
 @include phoneMax {
-	iframe {
+	iframe,
+	div[class*="-12 "] iframe {
 		&.video,
 		&.j-side,
 		&.center,

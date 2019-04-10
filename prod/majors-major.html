@@ -10,11 +10,29 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, user-scalable=no" name="viewport" />
     <link href="https://www.purdue.edu/purdue/images/favicon.ico" rel="shortcut icon" />
+	
+	<!-- partial:_twitter-card.html -->
+	<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@PurdueAdmission" />
+<meta name="twitter:title" content="Purdue Admissions" />
+<meta name="twitter:description" content="150 Years of Giant Leaps." />
+<meta name="twitter:image" content="https://admissions.purdue.edu/images/twitter-card-2-1ratio.png" />
+	<!-- partial -->
+	<!-- partial:_meta-og.html -->
+	<meta property="og:url" name="og:url" content="https://www.admissions.purdue.edu/" />
+<meta property="og:type" name="og:type" content="website" />
+<meta property="og:title" name="og:title" content="Purdue Admissions" />
+<meta property="og:description" name="og:description" content="150 Years of Giant Leaps." />
+<meta property="og:image" name="og:image" content="https://admissions.purdue.edu/images/fb-og-image.png" />
+<meta property="fb:app_id" name="fb:app_id" content="492762947795038" />
+
+	<!-- partial -->
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 	
     <link rel="stylesheet" text="text/css" href="css/main.css" />
+	<link rel="stylesheet" text="text/css" href="css/print.css" media="print" />
     
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,700" rel="stylesheet">
 	<!--[if IE]>
@@ -59,7 +77,7 @@
 				
 				<ul class="nav navbar-nav mr-auto information">
 					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Find Info For <b class="caret"></b></a>
-						<ul class="dropdown-menu"><p class="hide">Find Info For</p>
+						<ul class="dropdown-menu">
 							<li><a href="/index.php">Prospective Students</a></li>
 							<li><a href="/admitted/index.php">Admitted Students</a></li>
 							<li><a href="http://www.purdue.edu/purdue/current_students/index.php" target="_blank">Current Students</a></li>
@@ -93,14 +111,16 @@
 		<div class="top">
 			<div class="container">
 				<div class="row">
-					<div class="logo col-lg-2 col-md-3 col-sm-12">
+					
+					<div class="logo col-lg-2 col-md-3 col-sm-12 screen-only">
 						<a href="https://www.purdue.edu">
 							<img alt="Purdue University" src="https://www.purdue.edu/purdue/images/logo.png"/>
 						</a>
 					</div>
-					<div class="department col-lg-9 col-md-9 col-sm-9 col-xs-12">
+					<div class="department col-lg-9 col-md-9 col-sm-9 col-xs-12 screen-only">
 						<a href="/index.php">Undergraduate Admissions</a><!--<span class="tagline"><a href="#">Website tagline</a></span>-->
 					</div>
+					<div class="col-lg-12 print-only"><img style="margin-top:30px" alt="print-logo" src="images/print-logo.png"/></div>
 				</div>
 			</div>
 		</div>
@@ -201,7 +221,7 @@
 						<p>Art History students are taught to think critically, research, and learn theoretical aspects of this field, and express themselves effectively in written and oral form.  Several courses contribute to interdisciplinary programs in classical studies, Latin American and Latino Studies, women's, gender, and sexuality studies, and Italian Studies. Student who study art history must minor in another field. Students with an undergraduate degree may prepare for a future career in teaching, in the museum world, in art-dealing, in art journalism, or to attend graduate school.</p>
 						<p>All liberal arts majors prepare students with the skills identified as contributing to managerial success:  communicating and listening well, possessing insights into others, creative/critical thinking, problem solving, and the ability to make connections across complex ideas.</p>
 						
-						<div class="single-major-cta">
+						<!--<div class="single-major-cta">
 						
 							<a href="#" class="purple">CTA LINK ONE &nbsp; <i class="fas fa-pencil-alt"></i></a>
 
@@ -211,9 +231,9 @@
 							
 							<!-- <a href="#" class="yellow">CTA LINK FOUR &nbsp; <i class="fas fa-pencil-alt"></i></a>
 
-							<a href="#" class="orange">CTA LINK Five &nbsp; <i class="fas fa-list-ol"></i></a> -->
+							<a href="#" class="orange">CTA LINK Five &nbsp; <i class="fas fa-list-ol"></i></a> 
 							
-						</div>
+						</div> -->
 						
 						<!--<div class="text-center grayDrk">
 						<img src="images/Asian-female-student-in-science-lab-10.jpg">
@@ -246,7 +266,10 @@
 					
 						
 						<h2>Plan of Study</h2>
-						<p><a href="#">Art History, BA</a></p>
+						<ul id="POS" class="list-group ">
+							<li class="list-group-item"><a href="https://www.cla.purdue.edu/students/academics/majors/ahst.html">Art History, BA</a></li>
+							
+						</ul>
 						
 						<button onclick="window.location = 'https://www.cla.purdue.edu/students/academics/majors/ahst.html'" class="button button-bar button-light button-icon">Art History Webpage <span class="button__icon fas fa-external-link-alt" aria-hidden="true"></span></button>
 						
@@ -266,28 +289,38 @@
 							<a href="#">newstudent@purdue.edu</a></p>
 						
 						<hr class="striped-gold show-lg">
+						
+						<a class="button button-bar button-gray70 button-light" data-localizer="ignore" href="../health-and-human-sciences/index.php" id="college-link" data-localizer-ignore="true">College of Health and Human Sciences</a>
+						
+						<!--<a class="button button-hollow button-opaque" data-toggle="collapse" href="#mailing-list" localizerid="5a02076b47d6e7633cd9c60b" aria-expanded="true">Get On Our Mailing List</a>-->
+						
+						<button class="button button-icon button-gray70 button-light" data-toggle="collapse" data-target="#mailing-list">
+							Get On Our Mailing List
+							<span class="button__icon fas fa-envelope" aria-hidden="true"></span>
+						</button>
+
 									
 					</div>
 					
 					<div class="col-lg-4 aside main-content">
 						
 						<h2>Careers in Art History</h2>
-						<div id="career-text">
+						<!--<div id="career-text">
 							<p>As an aeronautical or astronautical engineer, you can work in aviation, defense, space exploration&#8212;even the automotive industry. Specific responsibilities for an aeronautical engineer can include:</p>
-<ol>
-<li>Conducting wind tunnel tests on an aircraft model</li>
-<li>Designing and analyzing an airplane wing&#8217;s structure</li>
-<li>Testing aircraft engines</li>
-</ol>
-<p>For an astronautical engineer:</p>
-<ol>
-<li>Designing power systems for satellites</li>
-<li>Developing communications systems</li>
-<li>Designing reusable space vehicles</li>
-</ol>
-<p>Your career path could include graduate school or employment with one of many companies or organizations, including ATA Engineering, Ball Aerospace, Belcan, Blue Origin, Boeing, Butler America, Dassault Falcon Jet, General Electric (Aircraft Engines, Aviation and Transportation), Gulfstream, Lockheed Martin, Military Service, NASA, NAS, NASIC, Navair, Northrop Grumman, Orbital ATK, Rockwell Collins, Rolls-Royce, SpaceX, and Xcor Aerospace.</p>
-						</div>
-						<!--<ul id="careers-list" class="list-group">
+								<ol>
+								<li>Conducting wind tunnel tests on an aircraft model</li>
+								<li>Designing and analyzing an airplane wing&#8217;s structure</li>
+								<li>Testing aircraft engines</li>
+								</ol>
+								<p>For an astronautical engineer:</p>
+								<ol>
+								<li>Designing power systems for satellites</li>
+								<li>Developing communications systems</li>
+								<li>Designing reusable space vehicles</li>
+								</ol>
+								<p>Your career path could include graduate school or employment with one of many companies or organizations, including ATA Engineering, Ball Aerospace, Belcan, Blue Origin, Boeing, Butler America, Dassault Falcon Jet, General Electric (Aircraft Engines, Aviation and Transportation), Gulfstream, Lockheed Martin, Military Service, NASA, NAS, NASIC, Navair, Northrop Grumman, Orbital ATK, Rockwell Collins, Rolls-Royce, SpaceX, and Xcor Aerospace.</p>
+						</div>-->
+						<ul id="careers-list" class="list-group">
 							<li class="list-group-item"><i class="fab fa-apple"></i> &nbsp; Teacher</li>
 							<li class="list-group-item"><i class="fas fa-certificate"></i> &nbsp; Museum and Archive Curator</li>
 							<li class="list-group-item"><i class="far fa-money-bill-alt"></i> &nbsp; Art Sales</li>
@@ -297,27 +330,39 @@
 							<li class="list-group-item"><i class="fas fa-pencil-alt"></i> &nbsp; Journalism</li>
 							<li class="list-group-item"><i class="fas fa-flask"></i> &nbsp; Teaching and Research</li>
 							<li class="list-group-item"><i class="fas fa-certificate"></i> &nbsp; Non-Profit Management</li>
-						</ul>-->
-						
-					
-						<h3>Related Career Interests</h3>
-						<ul class="list-inline">
-							<li><a href="#">Public Service or Social Sciences</a></li>
-							<li><a href="#">Teaching and Education</a></li>
-							<li><a href="#">Visual or Performing Arts</a></li>
 						</ul>
 						
-						<h3>Related Majors</h3>
-						<ul class="list-inline">
-							<li><a href="#">Classical Studies</a></li>
-							<li><a href="#">Film &amp; Theatre Production</a></li>
-							<li><a href="#">History</a></li>
-							<li><a href="#">Sound for Performing Arts</a></li>
-							<li><a href="#">Studio Arts &amp; Technology</a></li>
-							<li><a href="#">Undecided Liberal Arts</a></li>
-							<li><a href="#">Visual Arts Design Education</a></li>
-							<li><a href="#">Visual Arts Education</a></li>
-						</ul>
+						<div class="accordion">
+							<button class="collapsed accordion__heading black" data-toggle="collapse" data-target="#related-career-interests" aria-controls="related-career-interests" aria-expanded="false">Related Career Interests <i class="fas fa-minus-square closex"></i><i class="fas fa-plus-square"></i></button>
+							<div class="collapse accordion__content majors-accordion" id="related-career-interests">
+								<div class="accordion__item">
+						
+								<ul class="list-inline">
+									<li><a href="https://www.admissions.purdue.edu/purduesforme/index.php">Public Service or Social Sciences</a></li>
+									<li><a href="https://www.admissions.purdue.edu/purduesforme/index.php">Teaching and Education</a></li>
+									<li><a href="#">Visual or Performing Arts</a></li>
+								</ul>
+								</div>
+							</div>
+						</div>
+						<div class="accordion">
+							<button class="collapsed accordion__heading black" data-toggle="collapse" data-target="#related-majors" aria-controls="related-majors" aria-expanded="false">Related Majors <i class="fas fa-minus-square closex"></i><i class="fas fa-plus-square"></i></button>
+							<div class="collapse accordion__content majors-accordion" id="related-majors">
+								<div class="accordion__item">
+						
+								<ul class="list-inline">
+									<li><a href="https://www.admissions.purdue.edu/purduesforme/index.php">Classical Studies</a></li>
+									<li><a href="https://www.admissions.purdue.edu/purduesforme/index.php">Film &amp; Theatre Production</a></li>
+									<li><a href="https://www.admissions.purdue.edu/purduesforme/index.php">History</a></li>
+									<li><a href="#">Sound for Performing Arts</a></li>
+									<li><a href="#">Studio Arts &amp; Technology</a></li>
+									<li><a href="#">Undecided Liberal Arts</a></li>
+									<li><a href="#">Visual Arts Design Education</a></li>
+									<li><a href="#">Visual Arts Education</a></li>
+								</ul>
+								</div>
+							</div>
+						</div>
 					
 					</div>
 				</div>
@@ -326,30 +371,15 @@
 				
 			</div>
 		</section>
+		
+		
+		
     </main>
-							
-    <!-- partial:partials/_breadcrumb.html -->
-	 <section id="breadcrumb-nav">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12"><!-- max-width: 1170px -->
-				<nav aria-label="breadcrumb">
-				  <ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Main Page</a></li>
-					<li class="breadcrumb-item"><a href="#">Higher SubPage</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Current Page</li>
-				  </ol>
-				</nav>
-			</div>
-		</div>
-	</div>
-</section>
-	<!-- partial -->
    
     <!-- partial:partials/_footer-sidebar.html -->
 	<section id="footer-sidebar">
     <div class="container">
-	<a id="side-menu-btn"><i class="fa fa-bars"></i></a>
+	<a id="side-menu-btn"><i class="fas fa-bars"></i><a class="sr-only">menu</a></a>
 
 	<ul id="sidenav" class="nav nav-pills flex-column">
 	  <li class="top-level"><a href="#">Section Home</a></li>
@@ -371,16 +401,28 @@
 	<!-- partial -->
    
     <!-- partial:partials/_social-sidebar.html -->
-	 <section id="social-sidebar">
+	 <section class="hide-no-js" id="social-sidebar">
     <div class="container">
-	<a id="side-social-btn"><i class="fa fa-share-alt"></i></a>
+	<a id="side-social-btn"><i class="fa fa-share-alt"></i><span class="sr-only">Share this page:</span></a>
 
 	<ul id="social-links" class="nav nav-pills flex-column">
-		<li><a class="slayterblue-text" href="#"><i class="fab fa-facebook-square"></i></a></li>
-		<li><a class="ameliablue-text" href="#"><i class="fab fa-twitter"></i></a></li>
-		<li><a class="orange-text" href="#"><i class="fab fa-instagram"></i></a></li>
-		<li><a class="yellow-text" href="#"><i class="fab fa-snapchat-ghost"></i></a></li>
-		<li><a class="purple-text" href="#"><i class="fab fa-pinterest"></i></a></li>
+		
+		<li><a class="fb-share" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">Facebook</span></a></li>
+		
+		<li><a data-hashes="" class="twitter-share" href="https://twitter.com/share?url=https://www.admissions.purdue.edu/"><i class="fab fa-twitter"></i><span class="sr-only">Tweet</span></a>
+		</li>
+		
+		<li><a id="reddit-share" class="" href="#"><i class="fab fa-reddit-alien"></i><span class="sr-only">Reddit</span></a></li>
+		
+		<li><a id="tumblr-share" class="" href="#"><i class="fab fa-tumblr-square"></i><span class="sr-only">Tumblr</span></a></li>
+		
+		<li><a id="blogger-share" class="" href="#"><i class="fab fa-blogger-b"></i><span class="sr-only">Blogger</span></a></li>
+		
+		<li class="show-sm"><a id="sms-share" href="#"><i class="fas fa-sms"></i><span class="sr-only">Text</span></a></li>
+		
+		<li><a id="email-share" href="#"><i class="fas fa-envelope"></i><span class="sr-only">Email</span></a></li>
+		
+		
 	</ul>
 	</div>
 </section>
@@ -492,7 +534,6 @@
 </div>
 
 <script type="text/javascript" src="js/main.js"></script>
-
 
 	<!-- partial -->
 	

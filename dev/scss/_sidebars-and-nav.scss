@@ -33,6 +33,38 @@
 		}
 	}
 }
+.light-bg {
+	#footer-sidebar,
+	#social-sidebar,
+	#side-menu-btn,
+	#side-social-btn {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+}
+/*
+.landing,
+.light-bg {
+	#footer-sidebar,
+	#social-sidebar {
+		background-color: $color_campusGold;
+	}
+	#side-menu-btn,
+	#side-social-btn {
+		background-color: $color_campusGold;
+	}
+	
+}
+.home {
+	#footer-sidebar,
+	#social-sidebar,
+	#side-menu-btn,
+	#side-social-btn {
+		background-color: #222;
+	}
+	
+}*/
 #sidebar {
 	a {
 		font-weight: 700;
@@ -88,17 +120,7 @@
 
 	}
 }
-#social-sidebar {
-	.nav-pills li a {
-		font-size: 1.5em;
-		text-decoration: none;
-		line-height: 1;
-		
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-}
+
 #footer-sidebar,
 #social-sidebar {
 	width: 250px;
@@ -112,7 +134,7 @@
 	padding: 20px;
 	padding-left: 0;
 	padding-right: 30px;
-	@include box-shadow(3px 3px 10px, #000, 0.7);
+	@include box-shadow(3px 8px 8px, #000, 0.5);
 	
 	&:hover { 
 		left: 0;
@@ -130,22 +152,32 @@
 		}
 	} 
 }
-.light-bg #footer-sidebar,
-.light-bg #social-sidebar,
-.home #social-sidebar {
-	box-shadow: none;
-}
+
 #social-sidebar {
 	margin-top: 70px;
 	left: -110px;
 	width: 100px;
+	
+	.nav-pills li a {
+		font-size: 1.5em;
+		text-decoration: none;
+		line-height: 1;
+		
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 	
 	#social-links li a {
 		-webkit-transition:  -webkit-transform 300ms; 
 		transition: transform 300ms;
 		display: inline-block;
 		margin-bottom: 5px;
+		color: $color_campusGold;
 		
+		&:visited {
+			color: $color_campusGold;
+		}
 		
 		&:hover {
 			color: inherit;
@@ -255,14 +287,9 @@
 	padding-left: 30px;
 	color: #ddd;
 	background-color: #333;
-	@include box-shadow(5px 5px 8px, #000, 0.7);
+	@include box-shadow(7px 5px 6px, #000, 0.5);
 }
 
-.light-bg #side-menu-btn,
-.light-bg #side-social-btn,
-.home #side-social-btn {
-	box-shadow: none;
-}
 #top-link {
 	position: fixed;
 	top: 275px;
