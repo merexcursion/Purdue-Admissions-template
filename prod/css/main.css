@@ -10285,18 +10285,6 @@ table {
   color: #ffd100;
 }
 
-.slayterblue td,
-.rossadegreen td,
-.brick td,
-.teal td,
-.purple td,
-.trueblue td,
-.gray td,
-.brown td,
-.landgreen td {
-  color: #fff;
-}
-
 /* calc */
 /*
 	Source: https://css-tricks.com/snippets/sass/power-function/
@@ -11941,47 +11929,6 @@ header, section, footer, aside, nav, main, article, figure {
   display: block;
 }
 
-/* user ALERTS */
-.error-alert {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-}
-
-.notice-alert {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
-}
-
-.success-alert {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-}
-
-.info-alert {
-  padding: 0.75rem 1.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  color: #0c5460;
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
-}
-
 body {
   color: #111;
   background-color: #fff;
@@ -12950,6 +12897,76 @@ Purdue accordion altered +
 
 /* 	
 =============================================
+Alerts
+=============================================
+*/
+.alert.alert-danger {
+  background-color: #f7d4e5;
+  border-color: #f3bed8;
+  color: #571033;
+}
+
+.alert.alert-info {
+  background-color: #c7e6e6;
+  border-color: #a3d6d7;
+  color: #1c4040;
+}
+
+.alert.alert-success {
+  background-color: #dbe9ab;
+  border-color: #cade83;
+  color: #3a4512;
+}
+
+.alert.alert-warning {
+  background-color: #ffd9a9;
+  border-color: #ffc376;
+  color: #613700;
+}
+
+/* WYSIWYG alerts */
+.error-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: #f7d4e5;
+  border-color: #f3bed8;
+  color: #571033;
+}
+
+.notice-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: #ffd9a9;
+  border-color: #ffc376;
+  color: #613700;
+}
+
+.success-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: #dbe9ab;
+  border-color: #cade83;
+  color: #3a4512;
+}
+
+.info-alert {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  background-color: #c7e6e6;
+  border-color: #a3d6d7;
+  color: #1c4040;
+}
+
+/* 	
+=============================================
 Jumbotron
 =============================================
 */
@@ -13135,7 +13152,7 @@ Modals
 
 /* 	
 =============================================
-Panels
+Panels (deprecated for cards, but still have that here - need to upgrade)
 =============================================
 */
 .content .panel {

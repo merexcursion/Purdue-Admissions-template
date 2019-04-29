@@ -85,6 +85,72 @@ Purdue accordion altered +
 
 /* 	
 =============================================
+Alerts
+=============================================
+*/
+.alert {
+	&.alert-danger {
+		background-color: lighten($color-pappysPurple, 50);
+		border-color: lighten($color-pappysPurple, 45);
+		color: darken($color-pappysPurple, 20);
+	}
+	&.alert-info {
+		background-color: lighten($color-ameliaSkyBlue, 10);
+		border-color: $color-ameliaSkyBlue;
+		color: darken($color-ameliaSkyBlue, 56);
+	}
+	&.alert-success {
+		background-color: lighten($color-rossAdeGreen, 40);
+		border-color: lighten($color-rossAdeGreen, 30);
+		color: darken($color-rossAdeGreen, 22);
+	}
+	&.alert-warning {
+		background-color: lighten($color-mackeyOrange, 28);
+		border-color: lighten($color-mackeyOrange, 18);
+		color: darken($color-mackeyOrange, 36);
+	}
+}
+/* WYSIWYG alerts */
+.error-alert {
+	padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	background-color: lighten($color-pappysPurple, 50);
+	border-color: lighten($color-pappysPurple, 45);
+	color: darken($color-pappysPurple, 20);
+}
+.notice-alert {
+	padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	background-color: lighten($color-mackeyOrange, 28);
+	border-color: lighten($color-mackeyOrange, 18);
+	color: darken($color-mackeyOrange, 36);
+}
+.success-alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	background-color: lighten($color-rossAdeGreen, 40);
+	border-color: lighten($color-rossAdeGreen, 30);
+	color: darken($color-rossAdeGreen, 22);
+}
+.info-alert {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+	background-color: lighten($color-ameliaSkyBlue, 10);
+	border-color: $color-ameliaSkyBlue;
+	color: darken($color-ameliaSkyBlue, 56);
+}
+
+
+/* 	
+=============================================
 Jumbotron
 =============================================
 */
@@ -245,7 +311,7 @@ Modals
 
 /* 	
 =============================================
-Panels
+Panels (deprecated for cards, but still have that here - need to upgrade)
 =============================================
 */
 .content .panel {
