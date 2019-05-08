@@ -14051,130 +14051,6 @@ Media Queries
   font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
 }
 
-#faq-squares {
-  display: table;
-  height: 445px;
-  border-collapse: separate;
-  border-spacing: 8px;
-  width: 100% !important;
-}
-
-#faq-squares .faq-square-row {
-  display: table-row;
-}
-
-#faq-squares .faq-square-row a {
-  display: table-cell;
-  padding: 10px;
-  cursor: pointer;
-  color: #fff !important;
-  background-color: #222;
-  max-width: 20px;
-  overflow: hidden;
-  position: relative;
-  vertical-align: middle;
-}
-
-#faq-squares .faq-square-row a.spin-right:hover .bg-expand {
-  -webkit-transform: scale(1.4) rotate(28deg);
-  -moz-transform: scale(1.4) rotate(28deg);
-  -o-transform: scale(1.4) rotate(28deg);
-  transform: scale(1.4) rotate(28deg);
-}
-
-#faq-squares .faq-square-row a.spin-left:hover .bg-expand {
-  -webkit-transform: scale(1.4) rotate(-28deg);
-  -moz-transform: scale(1.4) rotate(-28deg);
-  -o-transform: scale(1.4) rotate(-28deg);
-  transform: scale(1.4) rotate(-28deg);
-}
-
-#faq-squares .faq-square-row a.zoom-in:hover .bg-expand {
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
-  -o-transform: scale(2);
-  transform: scale(2);
-}
-
-#faq-squares .faq-square-row a.zoom-out:hover .bg-expand {
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -o-transform: scale(0.5);
-  transform: scale(0.5);
-}
-
-#faq-squares .faq-square-row a.pan-left:hover .bg-expand img {
-  margin-left: 0;
-}
-
-#faq-squares .faq-square-row a.pan-right:hover .bg-expand img {
-  margin-left: -50%;
-}
-
-#faq-squares .faq-square-row a:hover .img1 {
-  opacity: 0;
-}
-
-#faq-squares .faq-square-row a .bg-expand {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-#faq-squares .faq-square-row a .bg-expand img {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: block;
-  top: 0;
-  left: 0;
-  vertical-align: middle;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-#faq-squares .faq-square-row a .bg-expand .img2 {
-  position: absolute;
-}
-
-#faq-squares .faq-square-row a.zoom-out .bg-expand img {
-  -webkit-transform: scale(2);
-  -moz-transform: scale(2);
-  -o-transform: scale(2);
-  transform: scale(2);
-}
-
-#faq-squares .faq-square-row a.pan-left .bg-expand img {
-  height: 214.5px;
-  max-height: 100%;
-  width: auto;
-  max-width: inherit;
-  margin-left: -50%;
-}
-
-#faq-squares .faq-square-row a.pan-right .bg-expand img {
-  height: 214.5px;
-  max-height: 100%;
-  width: auto;
-  max-width: inherit;
-  margin-left: 0;
-}
-
-#faq-squares .faq-square-row .text {
-  position: relative;
-  z-index: 5;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
 #go-to-majors a {
   margin-top: 2em;
   width: 100%;
@@ -14269,7 +14145,7 @@ Media Queries
   display: inline-block;
   width: inherit;
   overflow: hidden;
-  margin: 0;
+  margin: 1px;
   height: 44px;
 }
 
@@ -14790,6 +14666,11 @@ Media Queries
   transform: scale(1.3);
 }
 
+*::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 /* animations */
 @-webkit-keyframes bg {
   0% {
@@ -14840,84 +14721,14 @@ Media Queries
 }
 
 /* media queries */
-@media screen and (max-width: 1199.98px) {
-  /* xl */
-  #faq-squares {
-    height: 365px;
-    border-spacing: 5px;
-  }
-  #faq-squares .faq-square-row a {
-    font-size: 1.3em;
-  }
-  #purdue-example .interactive-exampleP {
-    height: 365px;
-  }
-}
-
 @media screen and (max-width: 991.98px) {
   /* lg */
   .carousel-wrap {
     /*background-color: rgba($color-ameliaSkyBlue,0.1);*/
     border-top: #222 4px solid;
   }
-  .carousel-text-item,
-  .rankings,
-  .faq-rank-nav {
-    text-align: center;
-    width: 100%;
-  }
   #dates-header {
     font-size: 2.2em !important;
-  }
-  .faq-rank-nav {
-    margin-bottom: 2em;
-  }
-  #faq-squares {
-    display: block;
-    height: inherit;
-  }
-  #faq-squares .faq-square-row {
-    width: 50%;
-    display: block;
-    float: left;
-  }
-  #faq-squares .faq-square-row a {
-    display: block;
-    max-width: 100%;
-    margin: 5px;
-    font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
-    text-shadow: none;
-    text-transform: capitalize;
-    text-align: left;
-    padding: 15px 20px;
-    color: #fff !important;
-    background-color: #222;
-    border: none;
-  }
-  #faq-squares .faq-square-row a i {
-    color: #a3d6d7;
-  }
-  #faq-squares .faq-square-row a .bg-expand {
-    display: none;
-  }
-  #faq-squares .faq-square-row a .text {
-    position: static;
-    display: block;
-    width: 100%;
-  }
-  #interactive-examples-wrap {
-    clear: both;
-  }
-  #interactive-examples-wrap .interactive-exampleP {
-    position: relative;
-    height: inherit;
-    padding-bottom: 50px;
-  }
-  #interactive-examples-wrap .interactive-exampleP .inner-text {
-    height: inherit !important;
-    width: auto;
-    cursor: inherit;
-    padding: 0;
   }
   .home #majors .majors-content {
     display: block !important;
@@ -14932,7 +14743,7 @@ Media Queries
     color: #a3d6d7 !important;
   }
   .home #majors .majors-content select {
-    width: 100%;
+    width: 70%;
   }
   .home #majors #majors-list {
     text-align: left;
@@ -14992,12 +14803,6 @@ Media Queries
   }
 }
 
-@media screen and (min-width: 768px) {
-  .faq-button {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 767.98px) {
   /* md */
   .carousel-wrap {
@@ -15005,31 +14810,6 @@ Media Queries
   }
   #dates-header {
     margin-top: 0.5em !important;
-  }
-  #faq-squares,
-  .closeXP {
-    display: none !important;
-  }
-  .faq-button {
-    display: block;
-    max-width: 100%;
-    margin: 5px;
-    font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
-    text-shadow: none;
-    text-transform: capitalize;
-    text-align: left;
-    padding: 15px 20px;
-    color: #fff !important;
-    background-color: #222;
-    border: none;
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
-    margin-right: 0;
-    cursor: pointer;
-  }
-  .faq-button i {
-    color: #a3d6d7;
   }
   #home-main-cta {
     font-size: 90%;
@@ -15265,6 +15045,231 @@ Media Queries
 @media screen and (max-width: 400px) {
   #video-container {
     height: 180px;
+  }
+}
+
+/* safari 7+ hack */
+_::-webkit-full-page-media, _:future, :root .home #majors #majors-list ul li {
+  margin: 3px 0;
+}
+
+/*************** FAQ SECTION ***************/
+@media screen and (min-width: 992px) {
+  #faq-squares {
+    display: table;
+    height: 445px;
+    border-collapse: separate;
+    border-spacing: 8px;
+    width: 100% !important;
+  }
+  #faq-squares .faq-square-row {
+    display: table-row;
+  }
+  #faq-squares .faq-square-row a {
+    display: table-cell;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff !important;
+    background-color: #222;
+    max-width: 20px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+  }
+  #faq-squares .faq-square-row a.spin-right:hover .bg-expand {
+    -webkit-transform: scale(1.4) rotate(28deg);
+    -moz-transform: scale(1.4) rotate(28deg);
+    -o-transform: scale(1.4) rotate(28deg);
+    transform: scale(1.4) rotate(28deg);
+  }
+  #faq-squares .faq-square-row a.spin-left:hover .bg-expand {
+    -webkit-transform: scale(1.4) rotate(-28deg);
+    -moz-transform: scale(1.4) rotate(-28deg);
+    -o-transform: scale(1.4) rotate(-28deg);
+    transform: scale(1.4) rotate(-28deg);
+  }
+  #faq-squares .faq-square-row a.zoom-in:hover .bg-expand {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+  }
+  #faq-squares .faq-square-row a.zoom-out:hover .bg-expand {
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  #faq-squares .faq-square-row a.pan-left:hover .bg-expand img {
+    margin-left: 0;
+  }
+  #faq-squares .faq-square-row a.pan-right:hover .bg-expand img {
+    margin-left: -50%;
+  }
+  #faq-squares .faq-square-row a:hover .img1 {
+    opacity: 0;
+  }
+  #faq-squares .faq-square-row a .bg-expand {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #faq-squares .faq-square-row a .bg-expand img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    vertical-align: middle;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  #faq-squares .faq-square-row a .bg-expand .img2 {
+    position: absolute;
+  }
+  #faq-squares .faq-square-row a.zoom-out .bg-expand img {
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+  }
+  #faq-squares .faq-square-row a.pan-left .bg-expand img {
+    height: 214.5px;
+    max-height: 100%;
+    width: auto;
+    max-width: inherit;
+    margin-left: -50%;
+  }
+  #faq-squares .faq-square-row a.pan-right .bg-expand img {
+    height: 214.5px;
+    max-height: 100%;
+    width: auto;
+    max-width: inherit;
+    margin-left: 0;
+  }
+  #faq-squares .faq-square-row .text {
+    position: relative;
+    z-index: 5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 1199.98px) {
+  /* xl */
+  #faq-squares {
+    height: 365px;
+    border-spacing: 5px;
+  }
+  #faq-squares .faq-square-row a {
+    font-size: 1.3em;
+  }
+  #purdue-example .interactive-exampleP {
+    height: 365px;
+  }
+}
+
+@media screen and (max-width: 991.98px) {
+  /* lg */
+  .carousel-text-item,
+  .rankings,
+  .faq-rank-nav {
+    text-align: center;
+    width: 100%;
+  }
+  .faq-rank-nav {
+    margin-bottom: 2em;
+  }
+  #faq-squares {
+    display: block;
+    height: inherit;
+  }
+  #faq-squares .faq-square-row {
+    width: 50%;
+    display: block;
+    float: left;
+  }
+  #faq-squares .faq-square-row a {
+    display: block;
+    max-width: 100%;
+    margin: 5px;
+    font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
+    text-shadow: none;
+    text-transform: capitalize;
+    text-align: left;
+    padding: 15px 20px;
+    color: #fff !important;
+    background-color: #222;
+    border: none;
+  }
+  #faq-squares .faq-square-row a i {
+    color: #a3d6d7;
+  }
+  #faq-squares .faq-square-row a .bg-expand {
+    display: none;
+  }
+  #faq-squares .faq-square-row a .text {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+  #interactive-examples-wrap {
+    clear: both;
+  }
+  #interactive-examples-wrap .interactive-exampleP {
+    position: relative;
+    height: inherit;
+    padding-bottom: 50px;
+  }
+  #interactive-examples-wrap .interactive-exampleP .inner-text {
+    height: inherit !important;
+    width: auto;
+    cursor: inherit;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .faq-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  /* md */
+  #faq-squares,
+  .closeXP {
+    display: none !important;
+  }
+  .faq-button {
+    display: block;
+    max-width: 100%;
+    margin: 5px;
+    font-family: "Archivo Narrow", "Arial Narrow", "Arial", sans-serif;
+    text-shadow: none;
+    text-transform: capitalize;
+    text-align: left;
+    padding: 15px 20px;
+    color: #fff !important;
+    background-color: #222;
+    border: none;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
+    cursor: pointer;
+  }
+  .faq-button i {
+    color: #a3d6d7;
   }
 }
 
@@ -16123,6 +16128,10 @@ Visual or Performing Arts  --  visual-performing-arts
 
 .majors hr.spacer, .majors hr.striped-gold {
   border-color: transparent;
+}
+
+.majors .vid-wrapper {
+  margin-top: 1em;
 }
 
 .all-majors #inner-page-content {

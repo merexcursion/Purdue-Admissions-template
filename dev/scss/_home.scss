@@ -68,110 +68,9 @@
 		}
 	}
 }
-#faq-squares {
-	display: table;
-	height: 445px; 
-	border-collapse: separate;
-    border-spacing: 8px;
-	width: 100%!important;
-	
-	.faq-square-row {
 
-		display: table-row;
 
-		a {
-			display: table-cell;
-			padding: 10px;
-			cursor: pointer;
-			color: #fff!important;
-			background-color: #222;
-			max-width: 20px;
-			overflow: hidden;
-			position: relative;
-			vertical-align: middle;
-			
-			&.spin-right:hover .bg-expand {
-				@include transform(scale(1.4) rotate(28deg));
-			}
-			&.spin-left:hover .bg-expand {
-				@include transform(scale(1.4) rotate(-28deg));
-			}
-			&.zoom-in:hover .bg-expand {
-			   @include transform(scale(2));
-			}
-			&.zoom-out:hover .bg-expand {
-			   @include transform(scale(.5));
-			}
-			&.pan-left:hover .bg-expand {
-				img {
-					margin-left: 0;
-				}
-			}
-			&.pan-right:hover .bg-expand {
-				img {
-					margin-left: -50%;
-				}
-			}
-			&:hover .img1 {
-				opacity: 0;
-			}
 
-			.bg-expand {
-				    @include transition(all 0.5s);
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: 1;
-
-				img {
-					width: 100%;
-					height: 100%;
-					position: relative;
-					display: block;
-					top: 0;
-					left: 0;
-					vertical-align: middle;
-					@include transition(all 0.5s);
-				}
-				.img2 {
-					position: absolute;
-				}
-			}
-			&.zoom-out .bg-expand {
-				img {
-					@include transform(scale(2));
-				}
-			}
-			&.pan-left .bg-expand {
-				
-				img {
-					height: 445px/2-8px;
-					max-height: 100%;
-					width: auto;
-					max-width: inherit;
-					margin-left: -50%;
-				}
-			}
-			&.pan-right .bg-expand {
-				img {
-					height: 445px/2-8px;
-					max-height: 100%;
-					width: auto;
-					max-width: inherit;
-					margin-left: 0;
-				}
-			}
-
-		}
-		.text {
-			position: relative;
-			z-index: 5;
-			white-space: nowrap;
-			text-overflow: ellipsis;
-			overflow: hidden;
-		}
-	}
-}
 #go-to-majors {
 	a {
 		margin-top: 2em;
@@ -179,6 +78,7 @@
 	}
 }
 .home {
+	
 	#home-main-cta {
 		text-align: left;
 		background: #222 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
@@ -262,7 +162,7 @@
 			display: inline-block;
 			width: inherit;
 			overflow: hidden;
-			margin: 0;
+			margin: 1px;
 			height: 44px;
 			
 				a {
@@ -818,6 +718,10 @@
 		}
 	}
 }
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
 
 /* animations */
 @-webkit-keyframes bg {
@@ -842,77 +746,13 @@
 }
 
 /* media queries */
-@include desktopLargeMax {
-	#faq-squares {
-		height: 365px; 
-		border-spacing: 5px;
-		.faq-square-row {
-			a {
-				font-size: 1.3em;
-			}
-		}
-	}
-	#purdue-example .interactive-exampleP {
-		height: 365px;
-	}
-}
 @include desktopSmallMax {
-	
 	.carousel-wrap {
 		/*background-color: rgba($color-ameliaSkyBlue,0.1);*/
 		border-top: #222 4px solid;
 	}
-	.carousel-text-item,
-	.rankings,
-	.faq-rank-nav {
-		text-align: center;
-		width: 100%;
-	}
 	#dates-header {
 		font-size: 2.2em!important;
-	}
-	.faq-rank-nav {
-		margin-bottom: 2em;
-	}
-	#faq-squares {
-		display: block;
-		height: inherit;
-		
-		.faq-square-row {
-			width: 50%;
-			display: block;
-			float: left;
-			
-			a {
-				@include mobile-faq-btn;
-				
-				.bg-expand {
-					display: none;
-				}
-				.text {
-					position: static;
-					display: block;
-					width: 100%;
-				}
-			}
-		}
-		
-	}
-	#interactive-examples-wrap {
-		clear: both;
-		
-		.interactive-exampleP {
-			position: relative;
-			height: inherit;
-			padding-bottom: 50px;
-			
-			.inner-text {
-				height: inherit!important;
-				width: auto;
-				cursor: inherit;
-				padding: 0;
-			}
-		}
 	}
 	.home #majors {
 		.majors-content {
@@ -929,7 +769,7 @@
 			}
 			
 			select {
-				width: 100%;
+				width: 70%;
 			}
 		}
 		#majors-list {
@@ -989,29 +829,13 @@
 		
 	}
 }
-@include tablet {
-	.faq-button {
-		display: none;
-	}
-}
+
 @include tabletMax {
 	.carousel-wrap {
 		margin-top: 50px;
 	}
 	#dates-header {
 		margin-top: .5em!important;
-	}
-	#faq-squares,
-	.closeXP {
-		display: none!important;
-	}
-	.faq-button {
-		@include mobile-faq-btn;
-		width: 100%;
-		text-align: center;
-		margin-left: 0;
-		margin-right: 0;
-		cursor: pointer;
 	}
 	#home-main-cta {
 		font-size: 90%;
@@ -1261,5 +1085,205 @@
 @media screen and (max-width: 400px ) {
 	#video-container {
 		height: 180px;
+	}
+}
+
+
+/* safari 7+ hack */
+_::-webkit-full-page-media, _:future, :root .home #majors #majors-list ul li {
+    margin: 3px 0;
+}
+
+/*************** FAQ SECTION ***************/
+@include desktopSmall {
+	#faq-squares {
+		display: table;
+		height: 445px; 
+		border-collapse: separate;
+		border-spacing: 8px;
+		width: 100%!important;
+
+		.faq-square-row {
+
+			display: table-row;
+
+			a {
+				display: table-cell;
+				padding: 10px;
+				cursor: pointer;
+				color: #fff!important;
+				background-color: #222;
+				max-width: 20px;
+				overflow: hidden;
+				position: relative;
+				vertical-align: middle;
+
+				&.spin-right:hover .bg-expand {
+					@include transform(scale(1.4) rotate(28deg));
+				}
+				&.spin-left:hover .bg-expand {
+					@include transform(scale(1.4) rotate(-28deg));
+				}
+				&.zoom-in:hover .bg-expand {
+				   @include transform(scale(2));
+				}
+				&.zoom-out:hover .bg-expand {
+				   @include transform(scale(.5));
+				}
+				&.pan-left:hover .bg-expand {
+					img {
+						margin-left: 0;
+					}
+				}
+				&.pan-right:hover .bg-expand {
+					img {
+						margin-left: -50%;
+					}
+				}
+				&:hover .img1 {
+					opacity: 0;
+				}
+
+				.bg-expand {
+						@include transition(all 0.5s);
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 1;
+
+					img {
+						width: 100%;
+						height: 100%;
+						position: relative;
+						display: block;
+						top: 0;
+						left: 0;
+						vertical-align: middle;
+						@include transition(all 0.5s);
+					}
+					.img2 {
+						position: absolute;
+					}
+				}
+				&.zoom-out .bg-expand {
+					img {
+						@include transform(scale(2));
+					}
+				}
+				&.pan-left .bg-expand {
+
+					img {
+						height: 445px/2-8px;
+						max-height: 100%;
+						width: auto;
+						max-width: inherit;
+						margin-left: -50%;
+					}
+				}
+				&.pan-right .bg-expand {
+					img {
+						height: 445px/2-8px;
+						max-height: 100%;
+						width: auto;
+						max-width: inherit;
+						margin-left: 0;
+					}
+				}
+
+			}
+			.text {
+				position: relative;
+				z-index: 5;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+		}
+	}
+}
+@include desktopLargeMax {
+	#faq-squares {
+		height: 365px; 
+		border-spacing: 5px;
+		.faq-square-row {
+			a {
+				font-size: 1.3em;
+			}
+		}
+	}
+	#purdue-example .interactive-exampleP {
+		height: 365px;
+	}
+}
+@include desktopSmallMax {
+	
+	.carousel-text-item,
+	.rankings,
+	.faq-rank-nav {
+		text-align: center;
+		width: 100%;
+	}
+	.faq-rank-nav {
+		margin-bottom: 2em;
+	}
+	#faq-squares {
+		display: block;
+		height: inherit;
+		
+		.faq-square-row {
+			width: 50%;
+			display: block;
+			float: left;
+			
+			a {
+				@include mobile-faq-btn;
+				
+				.bg-expand {
+					display: none;
+				}
+				.text {
+					position: static;
+					display: block;
+					width: 100%;
+				}
+			}
+		}
+		
+	}
+	#interactive-examples-wrap {
+		clear: both;
+		
+		.interactive-exampleP {
+			position: relative;
+			height: inherit;
+			padding-bottom: 50px;
+			
+			.inner-text {
+				height: inherit!important;
+				width: auto;
+				cursor: inherit;
+				padding: 0;
+			}
+		}
+	}
+}
+@include tablet {
+	.faq-button {
+		display: none;
+	}
+}
+@include tabletMax {
+	
+	#faq-squares,
+	.closeXP {
+		display: none!important;
+	}
+	.faq-button {
+		@include mobile-faq-btn;
+		width: 100%;
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+		cursor: pointer;
 	}
 }
