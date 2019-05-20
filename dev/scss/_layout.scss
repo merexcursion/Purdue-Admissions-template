@@ -170,6 +170,11 @@ main {
 	background-color: #fff;
 	color: #000;
 }
+#main {
+	iframe.side-video {
+		max-width: 100%;
+	}
+}
 .main-content {
 	> img,
 	> picture {
@@ -275,6 +280,11 @@ iframe {
 			height: 350px;
 		}
 	}
+	#main {
+		iframe.side-video {
+			height: 165px;
+		}
+	}
 	.main-content .jumbotron {
 		iframe.single {
 
@@ -285,6 +295,7 @@ iframe {
 	}
 }
 @include desktopSmallMax {
+	
 	iframe,
 	div[class*="-12 "] iframe {
 		&.video {
@@ -301,7 +312,12 @@ iframe {
 			height: 263px;
 		}
 	}
-	
+	#main {
+		iframe.side-video {
+			width: 560px;
+			height: 314px;
+		}
+	}
 	.main-content .jumbotron {
 		iframe.single {
 
@@ -336,6 +352,16 @@ iframe {
 	}
 	#sidebar {
 		padding-top: 2em;
+	}
+	#main {
+		.accordion iframe {
+			width: 100%;
+			height: 270px;
+		}
+		iframe.side-video {
+			width: 350px;
+			height: 198px;
+		}
 	}
 	.main-content .jumbotron {
 		iframe.single {
@@ -393,4 +419,5 @@ iframe {
 			text-indent: 30px;
 		}
 	} 
+	
 }

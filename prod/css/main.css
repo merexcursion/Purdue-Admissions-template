@@ -12110,6 +12110,10 @@ main {
   color: #000;
 }
 
+#main iframe.side-video {
+  max-width: 100%;
+}
+
 .main-content > img,
 .main-content > picture {
   margin-bottom: 1em;
@@ -12211,6 +12215,9 @@ iframe.j-side {
   .col-md-8 iframe.video {
     height: 350px;
   }
+  #main iframe.side-video {
+    height: 165px;
+  }
   .main-content .jumbotron iframe.single.center {
     height: 449px;
   }
@@ -12229,6 +12236,10 @@ iframe.j-side {
   }
   .col-md-8 iframe.video {
     height: 263px;
+  }
+  #main iframe.side-video {
+    width: 560px;
+    height: 314px;
   }
   .main-content .jumbotron iframe.single.right, .main-content .jumbotron iframe.single.left {
     width: 100%;
@@ -12257,6 +12268,14 @@ iframe.j-side {
   }
   #sidebar {
     padding-top: 2em;
+  }
+  #main .accordion iframe {
+    width: 100%;
+    height: 270px;
+  }
+  #main iframe.side-video {
+    width: 350px;
+    height: 198px;
   }
   .main-content .jumbotron iframe.single.center, .main-content .jumbotron iframe.single.left, .main-content .jumbotron iframe.single.right {
     height: 250px;
