@@ -171,6 +171,10 @@ main {
 	color: #000;
 }
 #main {
+	.sidebar-vid-container {
+		background-color: #c28e0e;
+		padding: 5px 0;
+	}
 	iframe.side-video {
 		max-width: 100%;
 	}
@@ -317,6 +321,9 @@ iframe {
 			width: 560px;
 			height: 314px;
 		}
+		.sidebar-vid-container {
+			padding-bottom: 15px
+		}
 	}
 	.main-content .jumbotron {
 		iframe.single {
@@ -362,6 +369,7 @@ iframe {
 			width: 350px;
 			height: 198px;
 		}
+		
 	}
 	.main-content .jumbotron {
 		iframe.single {

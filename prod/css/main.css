@@ -12110,6 +12110,11 @@ main {
   color: #000;
 }
 
+#main .sidebar-vid-container {
+  background-color: #c28e0e;
+  padding: 5px 0;
+}
+
 #main iframe.side-video {
   max-width: 100%;
 }
@@ -12240,6 +12245,9 @@ iframe.j-side {
   #main iframe.side-video {
     width: 560px;
     height: 314px;
+  }
+  #main .sidebar-vid-container {
+    padding-bottom: 15px;
   }
   .main-content .jumbotron iframe.single.right, .main-content .jumbotron iframe.single.left {
     width: 100%;
