@@ -12040,10 +12040,12 @@ figure {
 
 figure.right {
   margin-left: 20px;
+  margin-top: .5em;
 }
 
 figure.left {
   margin-right: 20px;
+  margin-top: .5em;
 }
 
 figure.center {
@@ -13388,6 +13390,7 @@ Tabs & Tabbed content
 .nav-tabs .nav-link {
   border-bottom: #c28e0e 2px solid;
   color: #98700d;
+  background-color: #fcf0d3;
 }
 
 .nav-tabs .nav-link:hover {
@@ -13408,6 +13411,7 @@ Tabs & Tabbed content
 
 .dark-bg .nav-link {
   color: #da9f10;
+  background-color: black;
 }
 
 .dark-bg .nav-link.active, .dark-bg .nav-link.active:focus, .dark-bg .nav-link.active:hover {

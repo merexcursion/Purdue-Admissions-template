@@ -506,6 +506,7 @@ Tabs & Tabbed content
 	.nav-link {
 		border-bottom: $color-campusGold 2px solid;
 		color: $color-headlineGold;
+		background-color: lighten($color-campusGold, 50%);
 		
 		&:hover {
 			background-color: #eee;
@@ -525,9 +526,11 @@ Tabs & Tabbed content
 .dark-bg {
 	.nav-tabs {
 		border-color: #444;
+		
 	}
 	.nav-link {
 		color: lighten($color-campusGold,5);
+		background-color: darken(#111, 50%);
 		
 		&.active, 
 		&.active:focus, 
