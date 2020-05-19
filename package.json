@@ -22,7 +22,7 @@
     "gulp-newer": "^1.4.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "merge-stream": "^1.0.1",
     "mustache": "^3.0.1",
     "streamqueue": "^1.1.2"
