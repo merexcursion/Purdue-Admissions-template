@@ -1,3 +1,4 @@
+
 @mixin animation($what){
 	-webkit-animation: $what;
 	-moz-animation: $what;
@@ -5,7 +6,7 @@
 	animation: $what;
 }
 @mixin black-lines-on-gray(){
-	background: #222 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
+	background: #333 url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat center;
     background-size: cover;
 }
 @mixin border-radius($amount){
@@ -25,21 +26,20 @@
 	max-width: 100%;
 }
 @mixin mobile-faq-btn(){
-	display: block;
-	max-width: 100%;
-	margin: 5px;
-	font-family: $font-archivo-narrow;
-	text-shadow: none;
-	text-transform: capitalize;
-	text-align: left;
-	padding: 15px 20px;
-	color: #fff !important;
-	background-color: #222;
-	border: none;
+	background-color: $steam-gray!important;
+		display: block;
+		max-width: 100%;
+		margin: 5px;
+		font-family: $united-sans;
+		text-shadow: none;
+		text-transform: capitalize;
+		text-align: left;
+		padding: 15px 20px;
+		color: #000 !important;
+		border: none;
+		font-weight: 700!important;
 	
-	i {
-		color: $color-ameliaSkyBlue;
-	}
+	
 }
 @mixin transition($what){
 	-webkit-transition: $what; 
@@ -52,6 +52,14 @@
 	-moz-transform: $what;
 	-o-transform: $what;
     transform: $what;
+}
+
+@mixin striped-hr($bgImg) {
+	margin: 2em 0;
+	padding: 0;
+	border: none;
+	height: 20px;
+	background: transparent url($bgImg) no-repeat center;
 }
 
 /* media queries */
@@ -98,4 +106,118 @@
 	}
 }
 
-	
+/* new brand (altered) */
+@mixin h1 {
+	margin: 0 0 2rem;
+	margin-bottom: .3em;
+	line-height: 1.22;
+	text-transform: uppercase;
+	font-family: $acumin-pro-condensed;
+	color: black;
+	font-size: calc-toRem(37);
+	font-weight: 700;
+	@include display-mo-plus {
+		font-size: calc-toRem(30);
+		line-height: 1.17;
+	}
+}
+
+@mixin h2 {
+	font-family: $acumin-pro-condensed;
+	margin: 2rem 0 1.5rem;
+	margin-bottom: .3em;
+	line-height: 1.2;
+	color: $aged-gold;
+	font-size: calc-toRem(32);
+	font-weight: 700;
+	@include display-mo-plus {
+		font-size: calc-toRem(27);
+	}
+}
+
+@mixin h3 {
+	font-family: $acumin-pro-semicondensed;
+	margin: 1.75rem 0 1.5rem;
+	margin-bottom: .3em;
+	line-height: 1.2;
+	font-weight: 700;
+	color: black;
+	font-size: calc-toRem(25);
+	@include display-mo-plus {
+		font-size: calc-toRem(22);
+	}
+}
+
+@mixin h4 {
+	font-family: $acumin-pro-semicondensed;
+	margin: 1.5rem 0 1.5rem;
+	margin-bottom: .3em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: $steel-gray;
+	font-size: calc-toRem(22);
+	@include display-mo-plus {
+		font-size: calc-toRem(22);
+	}
+}
+
+@mixin h5 {
+	font-family: $acumin-pro;
+	margin: 1.5rem 0 1.5rem;
+	margin-bottom: .3em;
+	line-height: 1.2;
+	// text-transform: uppercase;
+	font-weight: 700;
+	color: $aged-gold;
+	font-size: calc-toEm(22);
+	@include display-mo-plus {
+		font-size: calc-toRem(20);
+	}
+}
+
+@mixin h6 {
+	font-family: $acumin-pro-semicondensed;
+	margin: 1.5rem 0 1.5rem;
+	margin-bottom: .3em;
+	line-height: 1.2;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: black;
+	font-size: calc-toRem(19);
+}
+
+@mixin display-mo-xs {
+    @media (max-width: 329px) {
+      @content;
+    }
+}
+
+@mixin display-mo {
+    @media (max-width: 374px) {
+      @content;
+    }
+}
+@mixin display-mo-plus {
+    @media (max-width: 415px) {
+      @content;
+    }
+}
+@mixin display-sm {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin display-md {
+    @media (max-width: 990px) {
+        @content;
+    }
+}
+@mixin display-lg {
+    @media (max-width: 1199px) {
+        @content;
+    }
+}
+
+

@@ -1,37 +1,41 @@
 .dark-bg {
 	&.landing main {
-		background-color: #000;
-		color: #ddd;
+		background-color: #333;
+		color: #fff;
 	}
 }
 .landing {
+	
+	#announcement {
+		background-color: #ebd99f;
+		color: #000;
+		
+		h1,h2,h3,h4,h5,h6 {
+			color: #000;
+		}
+	}
 	
 	.feature-btn {
 		padding: 20px 30px;
 		display: inline-block;	
 		width: 100%;
 		margin-bottom: 5px;
-		background-color: #222;
+		background-color: #000;
 		color: $color-campusGold;
-		font-family: $font-archivo-narrow;
-		font-weight: 700;
+		font-family: $united-sans;
 		text-decoration: none!important;
-		font-family: $font-archivo-narrow;
-		font-size: 1.3em;
+		font-size: 1.5em;
+		text-align: center;
+		line-height: 1.2;
 
 		&:hover {
-			color: $color-campusGold;
-			background-color: #333;
+			color: #fff;
+			background-color: #222;
 		}
 	}
+	
 	.landing-links-title {
-		font-family: $font-champion-welter!important;
-		color: $color-campusGold!important;
-		font-size: 1.7em;
-		text-align: center;
-		text-transform: uppercase;
-		line-height: 1;
-		font-family: $font-champion-welter!important;
+		font-family: $acumin-pro-condensed!important;
 		color: $color-campusGold!important;
 		font-size: 1.7em;
 		text-align: center;
@@ -41,13 +45,13 @@
 	.image-link-title {
 		display: block;
 		position: absolute;
-		bottom: 5px;
+		bottom: 8px;
 		width: 100%;
-		background-color: rgba(0,0,0,0.5);
+		background-color: transparent;
 		padding: 30px 10px;
 		font-weight: 700;
 		font-size: 2vw;
-		font-family: $font-archivo-narrow;
+		font-family: $acumin-pro;
 		text-shadow: -1px -1px 3px #000, 0 0 7px #000;
 		line-height: 1;
 
@@ -168,7 +172,7 @@
 			.landing-image-links-block {
 				width: 33%;
 				float: left;
-				border: 2px solid black;
+				border: 2px solid #333;
 				
 				img {
 					display: block;
@@ -185,7 +189,7 @@
 			.landing-image-links-block {
 				width: 50%;
 				float: left;
-				border: 4px solid black;
+				border: 4px solid #333;
 				
 				img {
 					display: block;

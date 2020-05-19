@@ -1,88 +1,23 @@
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 THIS DOESN'T GET INCLUDED IN FULL SITE CSS
-It is a separate file ncluded only for wearepurdue page
+It is a separate file included only for developing wearepurdue page
 
-I forgot this earlier so need to remove scss and switch to css before updating
+The final css goes to Cascade wearepurdue/css/wearepurdue.css
 */
 .wearepurdue {
 	#temp-note {
 	display: none;
 }
-/* this here only temp - gets added to casade page itself */
+/* copy from below this line to the Cascade version */
 .progress #page {
 	display: none;
 }
 p .proof-point {
-	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif!important;
+	font-family: "United Sans",Impact, "Arial Black", "sans serif";
 	font-weight: 900;
-	font-size: 78%;
 	letter-spacing: 1px;
-	white-space: normal;
-	background-color: #000;
-	background: linear-gradient(to right, #231f20 , #111111, #111111, #231f20);
 	text-transform: uppercase;
-	padding: 1px 5px;
-	border-top: 1px solid #c28e0e;
-	border-bottom: 1px solid #c28e0e;
-	color: #c28e0e;
-}
-p .proof-point.ameliablue-text {
-	border-color: #A3D6D7;
-	color: #A3D6D7;
-}
-p .proof-point.orange-text {
-	border-color: #FF9B1A;
-	color: #FF9B1A;
-}
-p .proof-point.teal-text {
-	border-color: #29A592;
-	color: #29A592;
-}
-p .proof-point.yellow-text {
-	border-color: #FFD100;
-}
-p .proof-point.purple-text {
-	border-color: #AD1F65;
-	color: #AD1F65;
-}
-p .proof-point.brick-text {
-	border-color: #B46012;
-	color: #B46012;
-}
-p .proof-point.springgreen-text {
-	border-color: #E9E45B;
-	color: #E9E45B;
-}
-p .proof-point.celerygreen-text {
-	border-color: #C3BE0B;
-	color: #C3BE0B;
-}
-p .proof-point.slayterblue-text {
-	border-color: #6E99B4;
-	color: #6E99B4;
-}
-p .proof-point.rossadegreen-text {
-	border-color: #849E2A;
-	color: #849E2A;
-}
-p .proof-point.moon-text {
-	border-color: #BAA892;
-	color: #BAA892;
-}
-
-#side-links .link {
-	    color: #000;
-    display: block;
-    padding: 15px 20px;
-    border: 1px solid #555;
-    margin: 2px;
-    font-weight: 700!important;
-    font-size: 1.1em;
-    cursor: pointer;
-	text-decoration: none;
-}
-#side-links .link:hover {
-	background-color: #c28e0e;
+	color: #cfb991!important;
 }
 
 .major-btn {
@@ -94,22 +29,21 @@ p .proof-point.moon-text {
 	text-transform: uppercase;
 }
 .major-btn:hover {
-	/*background-color: #98700D!important;*/
+	/*background-color: #8e6f3e!important;*/
 }
 .intro.secondary {
 	text-transform: none;
 }
 .btn-check {
-	background-color: #C28E0E;
+	background-color: #cfb991;
 	color: #000;
-	font-family: 'archivoNarrow',"Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 1.4em;
 	font-weight: 700;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 .btn-check:hover {
-	background-color: #98700D;
+	background-color: #8e6f3e;
 	color: #000;
 }
 .proof-points img {
@@ -119,19 +53,18 @@ p .proof-point.moon-text {
 #social-links a {
 font-size: 2em;
 margin: 0 5px;
-	color: #c28e0e;
+	color: #9d9795;
 	
 }
 #social-links a:hover {
-	color: #707070;
+	color: #6f727b;
 }
 h2 {
-	color: #999;
+	
 }
 .subtitle {
-	font-family: "Champion Lightweight", "Archivo Narrow","Arial Narrow","Arial",sans-serif;
 	font-size: 1.7em;
-	color: #999;
+	color: #fff;
 }
 
 /* VIDEO */
@@ -157,15 +90,19 @@ h2 {
 	width: 24%;
 	max-width: 200px;
 	margin-top: 0;
+	color: #9d9795;
 	
 }
-		#controls button.off {
-			color: #98700D!important;
+	#controls #subtitles {
+		color: #daaa00;
+	}
+		#controls #subtitles.off {
+			color: #9d9795!important;
 		}
 
 		
 video::cue {
-  color: #C28E0E;
+  color: #cfb991;
 	background-color: #000;
 }
 
@@ -199,7 +136,7 @@ figure {
 	width: 200px;
 	height: 200px;
 	margin: 0;
-	border: 2px #C28E0E solid;
+	border: 2px #cfb991 solid;
 	max-width: 100%;
 
 		position: relative;
@@ -222,6 +159,12 @@ figcaption {
 	-o-transition: margin .8s;
 	transition: margin .8s;
 }
+	hr {
+		border-color: #9d9795!important;
+	}
+	hr.spacer {
+		border-color: transparent!important;
+	}
 figcaption p {
 	text-align: left;
 	margin: 0;
@@ -230,7 +173,7 @@ figcaption p {
 	line-height: 1.2;
 }
 #quick-facts figcaption h4 {
-	color: #bbb!important;
+	color: #C4BFC0!important;
 	margin: 0;
 	padding: 5px 0;
 	text-align: left;

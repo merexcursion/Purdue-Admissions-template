@@ -1,15 +1,13 @@
 /* general */
 p.lead {
-		font-family: $font-archivo-narrow;
-		font-weight: 900;
-		font-size: 1.3em;
-		line-height: 1.4;
-		color: $color-headlineGold;
-	
+	font-size: 1.3em;
+	line-height: 1.4;
+	color: #000;
+	font-weight: 700;
 }
 .dark-bg {
 	.lead {
-		color: $color-campusGold;
+		color: #fff;
 	}
 }
 /* leaving this here for now, not sure if it's being used... */
@@ -69,17 +67,17 @@ Purdue accordion altered +
 		margin: 0;
 		padding: 15px;
 		list-style-type: none;
-		background-color: #efefef;
+		background-color: #f5f5f5;
 	}
 	
 }
 
 .dark-bg .accordion {
 	.accordion__content {
-		background-color: #333;
+		background-color: #222;
 	}
 	.accordion__heading {
-		border-color: #222;
+		border-color: #333;
 	}
 }
 
@@ -90,24 +88,24 @@ Alerts
 */
 .alert {
 	&.alert-danger {
-		background-color: lighten($color-pappysPurple, 50);
-		border-color: lighten($color-pappysPurple, 45);
-		color: darken($color-pappysPurple, 20);
+		background-color: lighten(darkred, 70);
+		border-color: transparent;
+		color: darkred;
 	}
 	&.alert-info {
-		background-color: lighten($color-ameliaSkyBlue, 10);
-		border-color: $color-ameliaSkyBlue;
-		color: darken($color-ameliaSkyBlue, 56);
+		background-color: lighten($steel-gray, 55);
+		border-color: transparent;
+		color: darken($steel-gray, 6);
 	}
 	&.alert-success {
-		background-color: lighten($color-rossAdeGreen, 40);
-		border-color: lighten($color-rossAdeGreen, 30);
-		color: darken($color-rossAdeGreen, 22);
+		background-color: lighten(forestgreen, 62);
+		border-color: transparent;
+		color: darken(forestgreen, 7);
 	}
 	&.alert-warning {
-		background-color: lighten($color-mackeyOrange, 28);
-		border-color: lighten($color-mackeyOrange, 18);
-		color: darken($color-mackeyOrange, 36);
+		background-color: lighten(orange, 44);
+		border-color: transparent;
+		color: darken(orange, 15);
 	}
 }
 /* WYSIWYG alerts */
@@ -116,36 +114,74 @@ Alerts
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
-	background-color: lighten($color-pappysPurple, 50);
-	border-color: lighten($color-pappysPurple, 45);
-	color: darken($color-pappysPurple, 20);
+	background-color: lighten(darkred, 70);
+		border-color: transparent;
+		color: darkred;
 }
 .notice-alert {
 	padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
-	background-color: lighten($color-mackeyOrange, 28);
-	border-color: lighten($color-mackeyOrange, 18);
-	color: darken($color-mackeyOrange, 36);
+	background-color: lighten(orange, 44);
+		border-color: transparent;
+		color: darken(orange, 15);
 }
 .success-alert {
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
-	background-color: lighten($color-rossAdeGreen, 40);
-	border-color: lighten($color-rossAdeGreen, 30);
-	color: darken($color-rossAdeGreen, 22);
+	background-color: lighten(forestgreen, 62);
+		border-color: transparent;
+		color: darken(forestgreen, 7);
 }
 .info-alert {
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
-	background-color: lighten($color-ameliaSkyBlue, 10);
-	border-color: $color-ameliaSkyBlue;
-	color: darken($color-ameliaSkyBlue, 56);
+	background-color: lighten($steel-gray, 55);
+		border-color: transparent;
+		color: darken($steel-gray, 6);
+}
+
+.dark-bg {
+	.alert {
+		&.alert-danger {
+			background-color: darken(darkred, 15);
+			color: #fff;
+		}
+		&.alert-info {
+			background-color: darken($steel-gray, 25);
+			color: #fff;
+		}
+		&.alert-success {
+			background-color: darken(forestgreen, 22);
+			color: #fff;
+		}
+		&.alert-warning {
+			background-color: darken(orange, 27);
+			color: #fff;
+		}
+	}
+	/* WYSIWYG alerts */
+	.error-alert {
+		background-color: darken(darkred, 15);
+			color: #fff;
+	}
+	.notice-alert {
+		background-color: darken(orange, 27);
+			color: #fff;
+	}
+	.success-alert {
+		background-color: darken(forestgreen, 22);
+			color: #fff;
+	}
+	.info-alert {
+		background-color: darken($steel-gray, 25);
+			color: #fff;
+	}
 }
 
 
@@ -157,10 +193,11 @@ Jumbotron
 .main-content .jumbotron {
 	font-size: 1.2em;
 	@include border-radius(0);
-	background-color: $color-campusGold;
-	color: #000;
+	background-color: $aged-gold;
+	color: #fff;
 	margin-top: 0;
 	padding: 4rem;
+	box-shadow: -5px -5px 0 $cool-gray;
 	
 	h1,
 	h2,
@@ -169,12 +206,16 @@ Jumbotron
 	h5,
 	h6 {
 		line-height: 1;
-		font-family: $font-champion-welter;
-		
+		font-family: $acumin-pro-condensed;
 		&:first-child {
 			margin-top: 0;
 			padding-top: 0;
 		}
+		color: #fff!important;
+	}
+	
+	hr {
+		border-color: $boiler-gold;
 	}
 	
 	.right,
@@ -192,16 +233,19 @@ Jumbotron
 	}
 	&.cta a {
 		
-		font-family: $font-archivo-narrow;
+		font-family: $united-sans-extended;
 		text-decoration: none!important;
 		font-size: .8em;
 		font-weight: 700;
 		text-transform: uppercase;
 
 		&:hover {
-			background-color: $color-campusGold;
+			background-color: $steel-gray;
 		}
 		
+	}
+	p:last-child {
+		margin-bottom: 0;
 	}
 	&.profile {
 		h1,
@@ -210,14 +254,41 @@ Jumbotron
 		h4,
 		h5,
 		h6 {
-			font-family: $font-archivo-narrow;
+			font-family: $acumin-pro-condensed;
+			
 		}
-		.text {
-			font-size: 70%;
-		}
+		
 	}
 
 }
+.dark-bg {
+	.main-content .jumbotron {
+		background-color: #000;
+		color: #fff;
+		box-shadow: -5px -5px 0 #222;
+		
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: #fff!important;
+		}
+		
+		&.cta a {
+
+			&:hover {
+				background-color: $aged-gold;
+			}
+
+		}
+		hr {
+			border-color: $steel-gray;
+		}
+	}
+}
+
 
 /* 	
 =============================================
@@ -231,28 +302,36 @@ List Groups
 		margin: 0;
 		padding: 0;
 		margin-bottom: 10px;
-		color: $color-headlineGold;
+		color: $steel-gray;
 	}
 	p:last-child {
 		margin-bottom: 0;
 	}
 }
 .list-group-heading { 
-	font-size: 1.7em;
-	font-weight: normal;
-	font-family: $font-archivo-narrow;
+	font-weight: 700;
+	font-family: $acumin-pro-condensed;
 	line-height: 1.2;
 }
 .dark-bg .list-group-item {
 	background-color: transparent;
 }
-.content  .list-group {
+.content .list-group {
 	@include border-radius(0);
 	
 	.list-group-item {
-		border-color: #c28e0e;
-		@include border-radius(0);
+		border-color: $steam-gray;
+		background-color: lighten($steam-gray,20);
 		padding: 15px;
+		color: #000;
+	}
+}
+.dark-bg {
+	.content .list-group {
+		.list-group-item {
+			background-color: #222;
+			color: #fff;
+		}
 	}
 }
 
@@ -273,14 +352,21 @@ Modals
 .modal-header {
 	border-width: 2px;
 	padding-bottom: 5px;
+	
 }
-
+.modal-title {
+	font-family: $united-sans!important;
+	font-weight: 700;
+	text-transform: uppercase;
+}
 .modal-header, 
 .modal-footer {
 	border-color: $color-campusGold;
 }
 .modal-footer button {
-	@include border-radius(0);
+	background-color: transparent!important;
+	font-family: $united-sans!important;
+	font-weight: 700;
 }
 .modal-backdrop {
     background-color: $color-campusGold;
@@ -289,22 +375,19 @@ Modals
 .dark-bg {
 	.modal-content {
 		background-color: #000;
-		color: #ddd;
+		color: #fff;
 	}
 	.modal-title {
 		color: $color-campusGold;
-		text-transform: uppercase;
-		font-weight: normal!important;
 	}
 	.modal-footer button {
-		background-color: #444;
-		color: #ccc;
+		color: $color-campusGold;
 	}
 	.main-content .panel-default {
 		background-color: transparent!important;
 		.panel-body {
-			background-color: #343434!important;
-			color: #ddd;
+			background-color: #000!important;
+			color: #fff;
 		}
 	}
 }
@@ -314,52 +397,45 @@ Modals
 Panels (deprecated for cards, but still have that here - need to upgrade)
 =============================================
 */
-.content .panel {
+
+.main-content .panel {
 	margin-bottom: 20px;
     border: 1px solid transparent;
-    @include border-radius(0);
-	
-	&.panel-default, 
-	&.panel-default > .panel-heading {
-		@include border-radius(0);
-	}
 	
 	.panel-heading {
 		padding: 10px 15px;
 		border-bottom: 1px solid transparent;
-		@include border-radius(0);
+		
 	}
 	
 	.panel-body {
 		padding: 15px;
-		background-color: #fff;
+		
 	}
-}
-.main-content .panel {
+	
 	.panel-heading {
-		    font-family: $font-archivo-narrow;
+		    font-family: $acumin-pro-condensed;
 			font-size: 1.5em;
-			font-weight: bold;
+			font-weight: 700;
 			line-height: 1;
 	}
 	.panel-body {
-		
+		background-color: lighten($steam-gray,20);
 		p:last-child {
 			margin-bottom: 0;
 		}
 	}
 	&.panel-default, 
 	&.panel-default > .panel-heading {
-		border-color: $color-campusGold;
-		background-color: #fff;
+		border-color: $steam-gray;
 		color: #000;
 		
 	}
 	&.gold {
-		border-color: $color-campusGold;
+		border-color: $boiler-gold;
 		&.panel-default > .panel-heading {
-			border-color: $color-campusGold;
-			background-color: $color-campusGold;
+			border-color: $boiler-gold;
+			background-color: $boiler-gold;
 			color: #000;
 
 		}
@@ -369,62 +445,36 @@ Panels (deprecated for cards, but still have that here - need to upgrade)
 		&.panel-default > .panel-heading {
 			border-color: #000;
 			background-color: #000;
-			color: $color-campusGold;
+			color: $boiler-gold;
 
 		}
 	}
 	&.trueblue {
-		border-color: $color-everTrueBlue;
+		border-color: $steel-gray;
 		&.panel-default > .panel-heading {
-			border-color: $color-everTrueBlue;
-			background-color: $color-everTrueBlue;
+			border-color: $steel-gray;
+			background-color: $steel-gray;
 			color: #fff;
 
 		}
 	}
 	&.gray70 {
-		border-color: $color-gray70;
+		border-color: $railway-gray;
 		&.panel-default > .panel-heading {
-			border-color: $color-gray70;
-			background-color: $color-gray70;
-			color: #fff;
+			border-color: $railway-gray;
+			background-color: $railway-gray;
+			color: #000;
 
 		}
 	}
 }
-.image-panel-wrap {
-	display: table;
-	border: 1px solid $color-campusGold;
-}
-.panel-default.image-panel {
-	display: table-row;
-	
-	> div {
-		display: table-cell;
-		vertical-align: top;
-	}
-	.panel-body {
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			color: $color-headlineGold;
-		}
-		
-	}
-	.panel-image {
-		width: 40%;
-		border-left: 1px solid $color-campusGold;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		img {
-			display: none;
+.dark-bg {
+	.main-content .panel {
+		.panel-body {
+			background-color: #222!important;
+			color: #fff;
 		}
 	}
-	
 }
 
 /* 	
@@ -436,55 +486,97 @@ Tables
 	margin-top: 1em;
 	margin-bottom:2em;
 	width: 100%;
+	overflow: hidden;
 	
 	caption {
 		color: $color-headlineGold;
 		caption-side: top;
-
+		font-family: $united-sans;
 	}
 	&.table-responsive {
 		margin-bottom:1em;
 	}
 }
 .table-striped {
+	* {
+		border-color: $aged-gold!important;
+	}
 	caption {
-		background: transparent url('https://admissions.purdue.edu/images/design-elements/table-caption-bg.png') no-repeat center;
+		@include transform(skewX(-20deg));
+		max-width: 99%;
 		
 		span {
 			display: inline-block;
 			margin: 0 auto;
+			margin-bottom: 10px;
 			width: inherit;
-			background: #fff;
-			padding: 15px 3%;
+			color: $aged-gold;
+			padding: 3px 3%;
+			border-left: double $aged-gold .4em;
+			border-right: double $aged-gold .4em;
+			font-weight: 700;
+			max-width: 80%;
 		}
+	}
+	tbody tr:nth-child(even) {
+		
+		background-color: lighten($steam-gray,20);
+	}
+	tbody tr:nth-child(odd) {
+		background-color: #fff;
 	}
 	td {
 		line-height: 1.2;
 		font-size: .95em;
+		color: #000;
+		border-top: none;
 	}
 	tbody th {
-		text-transform: uppercase;
-		text-align: right;
-		font-size: .75em;
-		font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			font-size: .75em;
+			font-weight: 900;
+			border-top: none;
+			vertical-align: middle;
+			text-align: right;
 	}
 	thead th {
 		vertical-align: bottom;
+		border-top: none;
+		color: $aged-gold;
+		font-weight: 700;
+		font-family: $acumin-pro-condensed;
+		background-color: lighten($steam-gray,20);
+		text-transform: uppercase;
 	}
 }
 .dark-bg .table-striped {
 	* {
-		border-color: #8C8C8C;
+		border-color: $boiler-gold!important;
 	}
-	caption span {
-		background: #222;
-		color: $color-campusGold;
+	caption {
+		span {
+			color: $boiler-gold;
+			border-left: double $boiler-gold .4em;
+			border-right: double $boiler-gold .4em;
+		}
 	}
-	th {
-		color: lighten($color-campusGold, 5);
+	tbody tr:nth-child(even) {
+		
+		background-color: #222;
 	}
-	tbody tr:nth-of-type(odd) {
-		background-color: rgba(255, 255, 255, 0.05);
+	tbody tr:nth-child(odd) {
+		background-color: #333;
+	}
+	td {
+		color: #fff;
+	}
+	tbody th {
+		color: $boiler-gold;
+	}
+	thead th {
+		color: $boiler-gold;
+		background-color: #222;
 	}
 }
 .table-responsive {
@@ -504,47 +596,51 @@ Tabs & Tabbed content
 .nav-tabs {
 	margin-top: 30px;
 	.nav-link {
-		border-bottom: $color-campusGold 2px solid;
-		color: $color-headlineGold;
-		background-color: lighten($color-campusGold, 50%);
+		border-bottom: $boiler-gold 2px solid;
+		color: $aged-gold;
+		background-color: lighten($steam-gray,20);
+		
+		font-family: $united-sans-condensed;
+		font-weight: 900;
 		
 		&:hover {
-			background-color: #eee;
-			color: $color-headlineGold;
+			background-color: lighten($steam-gray,15);
+			color: $aged-gold;
+			border-bottom-color: $boiler-gold;
 		}
 		
 		&.active, 
 		&.active:focus, 
 		&.active:hover {
-			border: $color-campusGold 2px solid;
+			border: $boiler-gold 2px solid;
 			border-bottom-color: #fff;
 			background-color: #fff;
-			color: $color-headlineGold;
+			color: $aged-gold;
 		}
 	}
 }
 .dark-bg {
 	.nav-tabs {
-		border-color: #444;
-		
+		border-color: $boiler-gold;
 	}
 	.nav-link {
-		color: lighten($color-campusGold,5);
-		background-color: darken(#111, 50%);
+		color: $boiler-gold;
+		background-color: #222;
+		border-bottom-color: #222;
+		
+		&:hover {
+			background-color: #333;
+			color: $boiler-gold;
+			border-color: #333;
+		}
 		
 		&.active, 
 		&.active:focus, 
 		&.active:hover {
-			border: $color-campusGold 2px solid;
-			border-bottom-color: #444;
+			border: $boiler-gold 2px solid;
+			border-bottom-color: #333;
 			background-color: #333;
-			color: lighten($color-campusGold,7);
-		}
-		&:hover {
-			background-color: #333;
-			border-bottom-color: #444;
-			border-color: #333;
-			color: lighten($color-campusGold,7);
+			color: $boiler-gold;
 		}
 	}
 }
@@ -555,7 +651,6 @@ Tabs & Tabbed content
 	> a {
 		text-transform: uppercase;
 		text-align: center;
-		font-family: $font-champion-welter;
 		font-size: 1.2em;
 		font-weight: normal;
 		text-decoration: none;
@@ -575,6 +670,15 @@ Tabs & Tabbed content
 Media Queries
 =============================================
 */
+@include desktopLarge {
+	.school .jumbotron {
+		font-size: 100%;
+		
+		&.profile {
+			font-size: 90%;
+		}
+	}
+}
 @include desktopSmallMax {
 	
 	div.main-content .image-panel .panel-body,
@@ -586,11 +690,11 @@ Media Queries
 			.nav-item {
 
 				.nav-link {
-					border: 1px solid $color-campusGold;
+					border: 1px solid $boiler-gold;
 					@include border-radius(0);
 
 					&.active {
-						background-color: #333;
+						background-color: lighten($steam-gray,5);
 					}
 				}
 
@@ -619,11 +723,12 @@ Media Queries
 			flex-basis: 100%;
 			
 			.nav-link {
-				border: 1px solid $color-headlineGold;
+				border: 1px solid $boiler-gold;
 				@include border-radius(0);
 				
 				&.active {
-					background-color: $color-gray15;
+					background-color: lighten($steam-gray,5);
+					color: #000;
 				}
 			}
 			

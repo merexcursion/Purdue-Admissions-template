@@ -79,7 +79,3 @@
 
 	@return math-summation(math-ln-maclaurin, $value / math-pow(10, $ten-exp), 1, 100) + $ten-exp * $ln-ten;
 }
-
-@function get-cell-width($some-number, $another-number){
-  @return $some-number + $another-number
-}

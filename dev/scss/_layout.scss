@@ -1,4 +1,4 @@
-/* general layout */
+/* general layout and colors */
 * {
     box-sizing: border-box;
 }
@@ -8,46 +8,16 @@ header, section, footer, aside, nav, main, article, figure {
 }
 
 body {
-	color: #111;
+	color: #333;
 	background-color: #fff;
 	
 	&.dark-bg, 
 	&.light-bg {
-		color: #ddd;
+		color: lighten($steam-gray,10);
 		background-color: #000;
 	}
 }
 	
-blockquote {
-	position: relative;
-    border: none!important;
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    border-left: 5px solid #eeeeee;
-	quotes: none;
-	
-	&.quote-mark {
-		padding-left: 4rem;
-	}
-	.svg-container {
-		width: 50px;
-		height: 50px;
-		position: absolute;
-		left: 0;
-		top: 0;
-	}
-	.quote__content {
-		display: block;
-		padding: 0;
-		margin: 0;
-		margin-bottom: .5rem;
-	}
-	.quote__source {
-		display: block;
-		padding: 0;
-		margin-bottom: 0;
-	}
-}
 button.disabled {
 	opacity: 0.3;
 }
@@ -70,29 +40,30 @@ button:focus {
 }
 .dark-bg {
 	figure figcaption {
-		color: lighten($color-campusGold,10);
+		color: lighten($boiler-gold,5);
+	}
+	#intro {
+		background-color: $aged-gold;
+
+		h1 {
+			color: #fff;
+		}
 	}
 	main {
-		background-color: #222;
-		color: #ddd;
+		background-color: #333;
+		color: #eee;
 	}
 	.main-content {
 		h1,
 		h2,
 		h3 {
-			color: #8C8C8C;
+			color: $steam-gray;
 		}
 		h4,
 		h5,
 		h6 {
-			color: lighten($color-campusGold,5);
+			color: lighten($boiler-gold,5);
 		}
-		.lead {
-			color: lighten($color-campusGold,5);
-		}
-	}
-	table {
-		color: #ddd;
 	}
 	.vid-wrapper {
 		background-color: #111;
@@ -129,7 +100,7 @@ figure {
 		display: block;
 	}
 	figcaption {
-		color : #98700D;
+		color : #8e6f3e;
 		background-color: transparent;
 		padding: 10px;
 		width: 100%;
@@ -143,17 +114,16 @@ picture {
 picture {
 	display: block;
 }
-#inner-page-content {
-	padding: 10px 0 30px 0;
-}
 #intro {
-    @include black-lines-on-gray;
+    background-color: #c4bfc0;
 	
 	h1 {
-		color: $color-campusGold;
-		margin-top: .8em;
+		color: #000;
+		margin-top: 1em;
 		margin-bottom: 0;
-		padding: 10px 0;
+		padding: 10px 20px;
+		padding-left: 0;
+		text-transform: uppercase;
 	}
 }
 #intro-text {
@@ -165,16 +135,22 @@ picture {
     margin: 0;
     padding: 0;
 }
-.jumbotron hr {
-	border-color: $color-yellowWalk;
-}
 main {
 	background-color: #fff;
-	color: #000;
+	color: #333;
+	line-height: 1.7;
+	padding-bottom: 3em;
+	
+	a, a:visited {
+		color: inherit;
+	}
+}
+.landing main {
+	padding-bottom: 0;
 }
 #main {
 	.sidebar-vid-container {
-		background-color: #c28e0e;
+		background-color: #cfb991;
 		padding: 5px 0;
 	}
 	iframe.side-video {
@@ -182,6 +158,7 @@ main {
 	}
 }
 .main-content {
+	padding-top: 10px; 
 	> img,
 	> picture {
 		margin-bottom: 1em;
@@ -241,7 +218,7 @@ main {
 }
 
 .vid-wrapper {
-		background-color: $color-gray15;
+		background-color: lighten($steam-gray,15);
 	}
 iframe {
 	display: block;
@@ -255,6 +232,14 @@ iframe {
 	}
 	&.j-side {
 		margin-bottom: 1em;
+	}
+}
+.dark-bg {
+	iframe {
+		&.video {
+			border-top: 5px solid $aged-gold;
+			border-bottom: 5px solid $aged-gold;
+		}
 	}
 }
 
@@ -383,14 +368,7 @@ iframe {
 			}
 		}
 	}
-	blockquote.quote-mark {
-		 padding-left: 2.5rem;
-		.svg-container {
-			width: 30px;
-			height: 30px;
-			top: 14px;
-		}
-	} 
+	
 	figure {
 		display: block;
 		width: 100%;
@@ -418,16 +396,14 @@ iframe {
 			margin-left: 0!important;
 		}
 	}
-	blockquote.quote-mark {
-		padding-left: 0;
-		.svg-container {
-			top: .5em;
-			width: 20px;
-			height: 20px;
-		}
-		.quote__content {
-			text-indent: 30px;
-		}
-	} 
 	
+}
+
+/* new brand */ 
+.transition {
+	-webkit-transition-duration: 0.3s;
+	-moz-transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-ms-transition-duration: 0.3s;
 }

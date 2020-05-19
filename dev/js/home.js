@@ -141,7 +141,7 @@ if($('body').hasClass('home')){
 	// Find undergrad majors
 	// ------------------------------------------------------------------------
 	
-	var whichSchool
+	var whichSchool;
 	$school.change(function(){ // identify which are current school
 		$noMatchNote.hide();
 		whichSchool = $(this).val();
@@ -274,22 +274,11 @@ if($('body').hasClass('home')){
 	
 	// for hover colors
 	var majorLinkColorClasses = [
-		  '#849E2A',
-		  '#BAA892',
-		  '#C28E0E',
-		  '#B46012',
-		  '#C28E0E',
-		  '#AD1F65',
-		  '#29A592',
-		  '#C28E0E',
-		  '#A3D6D7',
-		  '#FF9B1A',
-		  '#E9E45B',
-		  '#C28E0E',
-		  '#C3BE0B',
-		  '#6E99B4',
-		  '#C28E0E',
-		  '#FFD100',
+		  '#cfb991',
+		  '#ebd99f',
+		  '#ddb945',
+		  '#c4bfc0',
+		  '#9d9795',
 	  ];
 	  
 	  var colorCount = 0;
@@ -306,7 +295,7 @@ if($('body').hasClass('home')){
 			  $(this).css('background-color',$(this).attr('data-hover'));
 		  },
 		  function(){
-			  $(this).css('background-color','#ddd');
+			  $(this).css('background-color','#fff');
 		  }
 		  
 	  );

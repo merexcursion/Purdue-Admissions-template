@@ -148,7 +148,8 @@ var getWindowOptions0 = function() {
 };
 
 var fbBtn = document.querySelector('.fb-share');
-var fbLink = 'https://www.facebook.com/v3.0/dialog/share?' +
+	// not sure why but the below stopped working
+/*var fbLink = 'https://www.facebook.com/v3.0/dialog/share?' +
 	'app_id=' + fbSDKId +
 	'&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fvy-MhgbfL4v.js%3Fversion%3D44%23cb%3Df5724576a443fc%26domain%3Dwww.admissions.purdue.edu%26origin%3Dhttps%253A%252F%252Fwww.admissions.purdue.edu%252Ff17af18a01c645%26relation%3Dopener' +
 	'&display=popup' + 
@@ -157,18 +158,21 @@ var fbLink = 'https://www.facebook.com/v3.0/dialog/share?' +
 	'&href=' + encodeURIComponent(location.href) +
 	'&locale=en_US' +
 	'&mobile_iframe=true' +
-	'scrape=true' +
+	'&scrape=true' +
 	'&next=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fvy-MhgbfL4v.js%3Fversion%3D44%23cb%3Dffddf91054f2e4%26domain%3Dwww.admissions.purdue.edu%26origin%3Dhttps%253A%252F%252Fwww.admissions.purdue.edu%252Ff17af18a01c645%26relation%3Dopener%26frame%3Df31fd828ad6ebfc%26result%3D%2522xxRESULTTOKENxx%2522' +
 	'&sdk=joey' +
-	'&version=v3.0';
-
-
-fbBtn.addEventListener('click', function(e) {
+	'&version=v3.0'; */
+var completeURL = encodeURIComponent(location.href);
+var useURLArr = completeURL.split('www');
+var fbLink = 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F' + useURLArr[1] + '&display=popup&mobile_iframe=true&scrape=true&src=sdkpreparse';
+fbBtn.href = fbLink;
+fbBtn.target = '_blank';
+/*fbBtn.addEventListener('click', function(e) {
   e.preventDefault();
 
 	 var win = window.open(fbLink, 'ShareOnFacebook', getWindowOptions0());
 	 win.opener = null; // 2
-});
+});*/
 
 
 // twitter share

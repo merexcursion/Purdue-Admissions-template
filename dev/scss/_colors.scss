@@ -1,33 +1,26 @@
 /* classes used to add specific colors to content individually */
 
-.ameliablue {
-	background-color: $color-ameliaSkyBlue;
+/* used in Cascade WYSIWYG */
+.highlight {
+	display: inline-block;
+	background-color: $dust-gold;
+	padding-left: .3em;
+	padding-right: .3em;
 }
-.ameliablue-text {
-	color: $color-ameliaSkyBlue;
+.dark-bg .highlight {
+	background-color: $aged-gold;
 }
+.gold-text-lightBG {
+	color: $aged-gold;
+}
+.gold-text-darkBG {
+	color: $boiler-gold;
+}
+/* end Cascade WYSIWYG */
+
 .black {
 	background-color: #000;
-	color: $color-campusGold;
-}
-.brick {
-	background-color: $color-bellTowerBrick;
-}
-.brick-text {
-	color: $color-bellTowerBrick;
-}
-.brown {
-	background-color: $color-oakenBucketBrown;
-}
-.brown-text {
-	color: $color-oakenBucketBrown;
-}
-
-.celerygreen {
-	background-color: $color-celeryBogGreen;
-}
-.celerygreen-text {
-	color: $color-celeryBogGreen;
+	color: $boiler-gold;
 }
 .gold {
 	background-color: $color-campusGold;
@@ -40,86 +33,25 @@
 	color: $color-headlineGold;
 }
 .gray {
-	background-color: $color-coalGray;
+	background-color: $cool-gray;
 }
 .gray-text {
-	color: $color-coalGray;
+	color: $cool-gray;
 }
 .gray40 {
-	background-color: $color-gray40;
+	background-color: $cool-gray;
 	color: #000;
 }
 .gray70 {
-	background-color: $color-gray70;
-	color: #fff;
+	background-color: $railway-gray;
+	color: #000;
 }
 .grayDrk {
-	background-color: $color-gray90;
+	background-color: $steel-gray;
 }
 .grayLt {
-	background-color: $color-gray15;
-}
-.landgreen {
-	background-color: $color-landGrantGreen;
-}
-.landgreen-text {
-	color: $color-landGrantGreen;
-}
-.moon {
-	background-color: $color-moonDustGray;
-}
-.moon-text {
-	color: $color-moonDustGray;
-}
-.orange {
-	background-color: $color-mackeyOrange;
-}
-.orange-text {
-	color: $color-mackeyOrange;
-}
-.purple {
-	background-color: $color-pappysPurple;
-}
-.purple-text {
-	color: $color-pappysPurple;
-}
-.rossadegreen {
-	background-color: $color-rossAdeGreen;
-}
-.rossadegreen-text {
-	color: $color-rossAdeGreen;
-}
-.slayterblue {
-	background-color: $color-slayterSkyBlue;
-}
-.slayterblue-text {
-	color: $color-slayterSkyBlue;
-}
-.springgreen {
-	background-color: $color-springFestGreen;
-}
-.springgreen-text {
-	color: $color-springFestGreen;
-}
-.teal {
-	background-color: $color-fountainRunTeal;
-}
-.teal-text {
-	color: $color-fountainRunTeal;
-}
-.trueblue {
-	background-color: $color-everTrueBlue;
-	color: #fff;
-}
-.trueblue-text {
-	color: $color-everTrueBlue;
+	background-color: $steam-gray;
 }
 .white {
 	background-color: #fff;
-}
-.yellow {
-	background-color: $color-yellowWalk;
-}
-.yellow-text {
-	color: $color-yellowWalk;
 }

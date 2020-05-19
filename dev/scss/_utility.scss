@@ -5,19 +5,45 @@ a[disabled="disabled"]{
 		cursor: not-allowed;
 	}
 }
+#announcement {
+	background-color: $aged-gold;
+	padding: 3em 0;
+	color: #fff;
+	border-top: 1em solid #daaa00;
+	border-bottom: 1em solid #daaa00;
+	
+	h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
 body.noScroll { 
+	
   overflow: hidden;
 	margin-right:20px;
 }
 .blur-content {
 	filter: blur(3px);
 }
+.dark-bg {
+	hr {
+		
+		&.striped-gold,
+		&.striped-teal,
+		&.striped-purple,
+		&.striped-ross-green {
+			border-top: double .4em $boiler-gold;
+			border-bottom: double .4em $boiler-gold;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
 .hide,
 #preload {
 	display: none!important;
 }
 hr {
-	border-color: $color-campusGold;
+	border-color: $boiler-gold;
 	clear: both;
 	margin: 2em 0;
 	
@@ -26,12 +52,17 @@ hr {
 		clear: both;
 		margin: 2em 0;
 	}
-	&.striped-gold {
-		margin: 2em 0;
-		padding: 0;
-		border: none;
-		height: 20px;
-		background: transparent url(https://admissions.purdue.edu/images/design-elements/hr-gold.png) no-repeat center;
+	&.striped-gold,
+	&.striped-teal,
+	&.striped-purple,
+	&.striped-ross-green {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		height: .15em;
+		border-top: double .4em $steam-gray;
+		border-bottom: double .4em $steam-gray;
+		@include transform(skewX(-20deg));
 	}
 	
 	&.extra-large {

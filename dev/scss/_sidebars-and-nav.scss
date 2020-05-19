@@ -6,8 +6,18 @@
 		border: none;
 		border-top: 1px solid #fff;
 		background-color: $color-campusGold;
-		color: #000;
+		color: darken($aged-gold, 14);
+		
 		margin-bottom: 0;
+		font-weight: 400;
+		text-decoration: none;
+		padding-top: .6em;
+		padding-bottom: .6em;
+		
+		&:hover {
+			background-color: lighten($aged-gold, 8);
+			color: #000;
+		}
 	}
 }
 #breadcrumb-nav  {
@@ -38,9 +48,9 @@
 	#social-sidebar,
 	#side-menu-btn,
 	#side-social-btn {
-		-webkit-box-shadow: none;
+		/*-webkit-box-shadow: none;
 		-moz-box-shadow: none;
-		box-shadow: none;
+		box-shadow: none;*/
 	}
 }
 /*
@@ -61,13 +71,13 @@
 	#social-sidebar,
 	#side-menu-btn,
 	#side-social-btn {
-		background-color: #222;
+		background-color: #333;
 	}
 	
 }*/
 #sidebar {
 	a {
-		font-weight: 700;
+		
 	}
 	img {
 		margin: 0 auto;
@@ -81,11 +91,10 @@
 		
 	}
 	.text {
-		font-size: .8em;
-		font-weight: 700;
+		font-size: .9em;
 		margin: 0;
 		background-color: $color-campusGold;
-		color: #000;
+		color: darken($aged-gold, 14);
 		padding: 10px;
 		
 		h1,
@@ -94,9 +103,8 @@
 		h4,
 		h5,
 		h6 {
-			font-family: $font-archivo-narrow;
-			font-weight: 700;
-			color: #000;
+			margin-bottom: .2em!important;
+			color: darken($aged-gold, 14);
 			text-transform: uppercase
 		}
 		h1 {
@@ -117,6 +125,9 @@
 		h6 {
 			font-size: 1.4em;
 		}
+		p:last-child {
+			margin-bottom: 0;
+		}
 
 	}
 }
@@ -130,11 +141,11 @@
 	top: 320px;
 	overflow: visible;
 	@include transition(left .8s);
-	background-color: #333;
+	background-color: #fff;
 	padding: 20px;
 	padding-left: 0;
 	padding-right: 30px;
-	@include box-shadow(3px 8px 8px, #000, 0.5);
+	@include box-shadow(3px 5px 5px, #000, 0.3);
 	
 	&:hover { 
 		left: 0;
@@ -145,7 +156,7 @@
 		width: 100%;
 		text-align: right;
 		a {
-			
+			color: $steel-gray;
 			text-align: right;
 			background-color: transparent!important;
 			padding: 2px;
@@ -173,14 +184,14 @@
 		transition: transform 300ms;
 		display: inline-block;
 		margin-bottom: 5px;
-		color: $color_campusGold;
+		color: $steel-gray;
 		
 		&:visited {
-			color: $color_campusGold;
+			color: $steel-gray;
 		}
 		
 		&:hover {
-			color: inherit;
+			color: #000;
 			transform: scale(1.2); 
 			-webkit-transform: scale(1.2);
 		}
@@ -200,10 +211,10 @@
 		font-weight: 700;
 		
 		a {
-			background-color: #C28E0E;
+			
 		}
 		li a {
-			color: #EEB011!important;
+			color: $aged-gold;
 		}
 	}
 	#sidenav {
@@ -213,18 +224,18 @@
 		font-weight: 700;
 		
 		a {
-			background-color: #222;
-			color: #C28E0E;
-			font-family: $font-archivo-narrow;
+			
+			font-family: $acumin-pro-condensed;
+			font-weight: 400;
 		}
 		
 		li.top-level a {
-			color: #ddd!important;
+			color: #000;
 			font-size: 1.1em;
 			text-transform: uppercase;
 		}
 		.list-group-item.header {
-			font-family: $font-archivo-narrow;
+			font-family: $acumin-pro;
 			text-transform: uppercase;
 			font-size: 1.1em;
 		}
@@ -243,9 +254,6 @@
 		}
 		li {
 			margin-bottom: 5px;
-			a {
-				color: #ADADAD!important;
-			}
 		}
 		
 	}
@@ -258,21 +266,39 @@
 		@include border-radius(0);
 		border: none;
 		border-top: 1px solid #fff;
-		background-color: #bbb;
-		color: #000;
+		background-color: $steam-gray;
+		color: darken($steel-gray, 4);
 		margin-bottom: 0;
+		font-weight: 400;
+		text-decoration: none;
+		padding-top: .6em;
+		padding-bottom: .6em;
 		
 		&:hover {
-			background-color: #aaa;
+			background-color: #9D9795;
+			color: #000;
 		}
 		&.header {
 			border-top: none;
-			background-color: #333;
-			color: #ddd;
+			background-color: $steam-gray;
+			font-size: 1.2em;
+			font-family: $acumin-pro;
+			text-align: center;
+			text-transform: uppercase;
+			@include transform(skewX(-20deg));
+			transform-origin: 100% 100%;
+			text-decoration: none;
+			font-weight: 400;
+			
+			&:hover {
+				color: #000;
+				text-decoration: underline;
+			}
 		}
 	}
 	.list-group-item.active {
-		background-color: #aaa;
+		background-color: #9D9795;
+		color: #000;
 	}
 	
 }
@@ -285,10 +311,11 @@
 	display: block;
 	padding: 20px;
 	padding-left: 30px;
-	color: #ddd;
-	background-color: #333;
-	@include box-shadow(7px 5px 6px, #000, 0.5);
+	color: #000;
+	background-color: #fff;
+	@include box-shadow(3px 5px 5px, #000, 0.3);
 }
+
 
 #top-link {
 	position: fixed;
@@ -296,11 +323,63 @@
 	left: 0;
 	width: 45px;
 	text-align: center;
-	color: #333;
+	color: #9d9795;
 	font-size: 35px;
 }
-.dark-bg #top-link {
-	color: #ADADAD;
+.dark-bg {
+	#footer-sidebar {
+		
+		#additional-links  {
+		
+			li a {
+				color: $boiler-gold;
+			}
+		}
+		#sidenav {
+
+			li.top-level a {
+				color: #fff;
+			}
+
+		}
+	}
+	
+	#side-menu-btn,
+	#side-social-btn {
+		
+		color: $steam-gray;
+		background-color: #333;
+		@include box-shadow(3px 5px 5px, #000, 0.5);
+	}
+	#footer-sidebar,
+	#social-sidebar {
+	
+		background-color: #333;
+		@include box-shadow(3px 5px 5px, #000, 0.5);
+
+		.nav-pills li {
+			
+			a {
+				color: $steam-gray;
+			}
+		} 
+	}
+
+	#social-sidebar {
+		
+		#social-links li a {
+			color: $steam-gray;
+
+			&:visited {
+				color: $steam-gray;
+			}
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+
 }
 
 /* media queries */
@@ -360,6 +439,33 @@
 		display: block;
 		color: #fff;
 	}
+	#side-social-btn,
+	#social-sidebar #social-links li a,
+	#social-sidebar #social-links li a:visited,
+	#footer-sidebar #sidenav li.top-level a,
+	#footer-sidebar #sidenav li.top-level a:visited {
+		color: #fff!important;
+	}
+	#footer-sidebar .nav-pills li a,
+	#footer-sidebar .nav-pills li a:visited {
+		color: $steam-gray;
+	}
+	#footer-sidebar #additional-links li a {
+		color: $boiler-gold;
+	}
+	.dark-bg {
+		
+		#side-menu-btn,
+		#side-social-btn,
+		#footer-sidebar,
+		#social-sidebar {
+			background-color: #000;
+		}
+	}
+}
+@include desktopLargeMax {
+
+	
 }
 
 @include desktopSmallMax {
@@ -373,19 +479,28 @@
 			}
 		}
 	}
+	#sidenav {
+		.list-group-item {
+			&.header {
+				@include transform(skewX(0deg));
+			}
+		}
+	}
+	
 }
 
 @include tabletMax {
-	#additional-links {
+	#footer-sidebar #additional-links {
 		clear: both;
-		padding-top: 5px;
+		border-top: 1px solid $steel-gray;
+		padding-top: 10px;
 	}
+	
 	#footer-sidebar #additional-links li a {
-		color: #ccc!important;
-		background-color: #191919!important;
+		
 	}
 	#footer-sidebar #sidenav li.top-level a {
-			color: $color_campusGold!important;
+			
 	}
 	#sidenav,
 	#additional-links {
@@ -396,7 +511,7 @@
 		}
 	}
 	#footer-sidebar .nav-pills li a {
-		background-color: #111!important;
+		
 		width: 48%;
 		text-align: center;
 		margin: 1px;

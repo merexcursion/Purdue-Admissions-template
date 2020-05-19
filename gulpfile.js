@@ -32,53 +32,46 @@ var APPPATH = {
 	img: 'prod/images'
 }
 
+
+/* GULP RUN DEFAULT */
+exports.default = parallel(
+	series(runSass, browserSyncRun), 
+	css, 
+	cleanHTML, 
+	series(cleanScripts, combineScripts), 
+	moveFonts, 
+	images, 
+	html, 
+	watchAll
+);
+
 /* ------------------------------------------------- */
-// dev 
+// production tasks
 
-function browserSyncRun(done) {
-  browserSync.init({
-    server: {
-      baseDir: APPPATH.root
-    },
-    port: 3000
-  });
-  done();
-}
-function reload(){
-	browserSync.reload();
-};
+task('compresscss', (done) => {
+	
+	sassFiles = src('prod/css/main.css')
+		.pipe(autoprefixer({
+				browsers: ['last 2 versions'],
+				cascade: false
+			}))
+		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+		.pipe(cssmin())
+		.pipe(rename({suffix: '.min'}))
+		.pipe(dest(APPPATH.css));
+		done();
+});
 
-			 
-function cleanHTML(cb){
-	return src(APPPATH.root + '/*.html', {read: false, force: true })
-		.pipe(clean());
-	cb();
-};
+/* ------------------------------------------------- */
+// dev functions
 
-function cleanScripts(cb){
-	return src(APPPATH.js + '/*.js', {read: false, force: true })
-		.pipe(clean());
-	cb();
-};
-
-function html(cb){
-	return src(SOURCEPATHS.htmlSource)
-		.pipe(injectPartials())
-		.pipe(dest(APPPATH.root));
-	cb();
-};
-
-function images(cb){
-	return src(SOURCEPATHS.imgSource)
-		.pipe(newer(APPPATH.img))
-		.pipe(dest(APPPATH.img));
-	cb();
-};
-
-function moveFonts(cb){
-	src('./node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2}')
-		  .pipe(dest(APPPATH.fonts));
-	cb();
+function watchAll(){
+	watch([SOURCEPATHS.sassSource], runSass).on('change', reload),
+	watch([SOURCEPATHS.cssSource]).on('change', reload),
+	watch([SOURCEPATHS.jsSource], series(cleanScripts, combineScripts)).on('change', reload),
+	watch([SOURCEPATHS.imgSource], images).on('change', reload),
+	watch([SOURCEPATHS.htmlSource, SOURCEPATHS.htmlPartialSource], html).on('change', reload);
+	return
 };
 
 function runSass(cb){
@@ -99,6 +92,7 @@ function runSass(cb){
 	cb();
 };
 
+
 function css(cb){
 	var cssFiles;
 	
@@ -108,6 +102,35 @@ function css(cb){
 	cb();
 };
 
+function browserSyncRun(done) {
+  browserSync.init({
+    server: {
+      baseDir: APPPATH.root
+    },
+    port: 3000
+  });
+  done();
+}
+
+			 
+function cleanHTML(cb){
+	return src(APPPATH.root + '/*.html', {read: false, force: true })
+		.pipe(clean());
+	cb();
+};
+
+function html(cb){
+	return src(SOURCEPATHS.htmlSource)
+		.pipe(injectPartials())
+		.pipe(dest(APPPATH.root));
+	cb();
+};
+
+function cleanScripts(cb){
+	return src(APPPATH.js + '/*.js', {read: false, force: true })
+		.pipe(clean());
+	cb();
+};
 
 function combineScripts(cb){
 	var jqueryJS = src('./node_modules/jquery/dist/jquery.min.js');
@@ -128,45 +151,19 @@ function combineScripts(cb){
 	cb();
 };
 
-function watchAll(){
-	watch([SOURCEPATHS.sassSource], runSass).on('change', reload),
-	watch([SOURCEPATHS.cssSource], css).on('change', reload),
-	watch([SOURCEPATHS.jsSource], series(cleanScripts, combineScripts)).on('change', reload),
-	watch([SOURCEPATHS.imgSource], images).on('change', reload),
-	watch([SOURCEPATHS.htmlSource, SOURCEPATHS.htmlPartialSource], html).on('change', reload);
-	return
+function images(cb){
+	return src(SOURCEPATHS.imgSource)
+		.pipe(newer(APPPATH.img))
+		.pipe(dest(APPPATH.img));
+	cb();
 };
 
+function moveFonts(cb){
+	src('./node_modules/bootstrap/dist/fonts/*.{eot,svg,ttf,woff,woff2}')
+		  .pipe(dest(APPPATH.fonts));
+	cb();
+};
 
-
-/* GULP RUN DEFAULT */
-exports.default = parallel(
-	series(runSass, browserSyncRun), 
-	css, 
-	cleanHTML, 
-	series(cleanScripts, combineScripts), 
-	moveFonts, 
-	images, 
-	html, 
-	watchAll
-);
-
-
-/* ------------------------------------------------- */
-// production tasks
-
-task('compresscss', (done) => {
-	
-	sassFiles = src('prod/css/main.css')
-		.pipe(autoprefixer({
-				browsers: ['last 2 versions'],
-				cascade: false
-			}))
-		.pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-		.pipe(cssmin())
-		.pipe(rename({suffix: '.min'}))
-		.pipe(dest(APPPATH.css));
-		done();
-});
-
-
+function reload(){
+	browserSync.reload();
+};

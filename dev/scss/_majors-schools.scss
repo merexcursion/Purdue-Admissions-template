@@ -1,42 +1,43 @@
 /* for all the college & schools pages, and majors pages */
 
-/* mockup version */
-$arts: darken($color-moonDustGray,15);
-$athletics: lighten($color-moonDustGray, 5);
-$aviation: $color-ameliaSkyBlue;
-$business: lighten($color-slayterSkyBlue, 10);
-$computers: lighten($color-fountainRunTeal, 27);
-$communication: lighten($color-fountainRunTeal, 5);
-$engineering: lighten($color-landGrantGreen, 50);
-$technology: lighten($color-rossAdeGreen, 17);
-$environment: lighten($color-celeryBogGreen,2);
-$healthcare: lighten($color-celeryBogGreen, 30);
-$law: lighten($color-bellTowerBrick, 5);
-$marketing: lighten($color-bellTowerBrick, 25);
-$math: $color-mackeyOrange;
-$perform: lighten($color-yellowWalk, 13);
-$programming: lighten($color-pappysPurple, 15);
-$public: lighten($color-pappysPurple, 28);
-$randd: lighten($color-oakenBucketBrown, 30);
-$science: lighten($color-campusGold, 16);
-$education: lighten($color-campusGold, 35);
+/* mockup version (3 more)*/
+$arts: $field-gold;
+$athletics: $field-gold;
+$aviation: $field-gold;
+$business: $field-gold;
+$computers: $field-gold;
+$communication: $field-gold;
+$engineering: $field-gold;
+$technology: $field-gold;
+$environment: $field-gold;
+$healthcare: $field-gold;
+$law: $field-gold;
+$marketing: $field-gold;
+$math: $field-gold;
+$perform: $field-gold;
+$programming: $field-gold;
+$public: $field-gold;
+$randd: $field-gold;
+$science: $field-gold;
+$education: $field-gold;
 
-/* actual version */
-$iAg: lighten($color-landGrantGreen, 47);
-$iAth: lighten($color-rossAdeGreen, 17);
-$iBiz: lighten($color-celeryBogGreen,23);
-$iProg: lighten($color-yellowWalk, 13);
-$iEngin: lighten($color-campusGold, 6);
-$iEnviro: $color-mackeyOrange;
-$iHealth: lighten($color-bellTowerBrick, 10);
-$iLaw: lighten($color-oakenBucketBrown, 30);
-$iMarket: lighten($color-pappysPurple, 15);
-$iMath: lighten($color-pappysPurple, 28);
-$iPub: lighten($color-moonDustGray, 5);
-$iSci: lighten($color-everTrueBlue, 28);
-$iTeach: lighten($color-slayterSkyBlue, 10);
-$iUn: $color-ameliaSkyBlue;
-$iArts: lighten($color-fountainRunTeal, 5);
+/* actual version -- these override the ones above */
+$iAg: $field-gold;
+$iAth: $field-gold;
+$iBiz: $field-gold;
+$iProg: $field-gold;
+$iEngin: $field-gold;
+$iEnviro: $field-gold;
+$iHealth: $field-gold;
+$iLaw: $field-gold;
+$iMarket: $field-gold;
+$iMath: $field-gold;
+$iPub: $field-gold;
+$iSci: $field-gold;
+$iTeach: $field-gold;
+$iUn: $field-gold;
+$iArts: $field-gold;
+$ipProf: $field-gold;
 
 
 /* AGRICULTURE
@@ -78,7 +79,7 @@ Visual or Performing Arts  --  visual-performing-arts
 	display: block;
 	float: left;
 	width: (100%/26);
-	font-family: $font-champion-heavy;
+	font-family: $united-sans-extended;
 	font-size: 1em;
 	color: #ccc!important;
 	text-align: center;
@@ -88,12 +89,45 @@ Visual or Performing Arts  --  visual-performing-arts
 	&:focus {
 		background-color: #111;
 		color: $color-campusGold!important;
+		
 	}
 	
 }
+.autocomplete {
+	position: relative;
+	width: 100%;
+	z-index: 5000;
+	top: 3px;
+	cursor: pointer;
+	
+	#autocomplete {
+		position: absolute;
+		background-color: #333;
+		color: $color_campusGold;
+		display: inline-block;
+		width: auto;
+		@include box-shadow(3px 8px 8px, #000, 0.5);
+		padding: .5em;
+		
+		a {
+			background-color: #333;
+			color: $color_campusGold;
+			border: none;
+			text-transform: capitalize;
+			text-decoration: none;
+			display: inline-block;
+			
+			&:hover {
+				color: #fff;
+			}
+		}
+		
+		
+	}
+}
 #career-text {
-	border-top: 5px solid #333;
-	border-bottom: 5px solid #333;
+	border-top: 5px solid #555960;
+	border-bottom: 5px solid #555960;
 	color: #ccc;padding-top: 1em;
 }
 .college-list-group {
@@ -115,13 +149,14 @@ Visual or Performing Arts  --  visual-performing-arts
 			color: $color-campusGold;
 			white-space: nowrap;
 			text-overflow: ellipsis;
-			font-family: $font-archivo-narrow;
-			font-weight: 700;
+			font-family: $united-sans;
+			font-weight: 300;
 			overflow: hidden;
+			text-decoration: none;
 			
 			&:hover {
 				color: $color-campusGold;
-				background-color: #333;
+				background-color: #222;
 				text-decoration: none;
 			}
 		}
@@ -132,6 +167,10 @@ Visual or Performing Arts  --  visual-performing-arts
 	font-size: .8em!important;
 	font-weight: bold;
 	margin-top: -2em;
+	
+	&.disabled {
+		display: none;
+	}
 }
 
 #college-panels {
@@ -149,15 +188,16 @@ Visual or Performing Arts  --  visual-performing-arts
 				display: inline-block;
 				margin: 2px 0;
 				padding: 5px 10px;
-				background-color: #333;
-				color: #eee;
+				background-color: #000;
+				color: $boiler-gold;
 				text-decoration: none;
-				font-weight: bold;
 				font-size: .9em;
+				font-family: $united-sans;
+				font-weight: 600;
 				
 				&:hover {
-					background-color: #222;
-					color: $color-campusGold;
+					background-color: #fff;
+					color: #000;
 				}
 				
 				i {
@@ -168,16 +208,18 @@ Visual or Performing Arts  --  visual-performing-arts
 	}
 	&.interests {
 		li a {
-			background-color: $color_campusGold;
+			background-color: $railway-gray;
 			color: #000;
 			display: block;
 			float: left;
 			margin: 2px;
 			padding: 10px 20px;
+			font-family: $united-sans;
+			font-weight: 700;
 		}
 		.all-majors a {
 			background-color: transparent;
-			color: #ccc;
+			color: #fff;
 			
 			
 			&:hover {
@@ -398,6 +440,12 @@ Visual or Performing Arts  --  visual-performing-arts
 			display: inline;
 		}
 	}
+	&.pre-professional {
+		.pre-professional .pre-professional {
+			color: $ipProf;
+			display: inline;
+		}
+	}
 }
 .dark-bg {
 	&.school {
@@ -407,10 +455,30 @@ Visual or Performing Arts  --  visual-performing-arts
 			h6 {
 				color: #8C8C8C;
 			}
+			.jumbotron {
+				background-color: #222;
+				
+				.button-bar {
+					background-color: #222;
+				}
+			}
+			.jumbotron .side .chart-title {
+				color: $railway-gray!important;
+			}
 		}
 		
 	}
 }
+.degree-in-3-icon {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	padding-left: .2em;
+	color: $color_campusGold;
+	font-family: $united-sans-condensed;
+	font-weight: normal!important;
+}
+
 #interest-check,
 #school-check {
 	label {
@@ -421,7 +489,6 @@ Visual or Performing Arts  --  visual-performing-arts
 		padding: 0;
 		padding-right: 15px;
 		vertical-align: middle;
-		font-weight: bold;
 	}
 	input[type="checkbox"],
 	input[type="radio"] {
@@ -437,7 +504,7 @@ Visual or Performing Arts  --  visual-performing-arts
 	}
 }
 #school-check label {
-	color: #c28e0e;
+	color: $steam-gray;
 }
 #interest-check  {
 	/* mock up */
@@ -544,16 +611,60 @@ Visual or Performing Arts  --  visual-performing-arts
 	.visual-performing-arts {
 		color: $iArts;
 	}
+	.pre-professional {
+		color: $ipProf;
+	}
 }
 
 #open-all, #close-all {
-	color: #bbb;
+	color: #C4BFC0;
+}
+h1 .btn-degree-in-3 {
+	font-size: .6em;
+	text-decoration: none;
+	color: $color-fountainRunTeal;
+	background: linear-gradient(to right, $color-rossAdeGreen 0%, $color-fountainRunTeal 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	@include transition(padding 200ms ease-in);
+		
+	i {
+		color: $color-fountainRunTeal;
+		background: none;
+		-webkit-background-clip: none;
+		-webkit-text-fill-color: $color-fountainRunTeal;
+		@include transition(font-size 200ms ease-in);
+	}
+	&:hover {
+		padding-left: 30px;
+		i {
+			font-size: 1.2em;
+		}
+	}
+	
 }
 .hide-major {
 	display:none!important;
 }
 
 .main-content {
+	.degree-in-3-box {
+		color: $color-springFestGreen;
+		padding: 1em 0;
+
+		.degree-in-3-head {
+			color: $color-fountainRunTeal!important;
+			background: linear-gradient(to right, $color-rossAdeGreen 0%, $color-fountainRunTeal 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-transform: uppercase;
+			margin-top: .3em;
+			border-bottom: 2px solid $color-fountainRunTeal;
+		}
+		hr {
+			margin: 0;
+		}
+	}
 	.filter-title {
 		margin: .8em 0 .5em 0!important;
 		font-size: 2.3em;
@@ -562,8 +673,12 @@ Visual or Performing Arts  --  visual-performing-arts
 		&.profile, 
 		&.cta {
 			margin-top: -30px;
-			background-color: darken($color-everTrueBlue, 6);
-			color: #eee;
+			background-color: $steam-gray!important;
+			color: #000;
+			
+			.button {
+				margin: 5px 3px;
+			}
 		}
 		&.cta {
 			background-color: #000;
@@ -576,7 +691,7 @@ Visual or Performing Arts  --  visual-performing-arts
 			h4,
 			h5,
 			h6 {
-				color: #fff!important;
+				color: #000!important;
 				margin-bottom: .5em;
 			}
 			img {
@@ -585,7 +700,7 @@ Visual or Performing Arts  --  visual-performing-arts
 				padding-top: 0
 			}
 			hr {
-				border-color: #999;
+				border-color: $steel-gray;
 				width: 80%;
 				margin: 1em auto;
 				border-style: dashed;
@@ -603,56 +718,23 @@ Visual or Performing Arts  --  visual-performing-arts
 			padding: 5px;
 			background-color: transparent;
 			border: none;
-			border-top: 1px solid #333;
+			border-top: 1px solid #555960;
 			text-align: left;
 			font-size: 1.1em;
+			color: $steam-gray;
 
-			i {
-				color: $color-campusGold;
-			}
 		}
 	}
 }
 .majors {
-	button[data-target="#mailing-list"] {
-		background-color: $color-rossAdeGreen!important;
-		
-		&:hover,
-		&:focus {
-			background-color: darken($color-rossAdeGreen, 10%)!important;
-		}
-	}
-	
-	.desc > p:first-child {
-		font-family: $font-archivo-narrow;
-		font-weight: 900;
-		font-size: 1.3em;
-		line-height: 1.4;
-		color: lighten($color-campusGold,5);
-	}
-	.col-lg-8 {
-		h2,
-		h3,
-		h4 {
-			color: $color-campusGold!important;
-		}
-		#POS {
-			background: -1880px center url(https://admissions.purdue.edu/images/design-elements/linesBG.png) no-repeat;
-			
-			.list-group-item {
-				border: #222 solid 5px;
-				padding: 5px;
-				border-left: none;
-				padding-left: 40px;
-				text-transform: capitalize!important;
-			}
-		} 
-	}
 	.aside {
 		.accordion {
 			background-color: transparent;
-			margin-top: 1em;
+			margin: 0;
 			
+			.accordion__heading {
+				background-color: #222;
+			}
 		}
 		.majors-accordion {
 			background-color: transparent;
@@ -661,8 +743,49 @@ Visual or Performing Arts  --  visual-performing-arts
 		}
 	}
 	
+	
+	.desc > p:first-child {
+		font-weight: 700;
+		font-size: 1.3em;
+		line-height: 1.4;
+	}
+	.desc + .text-center.grayDrk img {
+		display: block;
+	}
+	.col-lg-8 {
+		h2,
+		h3,
+		h4 {
+			color: $color-campusGold!important;
+		}
+		#POS {
+			
+			.list-group-item {
+				margin: 0;
+				padding: 0;
+				padding-left: 0;
+				background-color: transparent;
+				border: none;
+				
+				
+				a {
+					color: #c4bfc0;
+					font-size: 1.2em;
+					font-weight: 700;
+					font-family: $united-sans;
+					text-decoration: underline;
+					
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		} 
+	}
+	
+	
 	hr {
-		border-color: #333;
+		border-color: #555960;
 		&.spacer,
 		&.striped-gold {
 			border-color: transparent;
@@ -674,14 +797,17 @@ Visual or Performing Arts  --  visual-performing-arts
 	
 }
 .all-majors #inner-page-content {
-	background: #222 url('https://admissions.purdue.edu/images/design-elements/Bursts-grey-majors.png') no-repeat center;
-	background-size:120%
+	background-color: #333;
+}
+#majors-divider {
+	margin-top: 0;
 }
 .m-legend {
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 1;
 	padding-left: 5px;
 	margin-bottom: 5px;
+	color: $railway-gray;
 	
 	span {
 		font-weight: 900;
@@ -693,6 +819,24 @@ Visual or Performing Arts  --  visual-performing-arts
 	}
 }
 
+#search-majors {
+	padding-top: 10px;
+	
+	input[type="text"] {
+		background-color: #333;
+		border-color: $color_campusGold;
+		color: #fff;
+	}
+	.input-group-text {
+		background-color: $color_campusGold;
+		color: #000;
+		border-color: $color_campusGold;
+		
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
 .school {
 	.additional {
 		h2, h3, h4 {
@@ -700,6 +844,9 @@ Visual or Performing Arts  --  visual-performing-arts
 				margin-top: .5em;
 			}
 		}
+	}
+	.aside .list-inline {
+		width: 100%;
 	}
 	.aside .list-inline li {
 		display: block;
@@ -712,24 +859,29 @@ Visual or Performing Arts  --  visual-performing-arts
 			margin: 0;
 			margin-bottom: 5px;
 			padding: 5px 10px;
-			background-color: #1e1e1e;
-			color: $color-campusGold;
+			background-color: transparent;
+			color: $steam-gray;
 			font-size: 1.2em;
-			text-decoration: none;
-			font-weight: bold;
-			font-family: $font-archivo-narrow;
+			font-weight: 700;
+			font-family: $united-sans;
+			text-decoration: underline;
+			
 			
 			&:hover {
-				background-color: #333;
+				color: #fff;
 			}
 		}
 	}
 	.chart-title {
 		margin-top: 2em;
 		margin-bottom: .5em;
+		
 	}
-	.jumbotron .text {
-		font-size: 90%;
+	.jumbotron {
+		
+		.text {
+			font-size: 90%;
+		}
 	}
 	
 	.main-content {
@@ -739,20 +891,20 @@ Visual or Performing Arts  --  visual-performing-arts
 		h4,
 		h5,
 		h6 {
-			font-family: $font-champion-welter;
-			font-weight: normal!important;
+			
 		}
 	}
 	.major-personal {
 		font-size: 90%;
-		background-color: darken($color-everTrueBlue, 6);
-		color: #eee;
+		background-color: $steam-gray;
+		color: #000;
 		padding: 30px;
 		margin: 1em 0;
-
+		
 		button {
-			font-family: $font-archivo-narrow;
-			font-weight: bold;
+			clear:both;
+			background-color: transparent!important;
+			color: #000!important;
 		}
 		img {
 			max-width: 200px;
@@ -764,7 +916,7 @@ Visual or Performing Arts  --  visual-performing-arts
 		h4,
 		h5,
 		h6 {
-			color: #eee!important;
+			color: #000!important;
 		}
 		hr {
 			border-color: #999;
@@ -775,25 +927,9 @@ Visual or Performing Arts  --  visual-performing-arts
 		.major-personal-title {
 			margin-top: 0;
 			display: inline-block;
-		}
-		button {
-			width: 100%;
-			background-color: transparent;
-			color: lighten($color-everTrueBlue, 40);
-			padding: 10px;
-			text-align: center;
-			border: none;
-			margin-top: 1em;
-			outline: 1px solid lighten($color-everTrueBlue, 20);
 			
-			&:hover {
-				background-color: darken($color-everTrueBlue, 10);
-			}
-			
-			+ div.collapse :first-child {
-				padding-top: 2em;
-			}
 		}
+		
 		.portrait {
 			margin: 0 0 1em 1em;
 		}
@@ -801,50 +937,38 @@ Visual or Performing Arts  --  visual-performing-arts
 	}
 	.salary-title {
 		font-size:140%;
-		font-family: $font-archivo-narrow; 
-		color:#000
+		font-family: $acumin-pro-extra-condensed; 
+		color:$railway-gray;
 	}
 	.salary {
-		font-family: $font-champion-welter;
-		color:#000;
-		font-weight: normal!important;
+		font-family: $united-sans-condensed;
+		color:$railway-gray;
+		font-weight: 700!important;
 	}
 	.vid-wrapper {
-		background-color: #333;
+		background-color: #161616;
 	}
 	.text .vid-wrapper {
 		padding: 0;
 		margin-bottom: 2em;
-		background-color: $color-headlineGold;
+		background-color: #161616;
 		
 		iframe {
 			display: block;
 		}
 	}
+	.side .note {
+		color:$railway-gray;
+	}
 }
-.cta-link, 
-.single-major-cta a {
-	display: inline-block;
-    padding: 20px 30px;
-    border: 1px solid #666;
-    outline: #666;
-    margin: 10px 15px 10px 0;
-	color: #000!important;
-}
+
 .single-major-cta {
 	margin: 70px 0;
 	display: block;
 	height: inherit;
 	
 	a {
-		font-family: $font-archivo-narrow;
-		text-decoration: none!important;
-		font-weight: 700;
-		text-transform: uppercase;
-
-		&:hover {
-			background-color: $color-campusGold;
-		}
+		margin: 5px 3px;
 	}
 }
 
@@ -852,6 +976,7 @@ Visual or Performing Arts  --  visual-performing-arts
 /* ------------------------------------------------
 	Get on mailing list form 
 -------------------------------------------------*/
+
 #mailing-list {
 	margin-top: 2em;
 	
@@ -881,9 +1006,9 @@ Visual or Performing Arts  --  visual-performing-arts
 	input[type="text"],
 	select {
 		border: none!important;
-		border-bottom: #aaa solid 1px!important;
+		border-bottom: #9D9795 solid 1px!important;
 		color: lighten($color-campusGold, 10)!important;
-		background-color: #222!important;
+		background-color: #333!important;
 		padding: 2px 10px!important;
 		margin-bottom: 10px;
 	}
@@ -912,10 +1037,10 @@ Visual or Performing Arts  --  visual-performing-arts
 	}
 }
 div.form_header.form_layout_table .form_label {
-    color: #c28e0e!important;
+    color: #cfb991!important;
 	background: transparent!important;
-	font-family: "Archivo Narrow","Arial Narrow",Arial,sans-serif;
-	border-bottom: 2px solid #c28e0e;
+	font-family: $acumin-pro-condensed;
+	border-bottom: 2px solid #cfb991;
 	margin-bottom: .5em;
 	margin-top: 1em;
 }
@@ -949,20 +1074,23 @@ div.form_header.form_layout_table .form_label {
 				height: 257px;
 			}
 		} 
-		.cta-link, .single-major-cta a {
-			font-size: 100%!important;
-		}
+		
 		
 	}
-	.single-major-cta a {
-		display: block;
-		width: 100%;
-		margin: 5px 0;
-		text-align: center;
-	}
+	
 }
 @include desktopSmallMax {
-	
+	.autocomplete {
+		position: static;
+		cursor: pointer;
+
+		#autocomplete {
+			position: static;
+			@include box-shadow(0 0 0, transparent, 0.0);
+
+		
+		}
+	}
 	.college-list-group li a {
 		width: 49%;
 	}
@@ -984,24 +1112,23 @@ div.form_header.form_layout_table .form_label {
 			.side {
 				padding-top: 2em;
 				margin-top: 2em;
-				border-top: 1px solid $color-yellowWalk;
+				border-top: 1px solid $steel-gray;
 			}
 			.chart-title {
 				margin-top: 1.3em;
 				margin-bottom: 1em;
 				padding-top: 1.3em;
-				border-top: 1px solid $color-yellowWalk;
+				border-top: 1px solid $steel-gray;
 			}
 			.salary-title {
 				margin-top: 1em;
 			}
 		} 
-		.single-major-cta a {
-			font-size: 1.2em!important;
-		}
+		
 	}
 }
 @include tabletMax {
+	
 	.alpha {
 		width: (100%/13);
 	}
@@ -1074,15 +1201,11 @@ div.form_header.form_layout_table .form_label {
 		}
 	}
 	.school {
-		.cta-link {
-			font-size: 1.1em!important;
-		}
+		
 		.chart-title {
 			margin-bottom: 0!important;
 		}
-		.single-major-cta a {
-			font-size: 120%!important;
-		}
+		
 		.jumbotron {
 			.text iframe {
 				width: 280px;

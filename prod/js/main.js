@@ -152,7 +152,7 @@ if($('body').hasClass('home')){
 	// Find undergrad majors
 	// ------------------------------------------------------------------------
 	
-	var whichSchool
+	var whichSchool;
 	$school.change(function(){ // identify which are current school
 		$noMatchNote.hide();
 		whichSchool = $(this).val();
@@ -285,22 +285,11 @@ if($('body').hasClass('home')){
 	
 	// for hover colors
 	var majorLinkColorClasses = [
-		  '#849E2A',
-		  '#BAA892',
-		  '#C28E0E',
-		  '#B46012',
-		  '#C28E0E',
-		  '#AD1F65',
-		  '#29A592',
-		  '#C28E0E',
-		  '#A3D6D7',
-		  '#FF9B1A',
-		  '#E9E45B',
-		  '#C28E0E',
-		  '#C3BE0B',
-		  '#6E99B4',
-		  '#C28E0E',
-		  '#FFD100',
+		  '#cfb991',
+		  '#ebd99f',
+		  '#ddb945',
+		  '#c4bfc0',
+		  '#9d9795',
 	  ];
 	  
 	  var colorCount = 0;
@@ -317,7 +306,7 @@ if($('body').hasClass('home')){
 			  $(this).css('background-color',$(this).attr('data-hover'));
 		  },
 		  function(){
-			  $(this).css('background-color','#ddd');
+			  $(this).css('background-color','#fff');
 		  }
 		  
 	  );
@@ -392,18 +381,26 @@ if($('body').hasClass('home')){
 $(function(){ 
 if($('body').hasClass('all-majors')){
 			 
-		var $collegePanels = $('#college-panels');
+		var $collegePanels = $('#college-panels').not('.interests');
 		var $interestChecks = $('#interest-check input');
 		var $schoolChecks = $('#school-check input');
-		var $majorLinks = $('#college-panels ul li a');
+		var $majors = $collegePanels.find('li');
+		var $majorLinks = $majors.find('a');
 		var $showSchoolsBtn = $('#show-all-schools');
 		var $learnMoreBtns = $('.learn-more');
 		var $alpha = $('.alpha');
 		var $clearAllBtn = $('#clear-all');
 		var collegeClasses = [];
 		var icons = [];
-			 
-		
+		var $majorsSearchForm = $('#search-majors');
+		var $searchField = $('#search-term');
+		var $autocomplete = $('#autocomplete');
+		var $autocompleteParent = $('.autocomplete');
+		var $nonSearchCategories = $('.non-search-categories');
+		var $noMajorsFoundNotice = $('#empty-search-notice');
+	
+		$searchField.val(''); // clear on load to prevent saving stats that are old or browser cached
+	
 		$interestChecks.each(function(){
 			collegeClasses.push( $(this).val() );
 			icons.push( $(this).attr('data-icon') );
@@ -439,6 +436,10 @@ if($('body').hasClass('all-majors')){
 		});
 		
 		$clearAllBtn.click(function(){
+			$majors.removeClass('hide');
+			$autocompleteParent.addClass('hide');
+			$searchField.val('');
+			$majors.removeClass('hide');
 			$showSchoolsBtn.addClass('disabled');
 			$schoolChecks.each(function(){
 				$(this).prop('checked',false);
@@ -473,7 +474,112 @@ if($('body').hasClass('all-majors')){
 			}
 			
 		});
+	
+		// record which major clicked after search bar used
+		$majorLinks.click(function(event){ 
+			
+			event.preventDefault();
+			var page = $(this).attr('href');
+			var searchTerm = $searchField.val().trim();
+			
+			if(searchTerm != ''){
+				
+				var returnPage = 'search-majors-stats.php' + '?search-term=' + encodeURI(searchTerm) + '&major-clicked=' + encodeURI($(this).text().trim());
+				
+				$.get(returnPage, function(data, status){
+					//console.log(data);
+				});
+				
+			} 
+			window.location.assign("https://" + window.location.hostname + "/majors/" + page);
+		});
 		
+		// majors search
+		$('#submit-search-form').click(function(){
+			$majorsSearchForm.submit();
+		})
+		$majorsSearchForm.submit(function(event){
+			event.preventDefault();
+			$nonSearchCategories.hide();
+			var searchTerm = $searchField.val().trim();
+			var returnPage = 'search-majors.php' + '?search-term=' + encodeURI(searchTerm);
+
+			$.get(returnPage, function(data, status){
+				var returnMajors = JSON.parse(data);
+				$majors.addClass('hide');
+				$autocompleteParent.addClass('hide');
+				for(var m=0;m<returnMajors.length;m++){
+					$majors.each(function(){
+						if( $(this).attr('data-search-major') == returnMajors[m] ){
+						   $(this).removeClass('hide').attr('data-save-search', searchTerm);
+						}
+					});
+				}
+				$searchField.blur();
+				$autocompleteParent.addClass('hide');
+				// record empty search
+				var majorsShowing = $('#college-panels ul li').not('.hide');
+				//console.log(majorsShowing);
+				if(majorsShowing.length === 0){
+					var returnPage = 'search-majors-stats.php' + '?search-term=' + encodeURI(searchTerm) + '&major-clicked=none';
+					$.get(returnPage, function(data, status){
+						//console.log(data);
+					});
+					$noMajorsFoundNotice.removeClass('hide');
+					$searchField.focus();
+				} else {
+					$noMajorsFoundNotice.addClass('hide');
+				}
+			});
+			
+		});
+			
+		var cleared = false;
+		$searchField.keyup(function(){
+			
+			var searchTerm = $searchField.val().trim();
+			if(searchTerm !== ''){
+				
+				if(!cleared){
+					$clearAllBtn.click();
+					cleared = true;
+					$searchField.val(searchTerm);
+				}
+				
+				var returnPage = 'search-majors.php' + '?search-chars=' + encodeURI(searchTerm);
+
+				$.get(returnPage, function(data, status){
+					var returnKeywords = JSON.parse(data);
+					$autocomplete.html('');
+					if(returnKeywords.length > 0){
+						$autocompleteParent.removeClass('hide');
+						$noMajorsFoundNotice.addClass('hide');
+						$autocomplete.attr('size',returnKeywords.length);
+					} else {
+						$autocompleteParent.addClass('hide');
+					}
+					for(var x=0;x<returnKeywords.length;x++){
+						$autocomplete.append('<a href="#">' + returnKeywords[x] + '</a><br>');
+						$autocomplete.find('a').click(function(event) {
+							event.preventDefault();
+							$searchField.val( $(this).text() );
+							$majorsSearchForm.submit();
+						});
+					}
+				});
+				$nonSearchCategories.hide();
+				$majors.addClass('hide');
+				
+			} else {
+				$autocompleteParent.addClass('hide');
+				$majors.removeClass('hide');
+				$nonSearchCategories.show();
+				cleared = false;
+				$noMajorsFoundNotce.addClass('hide');
+			}
+
+		});
+	
 		function showHide(){
 			$clearAllBtn.removeClass('disabled');
 			
@@ -690,7 +796,8 @@ var getWindowOptions0 = function() {
 };
 
 var fbBtn = document.querySelector('.fb-share');
-var fbLink = 'https://www.facebook.com/v3.0/dialog/share?' +
+	// not sure why but the below stopped working
+/*var fbLink = 'https://www.facebook.com/v3.0/dialog/share?' +
 	'app_id=' + fbSDKId +
 	'&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fvy-MhgbfL4v.js%3Fversion%3D44%23cb%3Df5724576a443fc%26domain%3Dwww.admissions.purdue.edu%26origin%3Dhttps%253A%252F%252Fwww.admissions.purdue.edu%252Ff17af18a01c645%26relation%3Dopener' +
 	'&display=popup' + 
@@ -699,18 +806,21 @@ var fbLink = 'https://www.facebook.com/v3.0/dialog/share?' +
 	'&href=' + encodeURIComponent(location.href) +
 	'&locale=en_US' +
 	'&mobile_iframe=true' +
-	'scrape=true' +
+	'&scrape=true' +
 	'&next=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fvy-MhgbfL4v.js%3Fversion%3D44%23cb%3Dffddf91054f2e4%26domain%3Dwww.admissions.purdue.edu%26origin%3Dhttps%253A%252F%252Fwww.admissions.purdue.edu%252Ff17af18a01c645%26relation%3Dopener%26frame%3Df31fd828ad6ebfc%26result%3D%2522xxRESULTTOKENxx%2522' +
 	'&sdk=joey' +
-	'&version=v3.0';
-
-
-fbBtn.addEventListener('click', function(e) {
+	'&version=v3.0'; */
+var completeURL = encodeURIComponent(location.href);
+var useURLArr = completeURL.split('www');
+var fbLink = 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F' + useURLArr[1] + '&display=popup&mobile_iframe=true&scrape=true&src=sdkpreparse';
+fbBtn.href = fbLink;
+fbBtn.target = '_blank';
+/*fbBtn.addEventListener('click', function(e) {
   e.preventDefault();
 
 	 var win = window.open(fbLink, 'ShareOnFacebook', getWindowOptions0());
 	 win.opener = null; // 2
-});
+});*/
 
 
 // twitter share

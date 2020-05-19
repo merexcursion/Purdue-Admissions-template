@@ -13,10 +13,11 @@ var dataSet = [
 	  ['Seeking Education', 3.31],
 	  ['Other', 2.98],
 	]
-var colorSet = ['#A3D6D7','#FFD100','#FF9B1A','#C3BE0B','#ccc'];
+
+var colorSet = ['#cfb991','#ebd99f','#ddb945','#daaa00','#8e6f3e'];
 for(var a = 0; a < dataSet.length; a++){
 	if(a !== 0){
-		addLegend += '<p style="border-left: 13px solid ' + colorSet[a-1] + '" class="m-legend">' + dataSet[a][0] + ': <span>' + dataSet[a][1] + '%</span></p>';
+		addLegend += '<p style="border-left: 15px solid ' + colorSet[a-1] + '" class="m-legend">' + dataSet[a][0] + ': <span>' + dataSet[a][1] + '%</span></p>';
 	}
 }
 
@@ -31,12 +32,12 @@ function drawChart() {
 	var legendPos, fontSize, chartHeight, chartWidth;
 	if (window.innerWidth < 576){
 		legendPos = 'none'; // tried with top
-		fontSize = 12;
+		fontSize = 14;
 		chartHeight = '90%';
 		chartWidth = '80%';
 	} else {
 		legendPos = null;
-		fontSize = 16;
+		fontSize = 17;
 		chartHeight = '90%';
 		chartWidth = '100%';
 	}
@@ -48,8 +49,8 @@ function drawChart() {
 	  'colors': colorSet,
 	  //tooltip: { trigger: 'none' },
 	  'pieSliceTextStyle': {
-            color: 'black',
-		   'fontName':'Champion Welterweight',
+            color: '#000',
+		   'fontName':"United Sans Condensed"
        },
 	  'chartArea':{
 		  left: '5%',
@@ -57,16 +58,16 @@ function drawChart() {
 		  width: chartWidth,
 		  height: chartHeight
 	  },
-	  'pieSliceBorderColor' : '#5B6870',
-	  'fontSize':'16',
-	  'fontName':'Archivo Narrow',
+	  'pieSliceBorderColor' : '#000',
+	  'fontSize':'20',
+	  'fontName':"United Sans Condensed",
 	  'legend':{
 		  maxLines: 100,
 		  position: legendPos,
 		  alignment: 'start',
 		  textStyle: {
 			  fontSize: fontSize,
-			  color: '#000',
+			  color: '#9d9795'
 		  }
 	  }
   };

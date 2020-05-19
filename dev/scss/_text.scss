@@ -1,84 +1,70 @@
 /* general */
 body {
-	font-family: $font-arial;
+	font-family: $acumin-pro;
 	line-height: 1.6;
 }
-button {
-	font-family: $font-archivo-narrow;
-	text-transform: uppercase;
-}
+
 div[class*="-12 "].main-content,
 div[class*="-11 "].main-content {
-	font-size: 120%;
+	font-size: 130%;
 }
 div[class*="-10 "].main-content,
 div[class*="-9 "].main-content {
-	font-size: 110%;
+	font-size: 120%;
 }
 div[class*="-8 "].main-content .image-panel .panel-body,
 div[class*="-7 "].main-content .image-panel .panel-body {
-	font-size: 90%;
+	font-size: 100%;
 }
 div[class*="-6 "].main-content,
 div[class*="-5 "].main-content,
 div[class*="-4 "].main-content {
-	font-size: 90%;
+	font-size: 100%;
 }
 div[class*="-3 "].main-content,
 div[class*="-2 "].main-content,
 div[class*="-1 "].main-content {
-	font-size: 80%;
+	font-size: 90%;
 }
 em {
 	font-style: italic;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: $font-champion-welter;
-	font-weight: normal!important;
-	color: $color-gray70;
-	margin-top: 1em;
-	line-height: 1.1;
-	margin-bottom: .3em;
-	
-	strong, b {
-		font-weight: normal!important;
-		strong, b {
-			font-weight: normal!important;
-		}
+main {m
+	h1 {
+		@include h1;
+
 	}
-}
-h1 {
-	font-size: 2.25em;
-	text-transform: uppercase;
-}
-h2 {
-	font-size: 2em;
-}
-h3 {
-	font-size: 1.75em;
-	color: $color-gray60ish;
-}
-h4 {
-	font-size: 1.50em;
-	color: $color-gray90;
-}
-h5 {
-	font-size: 1.30em;
-	color: $color-gray90;
-}
-h6 {
-	font-size: 1.25em;
-	color: $color-gray90;
+	h2 {
+		@include h2;
+	}
+	h3 {
+		@include h3;
+	}
+	h4 {
+		@include h4;
+	}
+	h5 {
+		@include h5;
+	}
+	h6 {
+		@include h6;
+	}
 }
 ol,
 ul {
 	padding-left: 3em;
 	margin-bottom: 15px;
+}
+ul {
+	list-style-type: square;
+	
+	ul {
+		list-style-type: circle;
+		
+		ul {
+			list-style-type: disc;
+		}
+	}
 }
 p {
 	margin-bottom: 1em;
@@ -89,24 +75,89 @@ strong {
 }
 
 /* specific */
-blockquote {
-    
-	.quote__content {
-		
-		font-family: $font-archivo-narrow;
-		font-weight: bold;
-		font-size: 1.4em;
-		color: $color-gray90;
-		line-height: 1.25;
-	}
-	.quote__source {
-		
-		font-family: $font-archivo-narrow;
-		font-weight: bold;
-		font-size: 1.3em;
-		color: $color-headlineGold;
-	}
+blockquote, .quote {
+    padding: 0;
+    border: 0;
+    font-size: unset;
+    margin: 1rem 0;
+    padding-left: 2rem;
+    position: relative; 
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc-toRem(8);
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: $aged-gold;
+    }
 }
+
+.quote {
+    &-mark {
+        padding-left: 4rem;
+
+        &::before {
+            width: auto;
+            height: auto;
+            background: none;
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            background-image: url("data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20x%3D'0px'%20y%3D'0px'%20viewBox%3D'0%200%2050%2050'%20xml%3Aspace%3D'preserve'%3E%3Cpath%20style%3D'fill%3A%238e6f3e%3Bstroke%3Argba(0%2C0%2C0%2C0)%3B'%20d%3D'M14.8604%2C26.5957h7.6001v20.5205h-19V28.3057l9.1201-25.27h9.8799L14.8604%2C26.5957z%20M38.9912%2C26.5957h7.6006v20.5205h-19.001V28.3057l9.1201-25.27h9.8809L38.9912%2C26.5957z'%2F%3E%3C%2Fsvg%3E");
+            background-size: cover;
+        }
+    }
+
+    &__content {
+        display: block;
+        padding: 0;
+        margin: 0;
+        font-family: $acumin-pro-semicondensed;
+        font-weight: bold;
+        font-size: calc-toRem(24);
+        color: black;
+        line-height: 1.25;
+    }
+
+    &__source {
+        display: block;
+        padding: 0;
+        padding-top: .5rem;
+        font-family: $acumin-pro-semicondensed;
+        font-weight: bold;
+        font-size: calc-toRem(18);
+        color: $aged-gold;
+    }
+}
+@media ( min-width: 37.5em ) {
+    blockquote, .quote {
+        padding-left: 6rem;
+
+        &::before {
+            height: auto;
+            left: 4rem;
+            top: -0.1875rem;
+            bottom: -0.1875rem;
+        }
+    }
+
+    .quote {
+        &-mark {
+            &::before {
+                height: 3rem;
+                left: 2rem;
+                top: 0;
+            }
+        }
+    }
+}
+blockquote .quote__content {
+	font-size: 130%!important;
+}
+
 .dark-bg blockquote {
 	.quote__content {
 		color: #ddd;
@@ -118,7 +169,7 @@ blockquote {
 caption {
 	text-transform: uppercase;
 	text-align: center;
-	font-family: $font-champion-welter;
+	font-family: $acumin-pro-condensed;
 	font-size: 1.3em;
 	line-height: 1;
 }
@@ -140,11 +191,10 @@ caption {
 		h4,
 		h5,
 		h6 {
-			font-family: $font-archivo-narrow;
-			font-weight: bold!important;
+			
 			
 			&.landing-links-title {
-				font-weight: normal!important;
+				
 			}
 		}
 	}
@@ -178,12 +228,16 @@ figure {
 	}
 	h1 {
 		line-height: 1;
+		@include transform(skewX(-20deg));
+		font-size: 2.25em;
+		font-weight: 600;
 	}
 }
 #intro-text {
 	h1 {
 		font-size: 7vw;
 		margin-top: 0;
+		
 	}
 }
 .main-content, 
@@ -200,7 +254,7 @@ figure {
 	
 }
 thead th {
-	font-weight: bold;
+	font-weight: 900;
 	line-height: 1;
 	font-size: .9em;
 }
@@ -213,7 +267,7 @@ thead th {
 }
 @include desktopLargeMax {
 	button {
-		font-size: 110%!important;
+		
 	}
 }
 @include desktopSmallMax {
@@ -227,32 +281,49 @@ thead th {
 	div[class*="-3 "].main-content,
 	div[class*="-2 "].main-content,
 	div[class*="-1 "].main-content {
-		font-size: 100%;
+		font-size: 110%;
 	}
 	#intro {
-		font-size: 90%;
+		font-size: 100%;
+		h1 {
+			@include transform(skewX(0deg));
+		}
+	}
+	blockquote .quote__content {
+		font-size: 120%!important;
+		line-height: 1.5;
 	}
 }
 @include tabletMax {
 	#intro {
-		font-size: 80%;
+		font-size: 90%;
 		
 		.blurb {
-			font-size: 1.1em;
+			font-size: 1.2em;
 		}
+		
+	}
+	#intro-text {
 		h1 {
 			font-size: 9vw;
 		}
 	}
 	div[class*="col"].main-content {
-		font-size: 90%;
+		font-size: 100%;
+	}
+	blockquote .quote__content {
+		font-size: 110%!important;
+		
 	}
 }
 @include phoneMax {
 	#intro {
-		font-size: 70%;
+		font-size: 80%;
 	}
 	div[class*="col"].main-content {
-		font-size: 80%;
+		font-size: 90%;
+	}
+	blockquote .quote__content {
+		font-size: 105%!important;
 	}
 }
