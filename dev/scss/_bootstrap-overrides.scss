@@ -467,6 +467,15 @@ Panels (deprecated for cards, but still have that here - need to upgrade)
 
 		}
 	}
+	&.white {
+		border-color: $steam-gray;
+		&.panel-default > .panel-heading {
+			border-color: $steam-gray;
+			background-color: #fff;
+			color: $steel-gray;
+
+		}
+	}
 }
 .dark-bg {
 	.main-content .panel {

@@ -38,16 +38,17 @@
 .gray-text {
 	color: $cool-gray;
 }
-.gray40 {
-	background-color: $cool-gray;
-	color: #000;
-}
 .gray70 {
+	background-color: $cool-gray;
+	color: #fff;
+}
+.gray40 {
 	background-color: $railway-gray;
 	color: #000;
 }
-.grayDrk {
+.grayDrk, .trueblue {
 	background-color: $steel-gray;
+	color: #fff;
 }
 .grayLt {
 	background-color: $steam-gray;

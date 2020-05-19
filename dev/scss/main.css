@@ -76,16 +76,17 @@ table {
 .gray-text {
   color: #6f727b; }
 
-.gray40 {
-  background-color: #6f727b;
-  color: #000; }
-
 .gray70 {
+  background-color: #6f727b;
+  color: #fff; }
+
+.gray40 {
   background-color: #9d9795;
   color: #000; }
 
-.grayDrk {
-  background-color: #555960; }
+.grayDrk, .trueblue {
+  background-color: #555960;
+  color: #fff; }
 
 .grayLt {
   background-color: #c4bfc0; }
@@ -2113,6 +2114,12 @@ Panels (deprecated for cards, but still have that here - need to upgrade)
       border-color: #9d9795;
       background-color: #9d9795;
       color: #000; }
+  .main-content .panel.white {
+    border-color: #c4bfc0; }
+    .main-content .panel.white.panel-default > .panel-heading {
+      border-color: #c4bfc0;
+      background-color: #fff;
+      color: #555960; }
 
 .dark-bg .main-content .panel .panel-body {
   background-color: #222 !important;
@@ -2495,9 +2502,9 @@ body main .button-icon:hover, body main .button-icon:active, body main .button-i
 body main .button-icon.button-bar:hover, body main .button-icon.button-bar:active, body main .button-icon.button-bar:focus, body .button-icon.button-bar:hover, body .button-icon.button-bar:active, body .button-icon.button-bar:focus {
   outline-color: #8e6f3e;
   color: #000; }
-body main button.button-gray70, body main select.button-gray70,
-body main .button-gray70:link, body main .button-gray70:visited, body button.button-gray70, body select.button-gray70,
-body .button-gray70:link, body .button-gray70:visited {
+body main button.button-gray70, body main select.button-gray70
+.button-gray70:link, body main .button-gray70:visited, body button.button-gray70, body select.button-gray70
+.button-gray70:link, body .button-gray70:visited {
   outline-color: #555960;
   background-color: #555960;
   color: #fff; }

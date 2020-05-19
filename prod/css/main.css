@@ -10192,18 +10192,19 @@ table {
   color: #6f727b;
 }
 
-.gray40 {
+.gray70 {
   background-color: #6f727b;
-  color: #000;
+  color: #fff;
 }
 
-.gray70 {
+.gray40 {
   background-color: #9d9795;
   color: #000;
 }
 
-.grayDrk {
+.grayDrk, .trueblue {
   background-color: #555960;
+  color: #fff;
 }
 
 .grayLt {
@@ -13076,6 +13077,16 @@ Panels (deprecated for cards, but still have that here - need to upgrade)
   color: #000;
 }
 
+.main-content .panel.white {
+  border-color: #c4bfc0;
+}
+
+.main-content .panel.white.panel-default > .panel-heading {
+  border-color: #c4bfc0;
+  background-color: #fff;
+  color: #555960;
+}
+
 .dark-bg .main-content .panel .panel-body {
   background-color: #222 !important;
   color: #fff;
@@ -13597,9 +13608,9 @@ body main .button-icon.button-bar:hover, body main .button-icon.button-bar:activ
   color: #000;
 }
 
-body main button.button-gray70, body main select.button-gray70,
-body main .button-gray70:link, body main .button-gray70:visited, body button.button-gray70, body select.button-gray70,
-body .button-gray70:link, body .button-gray70:visited {
+body main button.button-gray70, body main select.button-gray70
+.button-gray70:link, body main .button-gray70:visited, body button.button-gray70, body select.button-gray70
+.button-gray70:link, body .button-gray70:visited {
   outline-color: #555960;
   background-color: #555960;
   color: #fff;
